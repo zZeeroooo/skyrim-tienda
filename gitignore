@@ -1,0 +1,16 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Node (por si en el futuro agregas herramientas de build)
+node_modules/
+npm-debug.log*
+
+# Archivos temporales
+*.log
+*.tmp

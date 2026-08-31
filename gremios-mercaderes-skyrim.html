@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gremios y Mercaderes de Skyrim</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+
+<div id="cart-overlay" onclick="toggleCart()"></div>
+<div id="cart-drawer">
+  <h2>Tu Bolsa <span id="close-cart" onclick="toggleCart()">✕</span></h2>
+  <div id="cart-items"></div>
+  <div id="cart-total-row">
+    <span>Total:</span>
+    <span id="cart-total">0 🪙</span>
+  </div>
+  <button class="accion" id="btn-checkout" onclick="checkout()">Cerrar Trato</button>
+  <button class="accion" id="btn-clear" onclick="clearCart()">Vaciar bolsa</button>
+</div>
+
+<h1>Gremios y Mercaderes de Skyrim</h1>
+<p class="subtitulo">Consulta antes de comerciar: quién compra, qué vende y dónde encontrarlos.</p>
+
+<div id="lista"></div>
+
+<footer>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</footer>
+
+<script src="cart.js"></script>
+<script>
+  /* =========================================================
+     DATOS DE ESTA PÁGINA (índice de gremios)
+     "pagina" es el archivo HTML propio de cada gremio, donde
+     vivirá su catálogo de productos y los botones Cart.add().
+  ========================================================= */
+  const datos = [
+    {
+      nombre: "Compañeros",
+      tipo: "gremio",
+      categoria: "herreria",
+      icono: "🪓",
+      ubicacion: "Whiterun, Jorrvaskr",
+      nota: "Buen trato general con guerreros y mercenarios.",
+      pagina: "companeros.html"
+    },
+    {
+      nombre: "Colegio de Winterhold",
+      tipo: "gremio",
+      categoria: "magia",
+      icono: "🔮",
+      ubicacion: "Winterhold",
+      nota: "Los precios mejoran con la reputación mágica.",
+      pagina: "colegio-winterhold.html"
+    },
+    {
+      nombre: "Belethor - Bienes Generales",
+      tipo: "mercader",
+      categoria: "general",
+      icono: "🛒",
+      ubicacion: "Whiterun",
+      nota: "Buen punto de partida para vender excedentes.",
+      pagina: "belethor.html"
+    },
+    {
+      nombre: "Herrería de Adrianne Avenicci",
+      tipo: "mercader",
+      categoria: "herreria",
+      icono: "⚔️",
+      ubicacion: "Whiterun",
+      nota: "Especialista en herrería, buenos precios en metal.",
+      pagina: "adrianne-herreria.html"
+    },
+    {
+      nombre: "Farengar Secret-Fire",
+      tipo: "mercader",
+      categoria: "magia",
+      icono: "🐉",
+      ubicacion: "Whiterun, Dragonsreach",
+      nota: "Interesado en todo lo relacionado con dragones.",
+      pagina: "farengar.html"
+    },
+    {
+      nombre: "Gremio de Comerciantes de Solitude",
+      tipo: "gremio",
+      categoria: "ropa",
+      icono: "💍",
+      ubicacion: "Solitude",
+      nota: "Los mejores precios están en la ciudad imperial.",
+      pagina: "comerciantes-solitude.html"
+    },
+    {
+      nombre: "Arcadia's Cauldron",
+      tipo: "mercader",
+      categoria: "alquimia",
+      icono: "🧪",
+      ubicacion: "Whiterun",
+      nota: "La mejor opción para vender cosechas de alquimia.",
+      pagina: "arcadias-cauldron.html"
+    },
+    {
+      nombre: "El Corcel Encabritado",
+      tipo: "mercader",
+      categoria: "comida",
+      icono: "🍖",
+      ubicacion: "Whiterun",
+      nota: "La mejor taberna para reponer provisiones.",
+      pagina: "corcel-encabritado.html"
+    }
+  ];
+
+  const nombresCategoria = {
+    herreria: "Herrería",
+    alquimia: "Alquimia",
+    general: "Bienes Generales",
+    ropa: "Ropa Fina",
+    comida: "Comida y Taberna",
+    magia: "Magia"
+  };
+
+  function render(lista) {
+    const cont = document.getElementById("lista");
+    cont.innerHTML = lista.map(d => `
+      <div class="tarjeta borde-${d.categoria}">
+        <div class="icono">${d.icono}</div>
+        <div class="info">
+          <span class="tipo cat-${d.categoria}">${nombresCategoria[d.categoria]} · ${d.tipo === "gremio" ? "Gremio" : "Mercader"}</span>
+          <h2>${d.nombre}</h2>
+          <p><span class="etiqueta">Ubicación:</span> ${d.ubicacion}</p>
+          <p><span class="etiqueta">Nota:</span> ${d.nota}</p>
+          <a class="btn-ingresar" href="${d.pagina}">Ingresar tienda</a>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  render(datos);
+</script>
+
+</body>
+</html>

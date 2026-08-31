@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=EB+Garamond:ital@0;1&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #111111;
+  color: #e6e6e6;
+  font-family: 'EB Garamond', Georgia, serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+p.subtitulo {
+  text-align: center;
+  color: #aaaaaa;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ---------- Ícono del carrito ---------- */
+#cart-icon {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #4a4a4a;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+#cart-icon:hover { background-color: #3a3a3a; }
+
+#cart-count {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #111;
+  font-weight: bold;
+  border-radius: 50%;
+  min-width: 20px;
+  padding: 1px 5px;
+  margin-left: 4px;
+  font-size: 0.85em;
+}
+
+/* ---------- Panel deslizante del carrito ---------- */
+#cart-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 90;
+}
+
+#cart-overlay.open { display: block; }
+
+#cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 85vw;
+  height: 100%;
+  background-color: #1a1a1a;
+  border-left: 1px solid #3a3a3a;
+  padding: 20px;
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  overflow-y: auto;
+}
+
+#cart-drawer.open { transform: translateX(0); }
+
+#cart-drawer h2 {
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  border-bottom: 1px solid #3a3a3a;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#close-cart {
+  cursor: pointer;
+  color: #999;
+  font-size: 1.2em;
+}
+
+.cart-empty {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 15px 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #3a3a3a;
+  font-size: 0.85em;
+}
+
+.cart-item-name { flex: 1; }
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cart-item-controls button {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #4a4a4a;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cart-item-price {
+  white-space: nowrap;
+  color: #ccc;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: #ff6f6f;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  border-top: 2px solid #3a3a3a;
+  padding-top: 12px;
+  margin: 12px 0;
+}
+
+#cart-drawer button.accion {
+  width: 100%;
+  padding: 10px;
+  font-family: 'Cinzel', serif;
+  border-radius: 4px;
+  border: 1px solid #4a4a4a;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+#btn-checkout { background-color: #ffffff; color: #111; }
+#btn-checkout:hover { background-color: #d4d4d4; }
+#btn-clear { background-color: #2a2a2a; color: #ccc; }
+#btn-clear:hover { background-color: #3a3a3a; }
+
+/* ---------- Filtros (por si los usas en una página de gremio) ---------- */
+.filtros {
+  text-align: center;
+  margin-bottom: 25px;
+  background-color: #1e1e1e;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #3a3a3a;
+}
+
+.filtros button {
+  font-family: 'Cinzel', serif;
+  background-color: #2a2a2a;
+  color: #e6e6e6;
+  border: 1px solid #4a4a4a;
+  padding: 8px 12px;
+  margin: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filtros button:hover, .filtros button.activo {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* ---------- Tarjetas de gremios/mercaderes ---------- */
+.tarjeta {
+  background-color: #1c1c1c;
+  border: 1px solid #3a3a3a;
+  border-left: 6px solid #3a3a3a;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.tarjeta .icono {
+  font-size: 2.2em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tarjeta .info { flex: 1; }
+
+.tarjeta h2 {
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+  margin-bottom: 5px;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.tarjeta h2:hover {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 12px currentColor,
+    0 0 25px currentColor,
+    0 0 40px currentColor;
+  cursor: default;
+}
+
+.tarjeta.borde-herreria h2:hover { color: #ff8a5c; }
+.tarjeta.borde-alquimia h2:hover { color: #6fe6a0; }
+.tarjeta.borde-general  h2:hover { color: #ffd45c; }
+.tarjeta.borde-ropa     h2:hover { color: #d59aff; }
+.tarjeta.borde-comida   h2:hover { color: #ff6f6f; }
+.tarjeta.borde-magia    h2:hover { color: #5cd2ff; }
+.tarjeta.borde-robados  h2:hover { color: #bfbfbf; }
+
+.tarjeta .tipo {
+  font-family: 'Cinzel', serif;
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.cat-herreria { background-color: #C05A2E; }
+.cat-alquimia { background-color: #4A7C59; }
+.cat-general  { background-color: #C99F3E; }
+.cat-ropa     { background-color: #7B5286; }
+.cat-comida   { background-color: #B84A4A; }
+.cat-magia    { background-color: #3C7A9E; }
+.cat-robados  { background-color: #4B4E4D; }
+
+.tarjeta.borde-herreria { border-left-color: #C05A2E; }
+.tarjeta.borde-alquimia { border-left-color: #4A7C59; }
+.tarjeta.borde-general  { border-left-color: #C99F3E; }
+.tarjeta.borde-ropa     { border-left-color: #7B5286; }
+.tarjeta.borde-comida   { border-left-color: #B84A4A; }
+.tarjeta.borde-magia    { border-left-color: #3C7A9E; }
+.tarjeta.borde-robados  { border-left-color: #4B4E4D; }
+
+.filtros button.f-herreria.activo { background-color: #C05A2E; color: #fff; }
+.filtros button.f-alquimia.activo { background-color: #4A7C59; color: #fff; }
+.filtros button.f-general.activo  { background-color: #C99F3E; color: #fff; }
+.filtros button.f-ropa.activo     { background-color: #7B5286; color: #fff; }
+.filtros button.f-comida.activo   { background-color: #B84A4A; color: #fff; }
+.filtros button.f-magia.activo    { background-color: #3C7A9E; color: #fff; }
+.filtros button.f-robados.activo  { background-color: #4B4E4D; color: #fff; }
+
+.tarjeta p { margin: 5px 0; }
+
+.tarjeta .etiqueta {
+  color: #999999;
+  font-weight: bold;
+}
+
+/* ---------- Items comprables dentro de una tarjeta (páginas de gremio) ---------- */
+.productos {
+  margin-top: 10px;
+  border-top: 1px dashed #3a3a3a;
+  padding-top: 10px;
+}
+
+.producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 0.9em;
+}
+
+.producto .precio {
+  color: #ccc;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+.producto button {
+  font-family: 'Cinzel', serif;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #4a4a4a;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+.producto button:hover { background-color: #3a3a3a; }
+
+/* ---------- Botón "Ingresar tienda" ---------- */
+.btn-ingresar {
+  font-family: 'Cinzel', serif;
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #4a4a4a;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-ingresar:hover { background-color: #3a3a3a; }
+
+footer {
+  text-align: center;
+  color: #888888;
+  font-style: italic;
+  margin-top: 30px;
+  font-size: 0.9em;
+}
