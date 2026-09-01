@@ -244,7 +244,6 @@ p.subtitulo {
 .tarjeta.borde-ropa     h2:hover { color: #d59aff; }
 .tarjeta.borde-comida   h2:hover { color: #ff6f6f; }
 .tarjeta.borde-magia    h2:hover { color: #5cd2ff; }
-.tarjeta.borde-robados  h2:hover { color: #bfbfbf; }
 
 .tarjeta .tipo {
   font-family: 'Cinzel', serif;
@@ -265,7 +264,6 @@ p.subtitulo {
 .cat-ropa     { background-color: #7B5286; }
 .cat-comida   { background-color: #B84A4A; }
 .cat-magia    { background-color: #3C7A9E; }
-.cat-robados  { background-color: #4B4E4D; }
 
 .tarjeta.borde-herreria { border-left-color: #C05A2E; }
 .tarjeta.borde-alquimia { border-left-color: #4A7C59; }
@@ -273,7 +271,6 @@ p.subtitulo {
 .tarjeta.borde-ropa     { border-left-color: #7B5286; }
 .tarjeta.borde-comida   { border-left-color: #B84A4A; }
 .tarjeta.borde-magia    { border-left-color: #3C7A9E; }
-.tarjeta.borde-robados  { border-left-color: #4B4E4D; }
 
 .filtros button.f-herreria.activo { background-color: #C05A2E; color: #fff; }
 .filtros button.f-alquimia.activo { background-color: #4A7C59; color: #fff; }
@@ -281,7 +278,6 @@ p.subtitulo {
 .filtros button.f-ropa.activo     { background-color: #7B5286; color: #fff; }
 .filtros button.f-comida.activo   { background-color: #B84A4A; color: #fff; }
 .filtros button.f-magia.activo    { background-color: #3C7A9E; color: #fff; }
-.filtros button.f-robados.activo  { background-color: #4B4E4D; color: #fff; }
 
 .tarjeta p { margin: 5px 0; }
 
