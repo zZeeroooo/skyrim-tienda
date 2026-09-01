@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio de Sesión - Gremios y Mercaderes de Skyrim</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .form-contenedor {
+    max-width: 420px;
+    margin: 30px auto;
+    background-color: #1c1c1c;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    padding: 25px;
+  }
+
+  .form-contenedor h1 {
+    font-size: 1.6em;
+    margin-bottom: 6px;
+  }
+
+  .campo {
+    margin-bottom: 18px;
+  }
+
+  .campo label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    color: #e6e6e6;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+  }
+
+  .campo input,
+  .campo select {
+    width: 100%;
+    padding: 9px 10px;
+    background-color: #111;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    color: #e6e6e6;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1em;
+  }
+
+  .campo input:focus,
+  .campo select:focus {
+    outline: none;
+    border-color: #d4af37;
+  }
+
+  .campo input[readonly] {
+    color: #999;
+    background-color: #191919;
+    cursor: not-allowed;
+  }
+
+  .campo.invalido input,
+  .campo.invalido select {
+    border-color: #ff6f6f;
+  }
+
+  .error-msg {
+    color: #ff6f6f;
+    font-size: 0.8em;
+    margin-top: 4px;
+    min-height: 14px;
+  }
+
+  .ok-msg {
+    color: #7fdc7f;
+    font-size: 0.8em;
+    margin-top: 4px;
+    min-height: 14px;
+  }
+
+  #btn-entrar {
+    width: 100%;
+    padding: 11px;
+    font-family: 'Cinzel', serif;
+    background-color: #2a2a2a;
+    color: #666;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    cursor: not-allowed;
+    font-size: 1em;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  #btn-entrar.habilitado {
+    background-color: #d4af37;
+    color: #111;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #btn-entrar.habilitado:hover {
+    background-color: #e6c250;
+  }
+
+  #mensaje-final {
+    text-align: center;
+    margin-top: 14px;
+    font-family: 'Cinzel', serif;
+    color: #7fdc7f;
+    min-height: 20px;
+  }
+</style>
+</head>
+<body>
+
+<p><a href="index.html" style="color:#d4af37; text-decoration:none; font-family:'Cinzel', serif;">← Volver al índice de gremios</a></p>
+
+<div class="form-contenedor">
+  <h1 style="text-align:center; color:#fff;">🗡️ Inicio de Sesión</h1>
+  <p class="subtitulo" style="margin-bottom:20px;">Preséntate ante los gremios de Skyrim</p>
+
+  <form id="form-login" novalidate>
+
+    <div class="campo" id="campo-nombre">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ej: Ulfric, Aela, Serana...">
+      <div class="error-msg" id="error-nombre"></div>
+    </div>
+
+    <div class="campo" id="campo-raza">
+      <label for="raza">Raza</label>
+      <select id="raza" name="raza">
+        <option value="">-- Selecciona tu raza --</option>
+        <option value="Nord">Nord</option>
+        <option value="Imperial">Imperial</option>
+        <option value="Breton">Breton</option>
+        <option value="Redguard">Redguard</option>
+        <option value="Argoniano">Argoniano</option>
+        <option value="Khajiit">Khajiit</option>
+        <option value="Orco">Orco (Orsimer)</option>
+        <option value="Alto Elfo">Alto Elfo (Altmer)</option>
+        <option value="Elfo del Bosque">Elfo del Bosque (Bosmer)</option>
+        <option value="Elfo Oscuro">Elfo Oscuro (Dunmer)</option>
+      </select>
+      <div class="error-msg" id="error-raza"></div>
+    </div>
+
+    <div class="campo" id="campo-apellido">
+      <label for="apellido">Apellido (se asigna según tu raza)</label>
+      <input type="text" id="apellido" name="apellido" readonly placeholder="Selecciona una raza primero">
+      <div class="error-msg" id="error-apellido"></div>
+    </div>
+
+    <button type="submit" id="btn-entrar" disabled>Entrar a Skyrim</button>
+    <div id="mensaje-final"></div>
+
+  </form>
+</div>
+
+<footer>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</footer>
+
+<script>
+  const nombreInput = document.getElementById('nombre');
+  const razaSelect = document.getElementById('raza');
+  const apellidoInput = document.getElementById('apellido');
+  const btnEntrar = document.getElementById('btn-entrar');
+  const form = document.getElementById('form-login');
+
+  const errorNombre = document.getElementById('error-nombre');
+  const errorRaza = document.getElementById('error-raza');
+
+  const campoNombre = document.getElementById('campo-nombre');
+  const campoRaza = document.getElementById('campo-raza');
+
+  const SOLO_LETRAS = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü' -]+$/;
+
+  let nombreValido = false;
+  let razaValida = false;
+
+  function validarNombre() {
+    const valor = nombreInput.value.trim();
+
+    if (valor.length === 0) {
+      errorNombre.textContent = 'El nombre es obligatorio.';
+      nombreValido = false;
+    } else if (valor.length < 2) {
+      errorNombre.textContent = 'El nombre debe tener al menos 2 caracteres.';
+      nombreValido = false;
+    } else if (valor.length > 50) {
+      errorNombre.textContent = 'El nombre no puede superar los 50 caracteres.';
+      nombreValido = false;
+    } else if (!SOLO_LETRAS.test(valor)) {
+      errorNombre.textContent = 'El nombre solo puede contener letras.';
+      nombreValido = false;
+    } else {
+      errorNombre.textContent = '';
+      nombreValido = true;
+    }
+
+    campoNombre.classList.toggle('invalido', !nombreValido);
+    actualizarBoton();
+  }
+
+  function validarRaza() {
+    const valor = razaSelect.value;
+
+    if (valor === '') {
+      errorRaza.textContent = 'Debes seleccionar una raza.';
+      razaValida = false;
+      apellidoInput.value = '';
+      apellidoInput.placeholder = 'Selecciona una raza primero';
+    } else {
+      errorRaza.textContent = '';
+      razaValida = true;
+      apellidoInput.value = valor;
+    }
+
+    campoRaza.classList.toggle('invalido', !razaValida);
+    actualizarBoton();
+  }
+
+  function actualizarBoton() {
+    const habilitado = nombreValido && razaValida;
+    btnEntrar.disabled = !habilitado;
+    btnEntrar.classList.toggle('habilitado', habilitado);
+  }
+
+  nombreInput.addEventListener('input', validarNombre);
+  razaSelect.addEventListener('change', validarRaza);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    validarNombre();
+    validarRaza();
+
+    if (!nombreValido || !razaValida) return;
+
+    const nombreCompleto = nombreInput.value.trim() + ' ' + apellidoInput.value;
+
+    localStorage.setItem('skyrim_user', JSON.stringify({
+      nombre: nombreInput.value.trim(),
+      raza: razaSelect.value,
+      apellido: apellidoInput.value
+    }));
+
+    document.getElementById('mensaje-final').textContent =
+      '¡Bienvenido/a, ' + nombreCompleto + '! Redirigiendo a los gremios...';
+
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1500);
+  });
+</script>
+
+</body>
+</html>

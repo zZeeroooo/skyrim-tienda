@@ -343,3 +343,17 @@ footer {
   margin-top: 30px;
   font-size: 0.9em;
 }
+
+/* ---------- Subcategorías dentro de una tienda ---------- */
+.subcategoria {
+  font-family: 'Cinzel', serif;
+  color: #aaaaaa;
+  margin: 16px 0 6px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px dashed #3a3a3a;
+  padding-bottom: 4px;
+}
+
+.subcategoria:first-child { margin-top: 0; }
