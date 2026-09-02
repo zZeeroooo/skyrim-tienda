@@ -3,7 +3,7 @@
 Sitio web temático de Skyrim con información de gremios y mercaderes, y un carrito de compras funcional compartido entre páginas mediante `localStorage`.
 
 ## Estructura del proyecto
-
+```
 .
 ├── index.html                          # Página principal (índice de gremios)
 ├── login.html                          # Inicio de sesión ficticio (nombre + raza)
