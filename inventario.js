@@ -2,7 +2,7 @@
 // Cada HTML de gremio incluye este archivo y solo lee su sección
 // (ej. inventario.ropa, inventario.magia). Así los precios se
 // editan en un solo lugar y no quedan repetidos en cada página.
-
+// jose jose
 const inventario = {
 
   ropa: [
