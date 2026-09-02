@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inicio de Sesión - Gremios y Mercaderes de Skyrim</title>
+<link rel="icon" type="image/png" href="img/skyrim-logo.png">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <style>
   .form-contenedor {
@@ -110,11 +111,12 @@
 </head>
 <body>
 
+<p><a href="index.html"><img src="img/skyrim-logo.png" alt="Skyrim Emporium" style="height:40px;"></a></p>
 <p><a href="index.html" style="color:#d4af37; text-decoration:none; font-family:'Cinzel', serif;">← Volver al índice de gremios</a></p>
 
 <div class="form-contenedor">
-  <h1 style="text-align:center; color:#fff;">🗡️ Inicio de Sesión</h1>
-  <p class="subtitulo" style="margin-bottom:20px;">Preséntate ante los gremios de Skyrim</p>
+  <h1 style="text-align:center; color:#fff;" id="titulo-login"></h1>
+  <p class="subtitulo" style="margin-bottom:20px;" id="subtitulo-login"></p>
 
   <form id="form-login" novalidate>
 
@@ -154,7 +156,8 @@
   </form>
 </div>
 
-<footer>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</footer>
+<footer id="pie-pagina"></footer>
+
 
 <script>
   const nombreInput = document.getElementById('nombre');

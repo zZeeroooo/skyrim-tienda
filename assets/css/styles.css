@@ -357,3 +357,154 @@ footer {
 }
 
 .subcategoria:first-child { margin-top: 0; }
+
+/* ---------- Párrafos de introducción y "Sobre Nosotros" (index.html) ---------- */
+#inicio p, #nosotros p {
+  text-align: center;
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: #cccccc;
+}
+
+/* =========================================================
+   ESTILOS DE index.html (navbar de Bootstrap + secciones)
+========================================================= */
+body.pagina-index {
+  max-width: none;
+  padding: 0;
+  padding-top: 70px; /* deja espacio para el navbar fijo */
+}
+
+.navbar {
+  background-color: #111111;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.navbar-brand {
+  font-family: 'Cinzel Decorative', serif;
+  color: #d4af37 !important;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-family: 'Cinzel', serif;
+  color: #e6e6e6 !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #d4af37 !important;
+}
+
+/* El carrito dentro de un navbar (Bootstrap) se ve estático, alineado a la derecha por el navbar-nav */
+.navbar #cart-icon {
+  position: static;
+  margin-left: 8px;
+}
+
+.contenido {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 50px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+section:last-of-type { border-bottom: none; }
+
+.seccion-titulo {
+  font-family: 'Cinzel Decorative', serif;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.seccion-linea {
+  width: 80px;
+  height: 3px;
+  background-color: #d4af37;
+  margin: 0 auto 30px;
+}
+
+.direccion-tarjeta {
+  background-color: #1c1c1c;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  padding: 18px;
+  height: 100%;
+}
+
+.direccion-tarjeta h3 {
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.direccion-tarjeta ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #cccccc;
+}
+
+.form-contacto label {
+  font-family: 'Cinzel', serif;
+  color: #e6e6e6;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #111;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  color: #e6e6e6;
+  font-family: 'EB Garamond', Georgia, serif;
+  margin-bottom: 6px;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.form-contacto .error-msg {
+  color: #ff6f6f;
+  font-size: 0.8em;
+  min-height: 14px;
+  margin-bottom: 10px;
+}
+
+.form-contacto button {
+  font-family: 'Cinzel', serif;
+  background-color: #d4af37;
+  color: #111;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-contacto button:hover { background-color: #e6c250; }
+
+#mensaje-contacto {
+  text-align: center;
+  color: #7fdc7f;
+  font-family: 'Cinzel', serif;
+  margin-top: 12px;
+  min-height: 20px;
+}
+
+/* Páginas que incluyen el navbar de Bootstrap (además del index) necesitan
+   espacio arriba para que el contenido no quede tapado por el navbar fijo */
+body.tiene-navbar {
+  padding-top: 90px;
+}
