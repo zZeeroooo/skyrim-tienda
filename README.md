@@ -4,17 +4,36 @@ Sitio web temático de Skyrim con información de gremios y mercaderes, y un car
 
 ## Estructura del proyecto
 
-```
 .
-├── index.html                     # Página principal (índice de gremios)
-├── styles.css                     # Todos los estilos del sitio
-├── cart.js                        # Lógica del carrito, compartida entre todos los gremios
-├── adrianne-herreria.html         # (por crear) Herrería
-├── arcadias-cauldron.html         # (por crear) Alquimia
-├── belethor.html                  # (por crear) Bienes Generales
-├── comerciantes-solitude.html     # (por crear) Ropa Fina
-├── corcel-encabritado.html        # (por crear) Comida y Taberna
-└── colegio-winterhold.html        # (por crear) Magia
+├── index.html                          # Página principal (índice de gremios)
+├── login.html                          # Inicio de sesión ficticio (nombre + raza)
+├── README.md
+│
+├── gremios/                             # Una página por tienda/gremio
+│   ├── adrianne-herreria.html           # Herrería
+│   ├── arcadias-cauldron.html           # Alquimia
+│   ├── belethor.html                    # Bienes Generales
+│   ├── comerciantes-solitude.html       # Ropa Fina
+│   ├── corcel-encabritado.html          # Comida y Taberna
+│   └── colegio-winterhold.html          # Magia
+│
+├── assets/
+│   ├── css/
+│   │   └── styles.css                   # Todos los estilos del sitio
+│   └── img/
+│       ├── receta.png              # Imagen de respaldo mientras
+│       └── gremios/                     # Una carpeta por categoría, con TODO lo visual de esa tienda
+│           ├── herreria/                #   portada.jpg + fotos de cada producto de esa categoría
+│           ├── alquimia/
+│           ├── general/
+│           ├── ropa/
+│           ├── comida/
+│           └── magia/
+│
+└── js/
+    ├── cart.js                          # Lógica del carrito, compartida entre todas las páginas
+    ├── inventario.js                    # Catálogo y precios centralizados de todas las tiendas
+    └── datos-gremios.js                 # Listado de gremios que se muestra en index.html
 ```
 
 Son 6 tiendas en total, una por categoría (sin duplicados).
