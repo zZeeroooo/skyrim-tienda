@@ -2,7 +2,6 @@
 // Cada HTML de gremio incluye este archivo y solo lee su sección
 // (ej. inventario.ropa, inventario.magia). Así los precios se
 // editan en un solo lugar y no quedan repetidos en cada página.
-
 const inventario = {
 
   ropa: [
@@ -92,28 +91,6 @@ const inventario = {
         { id: "col-pergamino-rayos", name: "Pergamino de rayos", price: 45 },
         { id: "col-pergamino-curacion", name: "Pergamino de curación", price: 40 },
         { id: "col-pergamino-invocacion", name: "Pergamino de invocación", price: 55 }
-      ]
-    },
-    {
-      titulo: "Pociones",
-      items: [
-        { id: "col-pocion-magicka", name: "Poción de restaurar magicka", price: 25 },
-        { id: "col-pocion-salud", name: "Poción de restaurar salud", price: 25 },
-        { id: "col-pocion-invisibilidad", name: "Poción de invisibilidad", price: 90 },
-        { id: "col-pocion-resistencia", name: "Poción de resistencia mágica", price: 70 }
-      ]
-    },
-    {
-      titulo: "Ingredientes de alquimia",
-      items: [
-        { id: "col-sal-vacio", name: "Sal de vacío", price: 15 },
-        { id: "col-polvo-brillante", name: "Polvo brillante", price: 12 },
-        { id: "col-corazon-daedra", name: "Corazón de daedra", price: 100 },
-        { id: "col-huevo-luna", name: "Huevo de luna", price: 20 },
-        { id: "col-raiz-nirn", name: "Raíz de nirn", price: 18 },
-        { id: "col-seta-imp", name: "Seta imp", price: 5 },
-        { id: "col-campana-muerte", name: "Campana de la muerte", price: 8 },
-        { id: "col-oreja-falmer", name: "Oreja de falmer", price: 10 }
       ]
     },
     {
