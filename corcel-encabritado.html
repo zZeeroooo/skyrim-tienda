@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Corcel Encabritado - Comida y Taberna</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+
+<div id="cart-overlay" onclick="toggleCart()"></div>
+<div id="cart-drawer">
+  <h2>Tu Bolsa <span id="close-cart" onclick="toggleCart()">✕</span></h2>
+  <div id="cart-items"></div>
+  <div id="cart-total-row">
+    <span>Total:</span>
+    <span id="cart-total">0 🪙</span>
+  </div>
+  <button class="accion" id="btn-checkout" onclick="checkout()">Cerrar Trato</button>
+  <button class="accion" id="btn-clear" onclick="clearCart()">Vaciar bolsa</button>
+</div>
+
+<p><a href="index.html" style="color:#ff6f6f; text-decoration:none; font-family:'Cinzel', serif;">← Volver al índice de gremios</a></p>
+
+<h1 style="color:#ff6f6f;">🍖 El Corcel Encabritado</h1>
+<p class="subtitulo">Whiterun · La mejor taberna para reponer provisiones.</p>
+
+<div id="lista"></div>
+
+<footer>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</footer>
+
+<script src="cart.js"></script>
+<script src="inventario.js"></script>
+<script>
+  const catalogo = inventario.comida;
+
+  function render() {
+    const cont = document.getElementById("lista");
+    cont.innerHTML = `
+      <div class="tarjeta borde-comida">
+        <div class="icono">🍖</div>
+        <div class="info">
+          <span class="tipo cat-comida">Comida y Taberna · Mercader</span>
+          <h2>El Corcel Encabritado</h2>
+          <p><span class="etiqueta">Nota:</span> La mejor taberna para reponer provisiones.</p>
+          <div class="productos">
+            ${catalogo.map(seccion => `
+              <p class="subcategoria">${seccion.titulo}</p>
+              ${seccion.items.map(p => `
+                <div class="producto">
+                  <span>${p.name}</span>
+                  <span class="precio">${p.price} 🪙</span>
+                  <button onclick='Cart.add(${JSON.stringify(p)})'>Añadir</button>
+                </div>
+              `).join("")}
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  render();
+</script>
+
+</body>
+</html>
