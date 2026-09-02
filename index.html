@@ -4,12 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gremios y Mercaderes de Skyrim</title>
+<link rel="icon" type="image/png" href="img/skyrim-logo.png">
+
+<!-- Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+<!-- Estilos propios del proyecto (se cargan después para tener prioridad) -->
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/skyrim-logo.png" alt="Skyrim Emporium" style="height:34px; vertical-align:middle; margin-right:8px;">
+      Skyrim Emporium
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGremios" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarGremios">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gremios">Gremios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#direcciones">Direcciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
+        <li class="nav-item">
+          <button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+<!-- ================= CARRITO (panel deslizante) ================= -->
 <div id="cart-overlay" onclick="toggleCart()"></div>
 <div id="cart-drawer">
   <h2>Tu Bolsa <span id="close-cart" onclick="toggleCart()">✕</span></h2>
@@ -19,15 +50,110 @@
     <span id="cart-total">0 🪙</span>
   </div>
   <button class="accion" id="btn-checkout" onclick="checkout()">Cerrar Trato</button>
-  <button class="accion" id="btn-clear" onclick="clearCart()">Vaciar bolsa</button> 
+  <button class="accion" id="btn-clear" onclick="clearCart()">Vaciar bolsa</button>
 </div>
 
-<h1>Gremios y Mercaderes de Skyrim</h1>
-<p class="subtitulo">Consulta antes de comerciar: quién compra, qué vende y dónde encontrarlos.</p>
+<!-- ================= INTRODUCCIÓN ================= -->
+<section id="inicio">
+  <div class="contenido">
+    <h1 class="seccion-titulo">Gremios y Mercaderes de Skyrim</h1>
+    <div class="seccion-linea"></div>
+    <p>Bienvenido, viajero.</p>
+    <p>Has llegado al lugar indicado si buscas buen equipo para continuar tu viaje por Skyrim. Aquí podrás encontrar armas, armaduras, pociones y otros artículos útiles para cualquier aventurero que se atreva a recorrer las tierras del norte.</p>
+    <p>Todo lo que ofrecemos ha sido seleccionado pensando en quienes necesitan estar preparados para lo que pueda aparecer en el camino, ya sea un grupo de bandidos, un draugr o, con un poco de mala suerte, un dragón.</p>
+    <p>Tómate tu tiempo para revisar nuestras mercancías. Lo que compres aquí podría ser la diferencia entre volver a casa con vida o terminar en una cripta nórdica.</p>
+  </div>
+</section>
 
-<div id="lista"></div>
+<!-- ================= SOBRE NOSOTROS ================= -->
+<section id="nosotros">
+  <div class="contenido">
+    <h2 class="seccion-titulo">Sobre Nosotros</h2>
+    <div class="seccion-linea"></div>
+    <p>Somos un pequeño grupo de aventureros y desarrolladores que decidimos unir nuestra pasión por Skyrim con el desarrollo web. Cada gremio de este sitio está inspirado en los lugares y personajes que hicieron memorable nuestro paso por Tamriel: la Herrería de Whiterun, el Colegio de Winterhold, los mercaderes de Solitude y muchos más.</p>
+    <p>Este proyecto es un sitio ficticio con fines educativos, creado como parte de nuestro aprendizaje en desarrollo frontend. No tiene afiliación con Bethesda Softworks ni con la saga The Elder Scrolls; es simplemente un homenaje hecho por fans, para fans.</p>
+  </div>
+</section>
 
-<footer>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</footer>
+<!-- ================= GREMIOS ================= -->
+<section id="gremios">
+  <div class="contenido">
+    <h2 class="seccion-titulo">Gremios y Mercaderes</h2>
+    <div class="seccion-linea"></div>
+    <p class="subtitulo">Consulta antes de comerciar: quién compra, qué vende y dónde encontrarlos.</p>
+    <div id="lista"></div>
+  </div>
+</section>
+
+<!-- ================= DIRECCIONES ================= -->
+<section id="direcciones">
+  <div class="contenido">
+    <h2 class="seccion-titulo">Direcciones</h2>
+    <div class="seccion-linea"></div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="direccion-tarjeta">
+          <h3>Whiterun</h3>
+          <ul>
+            <li>Herrería de Adrianne Avenicci</li>
+            <li>Arcadia's Cauldron</li>
+            <li>Belethor - Bienes Generales</li>
+            <li>El Corcel Encabritado</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="direccion-tarjeta">
+          <h3>Solitude</h3>
+          <ul>
+            <li>Gremio de Comerciantes de Solitude</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="direccion-tarjeta">
+          <h3>Winterhold</h3>
+          <ul>
+            <li>Colegio de Winterhold</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto">
+  <div class="contenido">
+    <h2 class="seccion-titulo">Contacto</h2>
+    <div class="seccion-linea"></div>
+    <p class="subtitulo" style="margin-bottom:25px;">¿Tienes dudas o sugerencias? Envíanos un mensaje.</p>
+
+    <form id="form-contacto" class="form-contacto" style="max-width:500px; margin:0 auto;" novalidate>
+      <label for="nombre-contacto">Nombre</label>
+      <input type="text" id="nombre-contacto" placeholder="Tu nombre">
+      <div class="error-msg" id="error-nombre-contacto"></div>
+
+      <label for="correo-contacto">Correo</label>
+      <input type="email" id="correo-contacto" placeholder="tu@correo.com">
+      <div class="error-msg" id="error-correo-contacto"></div>
+
+      <label for="mensaje-contacto-input">Mensaje</label>
+      <textarea id="mensaje-contacto-input" rows="4" maxlength="500" placeholder="Escribe tu mensaje..."></textarea>
+      <div class="error-msg" id="error-mensaje-contacto"></div>
+
+      <button type="submit">Enviar mensaje</button>
+      <div id="mensaje-contacto"></div>
+    </form>
+  </div>
+</section>
+
+<footer style="text-align:center; color:#888; font-style:italic; padding:20px 0;">
+  Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda
+</footer>
+
+<!-- Bootstrap JS (para el menú colapsable en móvil) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="cart.js"></script>
 <script>
@@ -114,6 +240,72 @@
   }
 
   render(datos);
+
+  /* ---------- Validación del formulario de contacto ---------- */
+  const nombreContacto = document.getElementById('nombre-contacto');
+  const correoContacto = document.getElementById('correo-contacto');
+  const mensajeContactoInput = document.getElementById('mensaje-contacto-input');
+  const formContacto = document.getElementById('form-contacto');
+
+  const errNombreContacto = document.getElementById('error-nombre-contacto');
+  const errCorreoContacto = document.getElementById('error-correo-contacto');
+  const errMensajeContacto = document.getElementById('error-mensaje-contacto');
+
+  const REGEX_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function validarContacto() {
+    let valido = true;
+
+    const nombre = nombreContacto.value.trim();
+    if (nombre.length === 0) {
+      errNombreContacto.textContent = 'El nombre es obligatorio.';
+      valido = false;
+    } else if (nombre.length > 100) {
+      errNombreContacto.textContent = 'Máximo 100 caracteres.';
+      valido = false;
+    } else {
+      errNombreContacto.textContent = '';
+    }
+
+    const correo = correoContacto.value.trim();
+    if (correo.length === 0) {
+      errCorreoContacto.textContent = '';
+    } else if (correo.length > 100) {
+      errCorreoContacto.textContent = 'Máximo 100 caracteres.';
+      valido = false;
+    } else if (!REGEX_CORREO.test(correo)) {
+      errCorreoContacto.textContent = 'Ingresa un correo válido.';
+      valido = false;
+    } else {
+      errCorreoContacto.textContent = '';
+    }
+
+    const mensaje = mensajeContactoInput.value.trim();
+    if (mensaje.length === 0) {
+      errMensajeContacto.textContent = 'El mensaje es obligatorio.';
+      valido = false;
+    } else if (mensaje.length > 500) {
+      errMensajeContacto.textContent = 'Máximo 500 caracteres.';
+      valido = false;
+    } else {
+      errMensajeContacto.textContent = '';
+    }
+
+    return valido;
+  }
+
+  [nombreContacto, correoContacto, mensajeContactoInput].forEach(campo => {
+    campo.addEventListener('input', validarContacto);
+  });
+
+  formContacto.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validarContacto()) return;
+
+    document.getElementById('mensaje-contacto').textContent =
+      '¡Mensaje enviado! Un cuervo mensajero lo llevará pronto.';
+    formContacto.reset();
+  });
 </script>
 
 </body>
