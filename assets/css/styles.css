@@ -336,12 +336,122 @@ p.subtitulo {
 
 .btn-ingresar:hover { background-color: #3a3a3a; }
 
+/* =========================================================
+   FOOTER MEJORADO
+========================================================= */
 footer {
-  text-align: center;
-  color: #888888;
+  background-color: #0d0d0d;
+  border-top: 1px solid #2a2a2a;
+  padding: 40px 0 20px;
+  margin-top: 40px;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+footer .footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+footer .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+footer .footer-logo {
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.3));
+}
+
+footer .footer-brand h2 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #d4af37;
+  font-size: 1.4rem;
+  margin: 0 0 4px 0;
+  letter-spacing: 1px;
+}
+
+footer .footer-brand p {
+  color: #999;
   font-style: italic;
-  margin-top: 30px;
-  font-size: 0.9em;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+footer .footer-links h3 {
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer-links ul li {
+  margin-bottom: 4px;
+}
+
+footer .footer-links ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+footer .footer-links ul li a:hover {
+  color: #d4af37;
+}
+
+footer .footer-bottom {
+  max-width: 900px;
+  margin: 25px auto 0;
+  padding: 15px 20px 0;
+  border-top: 1px solid #2a2a2a;
+  text-align: center;
+}
+
+footer .footer-bottom p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 600px) {
+  footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .footer-brand {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  footer .footer-links ul li {
+    margin-bottom: 0;
+  }
 }
 
 /* ---------- Subcategorías dentro de una tienda ---------- */
