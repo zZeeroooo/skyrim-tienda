@@ -2,7 +2,7 @@
 
 Sitio web temático de Skyrim con información de gremios y mercaderes, y un carrito de compras funcional compartido entre páginas mediante `localStorage`.
 
-## Estructura del proyecto
+## Estructura del proyecto [ACTUALIZAR]
 ```
 .
 ├── index.html                          # Página principal (índice de gremios)
@@ -21,19 +21,24 @@ Sitio web temático de Skyrim con información de gremios y mercaderes, y un car
 │   ├── css/
 │   │   └── styles.css                   # Todos los estilos del sitio
 │   └── img/
-│       ├── receta.png              # Imagen de respaldo mientras
-│       └── gremios/                     # Una carpeta por categoría, con TODO lo visual de esa tienda
-│           ├── herreria/                #   portada.jpg + fotos de cada producto de esa categoría
-│           ├── alquimia/
-│           ├── general/
-│           ├── ropa/
-│           ├── comida/
-│           └── magia/
+│       ├── alquimia/                # Fotos de cada producto de esa categoría
+│       ├── bienes_generales/
+│       ├── herreria/
+│       ├── iconos/
+│       ├── magia/
+│       ├── ropa_fina/
+│       └── taberna/
 │
-└── js/
-    ├── cart.js                          # Lógica del carrito, compartida entre todas las páginas
-    ├── inventario.js                    # Catálogo y precios centralizados de todas las tiendas
-    └── datos-gremios.js                 # Listado de gremios que se muestra en index.html
+├── js/
+│   ├── auth.js                          # Construyendo ?
+│   ├── cart.js                          # Lógica del carrito, compartida entre todas las páginas
+│   └── inventario.js                    # Catálogo y precios centralizados de todas las tiendas
+│   │
+└── pages/
+    ├── blogs.html                    # Construyendo... Página de blogs
+    ├── contacto.html                 # Página de contacto
+    ├── nosotros.html                 # Página sobre nosotros
+    └── producto-detalle.html         # Construyendo... Página para ver los detalles de un producto
 ```
 
 ## Tecnologías
