@@ -1,300 +1,683 @@
-// inventario.js - Catálogo y precios centralizados de todas las tiendas
-// Cada HTML de gremio incluye este archivo y solo lee su sección
-// (ej. inventario.ropa, inventario.magia). Así los precios se
-// editan en un solo lugar y no quedan repetidos en cada página.
 const inventario = {
 
-  ropa: [
+  // ----------------------------------------------------------
+  // 1. ALQUIMIA – Arcadia's Cauldron
+  // ----------------------------------------------------------
+  alquimia: [
     {
-      titulo: "Ropa y vestimenta",
+      titulo: "Pociones",
       items: [
-        { id: "sol-ropa-fina", name: "Ropa fina", price: 25 },
-        { id: "sol-ropa-comun", name: "Ropa común", price: 10 },
-        { id: "sol-tunica-cinturon", name: "Túnica con cinturón", price: 15 },
-        { id: "sol-tunica-chef", name: "Túnica de chef", price: 12 },
-        { id: "sol-gorro-chef", name: "Gorro de chef", price: 8 },
-        { id: "sol-robes-negras", name: "Robes negras", price: 40 },
-        { id: "sol-robes-azules", name: "Robes azules", price: 40 },
-        { id: "sol-robes-extravagantes", name: "Robes extravagantes", price: 60 },
-        { id: "sol-robes-monje", name: "Robes de monje", price: 30 },
-        { id: "sol-robes-necromante", name: "Robes de necromante", price: 55 },
-        { id: "sol-robes-harapientas", name: "Robes harapientas", price: 5 },
-        { id: "sol-capucha-alikr", name: "Capucha Alik'r", price: 20 },
-        { id: "sol-capucha-mendigo", name: "Capucha de mendigo", price: 3 },
-        { id: "sol-gorro-fino", name: "Gorro fino", price: 18 },
-        { id: "sol-sombrero-doliente", name: "Sombrero de doliente", price: 10 },
-        { id: "sol-gorro-doliente", name: "Gorro de doliente", price: 8 },
-        { id: "sol-capucha-roja", name: "Capucha roja", price: 15 },
-        { id: "sol-capucha-pescador", name: "Capucha de pescador", price: 10 },
-        { id: "sol-gorro-pescador", name: "Gorro de pescador", price: 8 },
-        { id: "sol-vestimenta-contramaestre", name: "Vestimenta de contramaestre", price: 22 },
-        { id: "sol-vestimenta-capitan", name: "Vestimenta de capitán", price: 28 },
-        { id: "sol-vestimenta-limpieza", name: "Vestimenta de limpieza", price: 6 }
+        { id: "curar-enfermedad", name: "Curar Enfermedad", price: 30, description: "Cura cualquier enfermedad.", image: "assets/img/Alquimia/Pociones/Curar_enfermedad.png" },
+        { id: "pocima-aguante", name: "Pócima Aguante", price: 25, description: "Restaura aguante.", image: "assets/img/Alquimia/Pociones/Pocima_aguante.png" },
+        { id: "pocima-fuerza", name: "Pócima Fuerza", price: 35, description: "Aumenta la fuerza temporalmente.", image: "assets/img/Alquimia/Pociones/Pocima_fuerza.png" },
+        { id: "pocima-magia", name: "Pócima Magia", price: 30, description: "Restaura magia.", image: "assets/img/Alquimia/Pociones/Pocima_magia.png" },
+        { id: "pocima-salud", name: "Pócima Salud", price: 30, description: "Restaura salud.", image: "assets/img/Alquimia/Pociones/Pocima_salud.png" },
+        { id: "pocion-abrir-cerraderas", name: "Poción Abrir Cerraderas", price: 40, description: "Abre cerraduras más fácilmente.", image: "assets/img/Alquimia/Pociones/Pocion_abrir_cerraderas.png" },
+        { id: "pocion-aguante", name: "Poción Aguante", price: 25, description: "Restaura aguante.", image: "assets/img/Alquimia/Pociones/Pocion_aguante.png" },
+        { id: "pocion-alteracion", name: "Poción Alteración", price: 45, description: "Mejora la alteración.", image: "assets/img/Alquimia/Pociones/Pocion_alteracion.png" },
+        { id: "pocion-del-berserk", name: "Poción del Berserk", price: 60, description: "Aumenta el daño cuerpo a cuerpo.", image: "assets/img/Alquimia/Pociones/Pocion_del_berserk.png" },
+        { id: "pocion-del-caballero", name: "Poción del Caballero", price: 50, description: "Mejora la armadura.", image: "assets/img/Alquimia/Pociones/Pocion_del_caballero.png" },
+        { id: "pocion-del-conjurador", name: "Poción del Conjurador", price: 55, description: "Mejora la conjuración.", image: "assets/img/Alquimia/Pociones/Pocion_del_conjurador.png" },
+        { id: "pocion-del-defensor", name: "Poción del Defensor", price: 50, description: "Aumenta la resistencia.", image: "assets/img/Alquimia/Pociones/Pocion_del_defensor.png" },
+        { id: "pocion-del-encantador", name: "Poción del Encantador", price: 60, description: "Mejora el encantamiento.", image: "assets/img/Alquimia/Pociones/Pocion_del_encantador.png" },
+        { id: "pocion-del-escaramuzador", name: "Poción del Escaramuzador", price: 40, description: "Mejora la puntería.", image: "assets/img/Alquimia/Pociones/Pocion_del_escaramuzador.png" },
+        { id: "pocion-del-guerrero", name: "Poción del Guerrero", price: 50, description: "Aumenta el daño con armas.", image: "assets/img/Alquimia/Pociones/Pocion_del_guerrero.png" },
+        { id: "pocion-del-herrero", name: "Poción del Herrero", price: 55, description: "Mejora la herrería.", image: "assets/img/Alquimia/Pociones/Pocion_del_herrero.png" },
+        { id: "pocion-destruccion", name: "Poción Destrucción", price: 45, description: "Mejora la destrucción.", image: "assets/img/Alquimia/Pociones/Pocion_destruccion.png" },
+        { id: "pocion-disparo-certero", name: "Poción Disparo Certero", price: 40, description: "Aumenta la precisión con arcos.", image: "assets/img/Alquimia/Pociones/Pocion_disparo_certero.png" },
+        { id: "pocion-ilusion", name: "Poción Ilusión", price: 45, description: "Mejora la ilusión.", image: "assets/img/Alquimia/Pociones/Pocion_ilusion.png" },
+        { id: "pocion-invisibilidad", name: "Poción Invisibilidad", price: 80, description: "Vuelve invisible al beberla.", image: "assets/img/Alquimia/Pociones/Pocion_invisibilidad.png" },
+        { id: "pocion-labia", name: "Poción Labia", price: 35, description: "Mejora la labia.", image: "assets/img/Alquimia/Pociones/Pocion_labia.png" },
+        { id: "pocion-magia", name: "Poción Magia", price: 30, description: "Restaura magia.", image: "assets/img/Alquimia/Pociones/Pocion_magia.png" },
+        { id: "pocion-pies-ligeros", name: "Poción Pies Ligeros", price: 40, description: "Reduce el ruido al moverse.", image: "assets/img/Alquimia/Pociones/Pocion_pies_ligeros.png" },
+        { id: "pocion-regateo", name: "Poción Regateo", price: 35, description: "Mejora el regateo.", image: "assets/img/Alquimia/Pociones/Pocion_regateo.png" },
+        { id: "pocion-resistencia-descarga", name: "Poción Resistencia Descarga", price: 40, description: "Resiste descargas eléctricas.", image: "assets/img/Alquimia/Pociones/Pocion_resistencia_descarga.png" },
+        { id: "pocion-resistencia-frio", name: "Poción Resistencia Frío", price: 40, description: "Resiste el frío.", image: "assets/img/Alquimia/Pociones/Pocion_resistencia_frio.png" },
+        { id: "pocion-resistencia-fuego", name: "Poción Resistencia Fuego", price: 40, description: "Resiste el fuego.", image: "assets/img/Alquimia/Pociones/Pocion_resistencia_fuego.png" },
+        { id: "pocion-resistencia-magia", name: "Poción Resistencia Magia", price: 45, description: "Resiste la magia.", image: "assets/img/Alquimia/Pociones/Pocion_resistencia_magia.png" },
+        { id: "pocion-respiracion-acuatica", name: "Poción Respiración Acuática", price: 50, description: "Permite respirar bajo el agua.", image: "assets/img/Alquimia/Pociones/Pocion_respiracion_acuatica.png" },
+        { id: "pocion-robo", name: "Poción Robo", price: 35, description: "Mejora el robo.", image: "assets/img/Alquimia/Pociones/Pocion_robo.png" },
+        { id: "pocion-salud", name: "Poción Salud", price: 30, description: "Restaura salud.", image: "assets/img/Alquimia/Pociones/Pocion_salud.png" },
+        { id: "savia-de-arbol-somnoliento", name: "Savia de Árbol Somnoliento", price: 60, description: "Induce sueño profundo.", image: "assets/img/Alquimia/Pociones/Savia_de_arbol_somnoliento.png" },
+        { id: "skooma", name: "Skooma", price: 80, description: "Poderosa droga ilegal.", image: "assets/img/Alquimia/Pociones/Skooma.png" },
+        { id: "vial-blanco", name: "Vial Blanco", price: 5, description: "Frasco vacío.", image: "assets/img/Alquimia/Pociones/Vial_blanco.png" }
       ]
     },
     {
-      titulo: "Calzado",
+      titulo: "Venenos",
       items: [
-        { id: "sol-botas-finas", name: "Botas finas", price: 20 },
-        { id: "sol-botas", name: "Botas", price: 10 },
-        { id: "sol-zapatos", name: "Zapatos", price: 8 },
-        { id: "sol-botas-redguard", name: "Botas de Redguard", price: 18 },
-        { id: "sol-botas-capitan", name: "Botas de capitán", price: 22 },
-        { id: "sol-botas-pescador", name: "Botas de pescador", price: 10 }
+        { id: "debilidad-descarga", name: "Debilidad Descarga", price: 25, description: "Veneno que debilita contra descargas.", image: "assets/img/Alquimia/Venenos/Debilidad_descarga.png" },
+        { id: "debilidad-frio", name: "Debilidad Frío", price: 25, description: "Veneno que debilita contra frío.", image: "assets/img/Alquimia/Venenos/Debilidad_frio.png" },
+        { id: "debilidad-fuego", name: "Debilidad Fuego", price: 25, description: "Veneno que debilita contra fuego.", image: "assets/img/Alquimia/Venenos/Debilidad_fuego.png" },
+        { id: "debilidad-magia", name: "Debilidad Magia", price: 25, description: "Veneno que debilita contra magia.", image: "assets/img/Alquimia/Venenos/Debilidad_magia.png" },
+        { id: "veneno", name: "Veneno", price: 20, description: "Veneno básico.", image: "assets/img/Alquimia/Venenos/Veneno.png" },
+        { id: "veneno-aguante", name: "Veneno Aguante", price: 30, description: "Veneno que drena aguante.", image: "assets/img/Alquimia/Venenos/Veneno_aguante.png" },
+        { id: "veneno-congelador", name: "Veneno Congelador", price: 35, description: "Congela al objetivo.", image: "assets/img/Alquimia/Venenos/Veneno_congelador.png" },
+        { id: "veneno-magia", name: "Veneno Magia", price: 30, description: "Veneno que drena magia.", image: "assets/img/Alquimia/Venenos/Veneno_magia.png" },
+        { id: "veneno-mortal-miedo", name: "Veneno Mortal Miedo", price: 50, description: "Provoca miedo y daño.", image: "assets/img/Alquimia/Venenos/Veneno_mortal_miedo.png" },
+        { id: "veneno-potente-paralisis", name: "Veneno Potente Parálisis", price: 60, description: "Paraliza al objetivo.", image: "assets/img/Alquimia/Venenos/Veneno_potente_paralisis.png" },
+        { id: "veneno-virulento-frenesi", name: "Veneno Virulento Frenesí", price: 55, description: "Provoca frenesí en el objetivo.", image: "assets/img/Alquimia/Venenos/Veneno_virulento_frenesi.png" }
       ]
     },
     {
-      titulo: "Accesorios",
+      titulo: "Ingredientes",
       items: [
-        { id: "sol-guantes", name: "Guantes", price: 8 },
-        { id: "sol-guantes-finos", name: "Guantes finos", price: 18 }
-      ]
-    },
-    {
-      titulo: "Joyas y aros",
-      items: [
-        { id: "sol-aro-oro-esmeralda", name: "Aro de oro y esmeralda", price: 150 },
-        { id: "sol-aro-plata-zafiro", name: "Aro de plata y zafiro", price: 120 },
-        { id: "sol-anillos", name: "Anillos (nivel variable)", price: 50 },
-        { id: "sol-collares", name: "Collares (nivel variable)", price: 60 },
-        { id: "sol-amuletos-divinos", name: "Amuletos de los Divinos", price: 100 },
-        { id: "sol-joyas-encantadas", name: "Joyas encantadas (nivel variable)", price: 200 }
-      ]
-    },
-    {
-      titulo: "Varios",
-      items: [
-        { id: "sol-ropa-nino", name: "Ropa de niño", price: 8 },
-        { id: "sol-ropa-nina", name: "Ropa de niña", price: 8 },
-        { id: "sol-espada-madera", name: "Espada de madera", price: 5 },
-        { id: "sol-muneca", name: "Muñeca", price: 6 }
+        { id: "abeja", name: "Abeja", price: 5, description: "Ingrediente alquímico común.", image: "assets/img/Alquimia/Ingredients/Abeja.png" },
+        { id: "aceite-enano", name: "Aceite Enano", price: 8, description: "Aceite de maquinaria enana.", image: "assets/img/Alquimia/Ingredients/Aceite_enano.png" },
+        { id: "ajo", name: "Ajo", price: 3, description: "Bulbo de ajo.", image: "assets/img/Alquimia/Ingredients/Ajo.png" },
+        { id: "ala-dardo-azul", name: "Ala Dardo Azul", price: 6, description: "Ala de libélula azul.", image: "assets/img/Alquimia/Ingredients/Ala_dardo_azul.png" },
+        { id: "ala-dardo-naranja", name: "Ala Dardo Naranja", price: 6, description: "Ala de libélula naranja.", image: "assets/img/Alquimia/Ingredients/Ala_dardo_naranja.png" },
+        { id: "ala-polilla-ancestral", name: "Ala Polilla Ancestral", price: 10, description: "Ala de polilla ancestral.", image: "assets/img/Alquimia/Ingredients/Ala_polilla_ancestral.png" },
+        { id: "ala-polilla-luna", name: "Ala Polilla Luna", price: 10, description: "Ala de polilla lunar.", image: "assets/img/Alquimia/Ingredients/Ala_polilla_luna.png" },
+        { id: "alas-mariposa", name: "Alas Mariposa", price: 4, description: "Alas de mariposa comunes.", image: "assets/img/Alquimia/Ingredients/Alas_mariposa.png" },
+        { id: "alas-mariposa-azul", name: "Alas Mariposa Azul", price: 5, description: "Alas de mariposa azul.", image: "assets/img/Alquimia/Ingredients/Alas_mariposa_azul.png" },
+        { id: "aleta-larga-abaceana", name: "Aleta Larga Abaceana", price: 7, description: "Aleta de pez abaceano.", image: "assets/img/Alquimia/Ingredients/Aleta_larga_abaceana.png" },
+        { id: "algodon-tundra", name: "Algodón Tundra", price: 5, description: "Algodón de la tundra.", image: "assets/img/Alquimia/Ingredients/Algodon_tundra.png" },
+        { id: "amanita-muscaria", name: "Amanita Muscaria", price: 8, description: "Hongo venenoso.", image: "assets/img/Alquimia/Ingredients/Amanita_muscaria.png" },
+        { id: "astas-pequenas", name: "Astas Pequeñas", price: 6, description: "Astas de ciervo pequeñas.", image: "assets/img/Alquimia/Ingredients/Astas_pequeñas.png" },
+        { id: "azucar-lunar", name: "Azúcar Lunar", price: 10, description: "Azúcar refinada de luna.", image: "assets/img/Alquimia/Ingredients/Azucar_lunar.png" },
+        { id: "bayas-enebro", name: "Bayas Enebro", price: 5, description: "Bayas de enebro.", image: "assets/img/Alquimia/Ingredients/Bayas_enebro.png" },
+        { id: "bayas-nieve", name: "Bayas Nieve", price: 6, description: "Bayas de la nieve.", image: "assets/img/Alquimia/Ingredients/Bayas_nieve.png" },
+        { id: "belladona", name: "Belladona", price: 8, description: "Planta venenosa.", image: "assets/img/Alquimia/Ingredients/Belladona.png" },
+        { id: "betty-rio", name: "Betty Río", price: 7, description: "Pez de río.", image: "assets/img/Alquimia/Ingredients/Betty_rio.png" },
+        { id: "campana-de-la-muerte", name: "Campana de la Muerte", price: 12, description: "Flor mortal.", image: "assets/img/Alquimia/Ingredients/Campana_de_la_muerte.png" },
+        { id: "carne-humana", name: "Carne Humana", price: 15, description: "Carne de humano.", image: "assets/img/Alquimia/Ingredients/Carne_humana.png" },
+        { id: "carpa-de-hist", name: "Carpa de Hist", price: 8, description: "Pez carpa de Hist.", image: "assets/img/Alquimia/Ingredients/Carpa_de_hist.png" },
+        { id: "champinon", name: "Champiñón", price: 4, description: "Champiñón común.", image: "assets/img/Alquimia/Ingredients/Champiñon.png" },
+        { id: "cola-espada-cyrodiplica", name: "Cola Espada Cyrodiplica", price: 9, description: "Cola de pez espada.", image: "assets/img/Alquimia/Ingredients/Cola_espada_cyrodiplica.png" },
+        { id: "cola-skeever", name: "Cola Skeever", price: 6, description: "Cola de skeever.", image: "assets/img/Alquimia/Ingredients/Cola_skeever.png" },
+        { id: "corazon-daedra", name: "Corazón Daedra", price: 30, description: "Corazón de un daedra.", image: "assets/img/Alquimia/Ingredients/Corazon_daedra.png" },
+        { id: "corazon-espino", name: "Corazón Espino", price: 15, description: "Corazón de espino.", image: "assets/img/Alquimia/Ingredients/Corazon_espino.png" },
+        { id: "corazon-humano", name: "Corazón Humano", price: 20, description: "Corazón humano.", image: "assets/img/Alquimia/Ingredients/Corazon_humano.png" },
+        { id: "cornamentas-grandes", name: "Cornamentas Grandes", price: 10, description: "Grandes astas de ciervo.", image: "assets/img/Alquimia/Ingredients/Cornamentas_grandes.png" },
+        { id: "corona-sangrante", name: "Corona Sangrante", price: 12, description: "Flor roja.", image: "assets/img/Alquimia/Ingredients/Corona_sangrante.png" },
+        { id: "dedo-gigante", name: "Dedo Gigante", price: 18, description: "Dedo de gigante.", image: "assets/img/Alquimia/Ingredients/Dedo_gigante.png" },
+        { id: "diente-gato-sable", name: "Diente Gato Sable", price: 10, description: "Colmillo de gato sable.", image: "assets/img/Alquimia/Ingredients/Diente_gato_sable.png" },
+        { id: "dientes-espectro-hielo", name: "Dientes Espectro Hielo", price: 14, description: "Dientes de espectro de hielo.", image: "assets/img/Alquimia/Ingredients/Dientes_espectro_hielo.png" },
+        { id: "ectoplasma", name: "Ectoplasma", price: 12, description: "Sustancia fantasmal.", image: "assets/img/Alquimia/Ingredients/Ectoplasma.png" },
+        { id: "envoltorio-colmena", name: "Envoltorio Colmena", price: 6, description: "Envoltura de colmena.", image: "assets/img/Alquimia/Ingredients/Envoltorio_colmena.png" },
+        { id: "envolturas-wisp", name: "Envolturas Wisp", price: 15, description: "Restos de wisp.", image: "assets/img/Alquimia/Ingredients/Envolturas_wisp.png" },
+        { id: "escamas-pez-carnicero", name: "Escamas Pez Carnicero", price: 7, description: "Escamas de pez carnicero.", image: "assets/img/Alquimia/Ingredients/Escamas_pez_carnicero.png" },
+        { id: "flor-de-montana-azul", name: "Flor de Montaña Azul", price: 6, description: "Flor azul de montaña.", image: "assets/img/Alquimia/Ingredients/Flor_de_montaña_azul.png" },
+        { id: "flor-de-montana-morada", name: "Flor de Montaña Morada", price: 6, description: "Flor morada de montaña.", image: "assets/img/Alquimia/Ingredients/Flor_de_montaña_morada.png" },
+        { id: "flor-de-montana-roja", name: "Flor de Montaña Roja", price: 6, description: "Flor roja de montaña.", image: "assets/img/Alquimia/Ingredients/Flor_de_montaña_roja.png" },
+        { id: "garra-bruja-cuervo", name: "Garra Bruja Cuervo", price: 8, description: "Garra de bruja cuervo.", image: "assets/img/Alquimia/Ingredients/Garra_bruja_cuervo.png" },
+        { id: "garra-oso", name: "Garra Oso", price: 10, description: "Garra de oso.", image: "assets/img/Alquimia/Ingredients/Garra_oso.png" },
+        { id: "graca-trol", name: "Grasa Trol", price: 12, description: "Grasa de trol.", image: "assets/img/Alquimia/Ingredients/Graca_trol.png" },
+        { id: "hierba-ampollada", name: "Hierba Ampollada", price: 5, description: "Hierba con ampollas.", image: "assets/img/Alquimia/Ingredients/Hierba_ampollada.png" },
+        { id: "huevo-arana", name: "Huevo Araña", price: 8, description: "Huevo de araña.", image: "assets/img/Alquimia/Ingredients/Huevo_araña.png" },
+        { id: "huevo-cauro", name: "Huevo Cauro", price: 8, description: "Huevo de cauro.", image: "assets/img/Alquimia/Ingredients/Huevo_cauro.png" },
+        { id: "huevo-curruca-roquera", name: "Huevo Curruca Roquera", price: 6, description: "Huevo de curruca roquera.", image: "assets/img/Alquimia/Ingredients/Huevo_curruca_roquera.png" },
+        { id: "huevo-gallina", name: "Huevo Gallina", price: 3, description: "Huevo de gallina.", image: "assets/img/Alquimia/Ingredients/Huevo_gallina.png" },
+        { id: "huevo-halcon", name: "Huevo Halcón", price: 10, description: "Huevo de halcón.", image: "assets/img/Alquimia/Ingredients/Huevo_halcon.png" },
+        { id: "huevo-pez-carnicero", name: "Huevo Pez Carnicero", price: 7, description: "Huevas de pez carnicero.", image: "assets/img/Alquimia/Ingredients/Huevo_pez_carnicero.png" },
+        { id: "huevo-zorzal-pino", name: "Huevo Zorzal Pino", price: 6, description: "Huevo de zorzal pino.", image: "assets/img/Alquimia/Ingredients/Huevo_zorzal_pino.png" },
+        { id: "lavanda", name: "Lavanda", price: 5, description: "Planta de lavanda.", image: "assets/img/Alquimia/Ingredients/Lavanda.png" },
+        { id: "lengua-dragon", name: "Lengua Dragón", price: 15, description: "Lengua de dragón.", image: "assets/img/Alquimia/Ingredients/Lengua_dragon.png" },
+        { id: "liquen-gigante", name: "Líquen Gigante", price: 10, description: "Líquen de gigante.", image: "assets/img/Alquimia/Ingredients/Liquen_gigante.png" },
+        { id: "mirriam-escarcha", name: "Mirriam Escarcha", price: 8, description: "Mirriam de escarcha.", image: "assets/img/Alquimia/Ingredients/Mirriam_escarcha.png" },
+        { id: "monton-sal", name: "Montón Sal", price: 4, description: "Sal común.", image: "assets/img/Alquimia/Ingredients/Monton_sal.png" },
+        { id: "mora-tapinella", name: "Mora Tapinella", price: 6, description: "Mora tapinella.", image: "assets/img/Alquimia/Ingredients/Mora_tapinella.png" },
+        { id: "musgo-colgante", name: "Musgo Colgante", price: 7, description: "Musgo que cuelga.", image: "assets/img/Alquimia/Ingredients/Musgo_colgante.png" },
+        { id: "ojo-gato-sable", name: "Ojo Gato Sable", price: 10, description: "Ojo de gato sable.", image: "assets/img/Alquimia/Ingredients/Ojo_gato_sable.png" },
+        { id: "oreja-falmer", name: "Oreja Falmer", price: 10, description: "Oreja de falmer.", image: "assets/img/Alquimia/Ingredients/Oreja_falmer.png" },
+        { id: "orejas-elfo", name: "Orejas Elfo", price: 12, description: "Orejas de elfo.", image: "assets/img/Alquimia/Ingredients/Orejas_elfo.png" },
+        { id: "panal-miel", name: "Panal Miel", price: 8, description: "Panal de miel.", image: "assets/img/Alquimia/Ingredients/Panal_miel.png" },
+        { id: "perca-lomo-plateado", name: "Perca Lomo Plateado", price: 7, description: "Perca de lomo plateado.", image: "assets/img/Alquimia/Ingredients/Perca_lomo_plateado.png" },
+        { id: "percebe-nordico", name: "Percebe Nórdico", price: 6, description: "Percebe nórdico.", image: "assets/img/Alquimia/Ingredients/Percebe_nordico.png" },
+        { id: "perla", name: "Perla", price: 15, description: "Perla natural.", image: "assets/img/Alquimia/Ingredients/Perla.png" },
+        { id: "perla-pequena", name: "Perla Pequeña", price: 10, description: "Perla pequeña.", image: "assets/img/Alquimia/Ingredients/Perla_pequeña.png" },
+        { id: "pholiota-escamosa", name: "Pholiota Escamosa", price: 6, description: "Hongo pholiota.", image: "assets/img/Alquimia/Ingredients/Pholiota_escamosa.png" },
+        { id: "pico-halcon", name: "Pico Halcón", price: 10, description: "Pico de halcón.", image: "assets/img/Alquimia/Ingredients/Pico_halcon.png" },
+        { id: "plumas-bruja-cuervo", name: "Plumas Bruja Cuervo", price: 8, description: "Plumas de bruja cuervo.", image: "assets/img/Alquimia/Ingredients/Plumas_bruja_cuervo.png" },
+        { id: "plumas-halcon", name: "Plumas Halcón", price: 8, description: "Plumas de halcón.", image: "assets/img/Alquimia/Ingredients/Plumas_halcon.png" },
+        { id: "polvo-brillante", name: "Polvo Brillante", price: 10, description: "Polvo que brilla.", image: "assets/img/Alquimia/Ingredients/Polvo_brillante.png" },
+        { id: "polvo-huesos", name: "Polvo Huesos", price: 6, description: "Polvo de huesos.", image: "assets/img/Alquimia/Ingredients/Polvo_huesos.png" },
+        { id: "polvo-vampiro", name: "Polvo Vampiro", price: 15, description: "Polvo de vampiro.", image: "assets/img/Alquimia/Ingredients/Polvo_vampiro.png" },
+        { id: "putrefaccion-namira", name: "Putrefacción Namira", price: 12, description: "Putrefacción de Namira.", image: "assets/img/Alquimia/Ingredients/Putrefaccion_namira.png" },
+        { id: "quitina-cangrejo-barro", name: "Quitina Cangrejo Barro", price: 6, description: "Quitina de cangrejo barro.", image: "assets/img/Alquimia/Ingredients/Quitina_cangrejo_barro.png" },
+        { id: "raiz-canina", name: "Raíz Canina", price: 7, description: "Raíz canina.", image: "assets/img/Alquimia/Ingredients/Raiz_canina.png" },
+        { id: "raiz-nirn", name: "Raíz Nirn", price: 10, description: "Raíz de Nirn.", image: "assets/img/Alquimia/Ingredients/Raiz_nirn.png" },
+        { id: "raiz-nirn-carmesi", name: "Raíz Nirn Carmesí", price: 15, description: "Raíz de Nirn carmesí.", image: "assets/img/Alquimia/Ingredients/Raiz_nirn_carmesi.png" },
+        { id: "raiz-trepadora", name: "Raíz Trepadora", price: 8, description: "Raíz trepadora.", image: "assets/img/Alquimia/Ingredients/Raiz_trepadora.png" },
+        { id: "rama-cardo", name: "Rama Cardo", price: 5, description: "Rama de cardo.", image: "assets/img/Alquimia/Ingredients/Rama_cardo.png" },
+        { id: "sales-escarcha", name: "Sales Escarcha", price: 12, description: "Sales de escarcha.", image: "assets/img/Alquimia/Ingredients/Sales_escarcha.png" },
+        { id: "sales-fuego", name: "Sales Fuego", price: 12, description: "Sales de fuego.", image: "assets/img/Alquimia/Ingredients/Sales_fuego.png" },
+        { id: "sales-vacio", name: "Sales Vacío", price: 15, description: "Sales del vacío.", image: "assets/img/Alquimia/Ingredients/Sales_vacio.png" },
+        { id: "savia-spriggan", name: "Savia Spriggan", price: 10, description: "Savia de spriggan.", image: "assets/img/Alquimia/Ingredients/Savia_spriggan.png" },
+        { id: "seta-brillante", name: "Seta Brillante", price: 8, description: "Seta que brilla.", image: "assets/img/Alquimia/Ingredients/Seta_brillante.png" }
       ]
     }
   ],
 
-  magia: [
-    {
-      titulo: "Libros de hechizos (Spell Tomes)",
-      items: [
-        { id: "col-hechizo-destruccion", name: "Hechizos de Destrucción (nivel bajo-medio)", price: 80 },
-        { id: "col-hechizo-conjura", name: "Hechizos de Conjura (nivel bajo-medio)", price: 80 },
-        { id: "col-hechizo-ilusion", name: "Hechizos de Ilusión (nivel bajo-medio)", price: 80 },
-        { id: "col-hechizo-alteracion", name: "Hechizos de Alteración (nivel bajo-medio)", price: 80 },
-        { id: "col-hechizo-restauracion", name: "Hechizos de Restauración (nivel bajo-medio)", price: 80 }
-      ]
-    },
-    {
-      titulo: "Pergaminos mágicos",
-      items: [
-        { id: "col-pergamino-fuego", name: "Pergamino de fuego", price: 45 },
-        { id: "col-pergamino-hielo", name: "Pergamino de hielo", price: 45 },
-        { id: "col-pergamino-rayos", name: "Pergamino de rayos", price: 45 },
-        { id: "col-pergamino-curacion", name: "Pergamino de curación", price: 40 },
-        { id: "col-pergamino-invocacion", name: "Pergamino de invocación", price: 55 }
-      ]
-    },
-    {
-      titulo: "Gemas y almas",
-      items: [
-        { id: "col-gema-vacia", name: "Gema vacía", price: 10 },
-        { id: "col-gema-alma-menor", name: "Gema de alma menor", price: 20 },
-        { id: "col-gema-alma-comun", name: "Gema de alma común", price: 40 },
-        { id: "col-gema-alma-mayor", name: "Gema de alma mayor", price: 80 },
-        { id: "col-gema-alma-grandiosa", name: "Gema de alma grandiosa", price: 120 }
-      ]
-    },
-    {
-      titulo: "Ropa de mago",
-      items: [
-        { id: "col-tunica-mago", name: "Túnica de mago", price: 60 },
-        { id: "col-tunica-aprendiz", name: "Túnica de mago de aprendiz", price: 35 },
-        { id: "col-capucha-mago", name: "Capucha de mago", price: 30 },
-        { id: "col-botas-mago", name: "Botas de mago", price: 25 },
-        { id: "col-guantes-mago", name: "Guantes de mago", price: 25 }
-      ]
-    },
-    {
-      titulo: "Varitas y bastones",
-      items: [
-        { id: "col-varita-fuego", name: "Varita de fuego", price: 70 },
-        { id: "col-varita-hielo", name: "Varita de hielo", price: 70 },
-        { id: "col-varita-rayos", name: "Varita de rayos", price: 70 },
-        { id: "col-baston-invocacion", name: "Bastón de invocación", price: 150 },
-        { id: "col-baston-hechizos", name: "Bastón de hechizos", price: 130 }
-      ]
-    },
-    {
-      titulo: "Varios",
-      items: [
-        { id: "col-tintero", name: "Tintero", price: 3 },
-        { id: "col-pluma", name: "Pluma", price: 2 }
-      ]
-    }
-  ],
-
+  // ----------------------------------------------------------
+  // 2. HERRERÍA – Warmaiden's
+  // ----------------------------------------------------------
   herreria: [
-    {
-      titulo: "Armas",
-      items: [
-        { id: "her-arma-hierro-acero", name: "Hierro / Acero", price: 50 },
-        { id: "her-arma-orco", name: "Orco", price: 100 },
-        { id: "her-arma-enano", name: "Enano", price: 150 },
-        { id: "her-arma-elfico", name: "Élfico", price: 200 },
-        { id: "her-arma-cristal", name: "Cristal", price: 350 },
-        { id: "her-arma-ebano", name: "Ébano", price: 500 }
-      ]
-    },
     {
       titulo: "Armaduras Ligeras",
       items: [
-        { id: "her-lig-piel-cuero", name: "Piel / Cuero", price: 15 },
-        { id: "her-lig-imperial", name: "Imperial ligera", price: 60 },
-        { id: "her-lig-cristal", name: "Cristal", price: 300 },
-        { id: "her-lig-escamas-dragon", name: "Escamas de dragón", price: 450 },
-        { id: "her-lig-hermandad-oscura", name: "Hermandad oscura", price: 80 },
-        { id: "her-lig-nightingale", name: "Nightingale", price: 350 },
-        { id: "her-lig-hermandad-ladrones", name: "Hermandad de Ladrones", price: 40 },
-        { id: "her-lig-linwe", name: "Linwe", price: 60 },
-        { id: "her-lig-gremio-ladrones", name: "Gremio de Ladrones", price: 60 },
-        { id: "her-lig-antiguos-dioses", name: "Antiguos Dioses", price: 90 },
-        { id: "her-lig-penitus-oculatus", name: "Guardia Penitus Oculatus", price: 70 },
-        { id: "her-lig-capas-tormenta", name: "Capas de la tormenta", price: 55 },
-        { id: "her-lig-renegados", name: "Renegados", price: 45 }
+        { id: "tocado-renegado", name: "Tocado Renegado", price: 80, description: "Yelmo ligero de renegado.", image: "assets/img/Herreria/Armadura/Ligera/Tocado_renegado.png" },
+        { id: "yelmo-cristal", name: "Yelmo Cristal", price: 180, description: "Yelmo de cristal.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_cristal.png" },
+        { id: "yelmo-cuero", name: "Yelmo Cuero", price: 60, description: "Yelmo de cuero.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_cuero.png" },
+        { id: "yelmo-elfico", name: "Yelmo Élfico", price: 140, description: "Yelmo élfico.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_elfico.png" },
+        { id: "yelmo-escamas-dragon", name: "Yelmo Escamas Dragón", price: 300, description: "Yelmo de escamas de dragón.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_escamas_dragon.png" },
+        { id: "yelmo-ligero-stalhrim", name: "Yelmo Ligero Stalhrim", price: 250, description: "Yelmo ligero de stalhrim.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_ligero_stalhrim.png" },
+        { id: "yelmo-piel", name: "Yelmo Piel", price: 40, description: "Yelmo de piel.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_piel.png" },
+        { id: "yelmo-pieles", name: "Yelmo Pieles", price: 45, description: "Yelmo de pieles.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_pieles.png" },
+        { id: "yelmo-quitinoso", name: "Yelmo Quitinoso", price: 100, description: "Yelmo de quitina.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_quitinoso.png" },
+        { id: "yelmo-tachonado", name: "Yelmo Tachonado", price: 70, description: "Yelmo tachonado.", image: "assets/img/Herreria/Armadura/Ligera/Yelmo_tachonado.png" },
+        { id: "zapatos-pieles", name: "Zapatos Pieles", price: 30, description: "Zapatos de pieles.", image: "assets/img/Herreria/Armadura/Ligera/Zapatos_pieles.png" },
+        { id: "armadura-cristal-femenina", name: "Armadura Cristal Femenina", price: 200, description: "Armadura de cristal para mujer.", image: "assets/img/Herreria/Armadura/Ligera/Armadura_cristal_femenina.png" },
+        { id: "botas-renegado", name: "Botas Renegado", price: 60, description: "Botas de renegado.", image: "assets/img/Herreria/Armadura/Ligera/Botas_renegado.png" },
+        { id: "botas-tachonadas", name: "Botas Tachonadas", price: 50, description: "Botas tachonadas.", image: "assets/img/Herreria/Armadura/Ligera/Botas_tachonadas.png" },
+        { id: "botas-vampiro", name: "Botas Vampiro", price: 80, description: "Botas de vampiro.", image: "assets/img/Herreria/Armadura/Ligera/Botas_vampiro.png" },
+        { id: "brazales-cuero", name: "Brazales Cuero", price: 40, description: "Brazales de cuero.", image: "assets/img/Herreria/Armadura/Ligera/Brazales_cuero.png" },
+        { id: "brazales-ligeros-stalhrim", name: "Brazales Ligeros Stalhrim", price: 150, description: "Brazales ligeros de stalhrim.", image: "assets/img/Herreria/Armadura/Ligera/Brazales_ligeros_stalhrim.png" },
+        { id: "brazales-piel", name: "Brazales Piel", price: 30, description: "Brazales de piel.", image: "assets/img/Herreria/Armadura/Ligera/Brazales_piel.png" },
+        { id: "brazales-pieles", name: "Brazales Pieles", price: 35, description: "Brazales de pieles.", image: "assets/img/Herreria/Armadura/Ligera/Brazales_pieles.png" },
+        { id: "brazales-quitinosos", name: "Brazales Quitinosos", price: 80, description: "Brazales de quitina.", image: "assets/img/Herreria/Armadura/Ligera/Brazales_quitinosos.png" },
+        { id: "brazales-tachonados", name: "Brazales Tachonados", price: 55, description: "Brazales tachonados.", image: "assets/img/Herreria/Armadura/Ligera/Brazales_tachonados.png" },
+        { id: "escudo-cristal", name: "Escudo Cristal", price: 180, description: "Escudo de cristal.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_cristal.png" },
+        { id: "escudo-elfico", name: "Escudo Élfico", price: 140, description: "Escudo élfico.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_elfico.png" },
+        { id: "escudo-escamas-dragon", name: "Escudo Escamas Dragón", price: 280, description: "Escudo de escamas de dragón.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_escamas_dragon.png" },
+        { id: "escudo-piel", name: "Escudo Piel", price: 50, description: "Escudo de piel.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_piel.png" },
+        { id: "escudo-quitinoso", name: "Escudo Quitinoso", price: 100, description: "Escudo de quitina.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_quitinoso.png" },
+        { id: "escudo-stalhrim", name: "Escudo Stalhrim", price: 250, description: "Escudo de stalhrim.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_stalhrim.png" },
+        { id: "gaunteletes-escamas-dragon", name: "Guanteletes Escamas Dragón", price: 150, description: "Guanteletes de escamas de dragón.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_escamas_dragon.png" },
+        { id: "gaunteletes-cristal", name: "Guanteletes Cristal", price: 120, description: "Guanteletes de cristal.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_cristal.png" },
+        { id: "gaunteletes-elficos", name: "Guanteletes Élficos", price: 100, description: "Guanteletes élficos.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_elficos.png" },
+        { id: "gaunteletes-pieles", name: "Guanteletes Pieles", price: 30, description: "Guanteletes de pieles.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_pieles.png" },
+        { id: "gaunteletes-renegado", name: "Guanteletes Renegado", price: 60, description: "Guanteletes de renegado.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_renegado.png" },
+        { id: "gaunteletes-vampiro", name: "Guanteletes Vampiro", price: 70, description: "Guanteletes de vampiro.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_vampiro.png" }
       ]
     },
     {
       titulo: "Armaduras Pesadas",
       items: [
-        { id: "her-pes-hierro-acero", name: "Hierro / Acero", price: 60 },
-        { id: "her-pes-imperial", name: "Imperial", price: 90 },
-        { id: "her-pes-nordica-antigua", name: "Nórdica Antigua", price: 120 },
-        { id: "her-pes-hueso-dragon", name: "Hueso de dragón", price: 480 },
-        { id: "her-pes-ebano", name: "Ébano", price: 520 },
-        { id: "her-pes-daedrica", name: "Draédrica", price: 600 },
-        { id: "her-pes-blades", name: "Blades", price: 150 },
-        { id: "her-pes-orco", name: "Orco", price: 130 },
-        { id: "her-pes-enano", name: "Enano", price: 170 }
+        { id: "armadura-acero", name: "Armadura Acero", price: 200, description: "Armadura de acero.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_acero.png" },
+        { id: "armadura-daedrica", name: "Armadura Daédrica", price: 600, description: "Armadura daédrica.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_daedrica.png" },
+        { id: "armadura-ebano", name: "Armadura Ébano", price: 500, description: "Armadura de ébano.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_ebano.png" },
+        { id: "armadura-enana", name: "Armadura Enana", price: 300, description: "Armadura enana.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_enana.png" },
+        { id: "armadura-hierro", name: "Armadura Hierro", price: 150, description: "Armadura de hierro.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_hierro.png" },
+        { id: "armadura-hierro-bandas", name: "Armadura Hierro Bandas", price: 160, description: "Armadura de hierro con bandas.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_hierro_bandas.png" },
+        { id: "armadura-hombresra-hueso", name: "Armadura Hombresra Hueso", price: 220, description: "Armadura de hueso de hombresra.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_hombresra_hueso.png" },
+        { id: "armadura-hueso", name: "Armadura Hueso", price: 210, description: "Armadura de hueso.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_hueso.png" },
+        { id: "armadura-hueso-guardia", name: "Armadura Hueso Guardia", price: 230, description: "Armadura de hueso de guardia.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_hueso_guardia.png" },
+        { id: "armadura-orco", name: "Armadura Orco", price: 250, description: "Armadura orco.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_orco.png" },
+        { id: "armadura-pesada-falmer", name: "Armadura Pesada Falmer", price: 260, description: "Armadura pesada falmer.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_pesada_falmer.png" },
+        { id: "armadura-pesada-quitina", name: "Armadura Pesada Quitina", price: 220, description: "Armadura pesada de quitina.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_pesada_quitina.png" },
+        { id: "armadura-pesada-stalhrim", name: "Armadura Pesada Stalhrim", price: 450, description: "Armadura pesada de stalhrim.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_pesada_stalhrim.png" },
+        { id: "armadura-placas-acero", name: "Armadura Placas Acero", price: 350, description: "Armadura de placas de acero.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_placas_acero.png" },
+        { id: "armadura-placas-dragon", name: "Armadura Placas Dragón", price: 550, description: "Armadura de placas de dragón.", image: "assets/img/Herreria/Armadura/Pesada/Armadura_placas_dragon.png" },
+        { id: "botas-imperiales", name: "Botas Imperiales", price: 80, description: "Botas imperiales.", image: "assets/img/Herreria/Armadura/Pesada/Botas_imperiales.png" },
+        { id: "botas-orco", name: "Botas Orco", price: 100, description: "Botas orco.", image: "assets/img/Herreria/Armadura/Pesada/Botas_orco.png" },
+        { id: "botas-pesadas-falmer", name: "Botas Pesadas Falmer", price: 120, description: "Botas pesadas falmer.", image: "assets/img/Herreria/Armadura/Pesada/Botas_pesadas_falmer.png" },
+        { id: "botas-pesadas-stalhrim", name: "Botas Pesadas Stalhrim", price: 180, description: "Botas pesadas de stalhrim.", image: "assets/img/Herreria/Armadura/Pesada/Botas_pesadas_stalhrim.png" },
+        { id: "botas-placas-acero", name: "Botas Placas Acero", price: 140, description: "Botas de placas de acero.", image: "assets/img/Herreria/Armadura/Pesada/Botas_placas_acero.png" },
+        { id: "botas-placas-dragon", name: "Botas Placas Dragón", price: 220, description: "Botas de placas de dragón.", image: "assets/img/Herreria/Armadura/Pesada/Botas_placas_dragon.png" },
+        { id: "botas-quitinosas-pesadas", name: "Botas Quitinosas Pesadas", price: 100, description: "Botas pesadas de quitina.", image: "assets/img/Herreria/Armadura/Pesada/Botas_quitinosas_pesadas.png" },
+        { id: "escudo-acero", name: "Escudo Acero", price: 150, description: "Escudo de acero.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_acero.png" },
+        { id: "escudo-daedrico", name: "Escudo Daédrico", price: 450, description: "Escudo daédrico.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_daedrico.png" },
+        { id: "escudo-ebano", name: "Escudo Ébano", price: 380, description: "Escudo de ébano.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_ebano.png" },
+        { id: "escudo-enano", name: "Escudo Enano", price: 220, description: "Escudo enano.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_enano.png" },
+        { id: "escudo-falmer", name: "Escudo Falmer", price: 180, description: "Escudo falmer.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_falmer.png" },
+        { id: "escudo-hierro", name: "Escudo Hierro", price: 100, description: "Escudo de hierro.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_hierro.png" },
+        { id: "escudo-nordico", name: "Escudo Nórdico", price: 200, description: "Escudo nórdico.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_nordico.png" },
+        { id: "escudo-orco", name: "Escudo Orco", price: 200, description: "Escudo orco.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_orco.png" },
+        { id: "escudo-placas-dragon", name: "Escudo Placas Dragón", price: 400, description: "Escudo de placas de dragón.", image: "assets/img/Herreria/Armadura/Pesada/Escudo_placas_dragon.png" },
+        { id: "guanteletes-daedricos", name: "Guanteletes Daédricos", price: 300, description: "Guanteletes daédricos.", image: "assets/img/Herreria/Armadura/Pesada/Guanteletes_daedricos.png" },
+        { id: "guanteletes-ebano", name: "Guanteletes Ébano", price: 250, description: "Guanteletes de ébano.", image: "assets/img/Herreria/Armadura/Pesada/Guanteletes_ebano.png" },
+        { id: "guanteletes-enanos", name: "Guanteletes Enanos", price: 150, description: "Guanteletes enanos.", image: "assets/img/Herreria/Armadura/Pesada/Guanteletes_enanos.png" },
+        { id: "yelmo-pesado-stalhrim", name: "Yelmo Pesado Stalhrim", price: 280, description: "Yelmo pesado de stalhrim.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_pesado_stalhrim.png" },
+        { id: "yelmo-placas-acero", name: "Yelmo Placas Acero", price: 180, description: "Yelmo de placas de acero.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_placas_acero.png" },
+        { id: "yelmo-placas-dragon", name: "Yelmo Placas Dragón", price: 350, description: "Yelmo de placas de dragón.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_placas_dragon.png" },
+        { id: "yelmo-nordicos-tallados", name: "Yelmo Nórdicos Tallados", price: 240, description: "Yelmo nórdico tallado.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_nordicos_tallados.png" },
+        { id: "yelmo-acero", name: "Yelmo Acero", price: 120, description: "Yelmo de acero.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_acero.png" },
+        { id: "yelmo-acero-cuerros", name: "Yelmo Acero Cuerros", price: 130, description: "Yelmo de acero con cuerros.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_acero_cuerros.png" },
+        { id: "yelmo-daedrico", name: "Yelmo Daédrico", price: 400, description: "Yelmo daédrico.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_daedrico.png" },
+        { id: "yelmo-ebano", name: "Yelmo Ébano", price: 320, description: "Yelmo de ébano.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_ebano.png" },
+        { id: "yelmo-hierro", name: "Yelmo Hierro", price: 80, description: "Yelmo de hierro.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_hierro.png" },
+        { id: "yelmo-hueso", name: "Yelmo Hueso", price: 100, description: "Yelmo de hueso.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_hueso.png" },
+        { id: "yelmo-nordico-tallado", name: "Yelmo Nórdico Tallado", price: 230, description: "Yelmo nórdico tallado.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_nordico_tallado.png" },
+        { id: "yelmo-orco", name: "Yelmo Orco", price: 160, description: "Yelmo orco.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_orco.png" },
+        { id: "yelmo-pesado-falmer", name: "Yelmo Pesado Falmer", price: 200, description: "Yelmo pesado falmer.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_pesado_falmer.png" },
+        { id: "yelmo-pesado-quininoso", name: "Yelmo Pesado Quininoso", price: 180, description: "Yelmo pesado de quitina.", image: "assets/img/Herreria/Armadura/Pesada/Yelmo_pesado_quininoso.png" }
+      ]
+    },
+    {
+      titulo: "Arcos y Ballestas",
+      items: [
+        { id: "arco-cazador", name: "Arco Cazador", price: 50, description: "Arco de cazador.", image: "assets/img/Herreria/Armas/Arquería/Arco_cazador.png" },
+        { id: "arco-cristal", name: "Arco Cristal", price: 180, description: "Arco de cristal.", image: "assets/img/Herreria/Armas/Arquería/Arco_cristal.png" },
+        { id: "arco-daedrico", name: "Arco Daédrico", price: 400, description: "Arco daédrico.", image: "assets/img/Herreria/Armas/Arquería/Arco_daedrico.png" },
+        { id: "arco-ebano", name: "Arco Ébano", price: 300, description: "Arco de ébano.", image: "assets/img/Herreria/Armas/Arquería/Arco_ebano.png" },
+        { id: "arco-elfico", name: "Arco Élfico", price: 150, description: "Arco élfico.", image: "assets/img/Herreria/Armas/Arquería/Arco_elfico.png" },
+        { id: "arco-enano", name: "Arco Enano", price: 200, description: "Arco enano.", image: "assets/img/Herreria/Armas/Arquería/Arco_enano.png" },
+        { id: "arco-heroe-nordico", name: "Arco Héroe Nórdico", price: 250, description: "Arco de héroe nórdico.", image: "assets/img/Herreria/Armas/Arquería/Arco_heroe_nordico.png" },
+        { id: "arco-largo", name: "Arco Largo", price: 60, description: "Arco largo.", image: "assets/img/Herreria/Armas/Arquería/Arco_largo.png" },
+        { id: "arco-nordico", name: "Arco Nórdico", price: 120, description: "Arco nórdico.", image: "assets/img/Herreria/Armas/Arquería/Arco_nordico.png" },
+        { id: "arco-nordico-antiguo", name: "Arco Nórdico Antiguo", price: 140, description: "Arco nórdico antiguo.", image: "assets/img/Herreria/Armas/Arquería/Arco_nordico_antiguo.png" },
+        { id: "arco-orco", name: "Arco Orco", price: 160, description: "Arco orco.", image: "assets/img/Herreria/Armas/Arquería/Arco_orco.png" },
+        { id: "arco-stalhrim", name: "Arco Stalhrim", price: 280, description: "Arco de stalhrim.", image: "assets/img/Herreria/Armas/Arquería/Arco_stalhrim.png" },
+        { id: "ballesta", name: "Ballesta", price: 120, description: "Ballesta básica.", image: "assets/img/Herreria/Armas/Arquería/Ballesta.png" },
+        { id: "ballesta-cristal", name: "Ballesta Cristal", price: 220, description: "Ballesta de cristal.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_cristal.png" },
+        { id: "ballesta-daedrica", name: "Ballesta Daédrica", price: 450, description: "Ballesta daédrica.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_daedrica.png" },
+        { id: "ballesta-ebano", name: "Ballesta Ébano", price: 340, description: "Ballesta de ébano.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_ebano.png" },
+        { id: "ballesta-elfica", name: "Ballesta Élfica", price: 200, description: "Ballesta élfica.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_elfica.png" },
+        { id: "ballesta-enana", name: "Ballesta Enana", price: 250, description: "Ballesta enana.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_enana.png" },
+        { id: "ballesta-imperial", name: "Ballesta Imperial", price: 140, description: "Ballesta imperial.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_imperial.png" },
+        { id: "ballesta-nordica", name: "Ballesta Nórdica", price: 160, description: "Ballesta nórdica.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_nordica.png" }
       ]
     },
     {
       titulo: "Flechas",
       items: [
-        { id: "her-flecha-falmer", name: "Falmer", price: 1 },
-        { id: "her-flecha-renegados", name: "Renegados", price: 1 },
-        { id: "her-flecha-hierro", name: "Hierro", price: 1 },
-        { id: "her-flecha-nordica-antigua", name: "Nórdica Antigua", price: 2 },
-        { id: "her-flecha-acero", name: "Acero", price: 2 },
-        { id: "her-flecha-enana", name: "Enana", price: 3 },
-        { id: "her-flecha-orca", name: "Orca", price: 4 },
-        { id: "her-flecha-elfica", name: "Élfica", price: 5 },
-        { id: "her-flecha-cristal", name: "Cristal", price: 8 },
-        { id: "her-flecha-ebano", name: "Ébano", price: 10 },
-        { id: "her-flecha-esfera-enana", name: "Esfera enana", price: 6 },
-        { id: "her-flecha-daedrica", name: "Daédrica", price: 15 },
-        { id: "her-flecha-heroe-nordico", name: "Héroe nórdico", price: 6 },
-        { id: "her-flecha-hueso-dragon", name: "Hueso de dragón", price: 12 }
+        { id: "flecha-acero", name: "Flecha Acero", price: 2, description: "Flecha de acero.", image: "assets/img/Herreria/Armas/Flechas/Flecha_acero.png" },
+        { id: "flecha-cristal", name: "Flecha Cristal", price: 8, description: "Flecha de cristal.", image: "assets/img/Herreria/Armas/Flechas/Flecha_cristal.png" },
+        { id: "flecha-daedrica", name: "Flecha Daédrica", price: 15, description: "Flecha daédrica.", image: "assets/img/Herreria/Armas/Flechas/Flecha_daedrica.png" },
+        { id: "flecha-ebano", name: "Flecha Ébano", price: 10, description: "Flecha de ébano.", image: "assets/img/Herreria/Armas/Flechas/Flecha_ebano.png" },
+        { id: "flecha-elfica", name: "Flecha Élfica", price: 5, description: "Flecha élfica.", image: "assets/img/Herreria/Armas/Flechas/Flecha_elfica.png" },
+        { id: "flecha-enana", name: "Flecha Enana", price: 4, description: "Flecha enana.", image: "assets/img/Herreria/Armas/Flechas/Flecha_enana.png" },
+        { id: "flecha-falmer", name: "Flecha Falmer", price: 2, description: "Flecha falmer.", image: "assets/img/Herreria/Armas/Flechas/Flecha_falmer.png" },
+        { id: "flecha-hierro", name: "Flecha Hierro", price: 1, description: "Flecha de hierro.", image: "assets/img/Herreria/Armas/Flechas/Flecha_hierro.png" },
+        { id: "flecha-hueso", name: "Flecha Hueso", price: 2, description: "Flecha de hueso.", image: "assets/img/Herreria/Armas/Flechas/Flecha_hueso.png" },
+        { id: "flecha-ladrona-alma", name: "Flecha Ladrona Alma", price: 12, description: "Flecha robadora de almas.", image: "assets/img/Herreria/Armas/Flechas/Flecha_ladrona_alma.png" },
+        { id: "flecha-nordica-antigua", name: "Flecha Nórdica Antigua", price: 3, description: "Flecha nórdica antigua.", image: "assets/img/Herreria/Armas/Flechas/Flecha_nordica_antigua.png" },
+        { id: "flecha-orca", name: "Flecha Orca", price: 4, description: "Flecha orca.", image: "assets/img/Herreria/Armas/Flechas/Flecha_orca.png" },
+        { id: "flecha-renegado", name: "Flecha Renegado", price: 2, description: "Flecha de renegado.", image: "assets/img/Herreria/Armas/Flechas/Flecha_renegado.png" },
+        { id: "flecha-stalhrim", name: "Flecha Stalhrim", price: 6, description: "Flecha de stalhrim.", image: "assets/img/Herreria/Armas/Flechas/Flecha_stalhrim.png" }
       ]
     },
     {
-      titulo: "Minerales / Lingotes",
+      titulo: "Armas de Una Mano",
       items: [
-        { id: "her-min-hierro", name: "Mena / Lingote de hierro", price: 8 },
-        { id: "her-min-plata", name: "Mena / Lingote de plata", price: 15 },
-        { id: "her-min-oro", name: "Mena / Lingote de oro", price: 20 },
-        { id: "her-min-cobre", name: "Mena / Lingote de cobre", price: 6 },
-        { id: "her-min-oricalco", name: "Mena / Lingote de oricalco", price: 10 },
-        { id: "her-min-malaquita", name: "Mena de malaquita / Malaquita refinada", price: 12 },
-        { id: "her-min-piedra-lunar", name: "Mena de piedra lunar / Piedra Lunar refinada", price: 15 },
-        { id: "her-min-mercurio", name: "Mena / Lingote de mercurio", price: 8 },
-        { id: "her-min-ebano", name: "Mena / Lingote de ébano", price: 50 },
-        { id: "her-min-azurita", name: "Mena de azurita", price: 10 },
-        { id: "her-min-estalhrim", name: "Mena / Lingote de estalhrim", price: 40 },
-        { id: "her-min-ambar", name: "Mena de ámbar", price: 12 },
-        { id: "her-min-locura", name: "Mena de locura", price: 25 }
+        { id: "daga-acero", name: "Daga Acero", price: 30, description: "Daga de acero.", image: "assets/img/Herreria/Armas/Una_mano/Daga_acero.png" },
+        { id: "daga-cristal", name: "Daga Cristal", price: 100, description: "Daga de cristal.", image: "assets/img/Herreria/Armas/Una_mano/Daga_cristal.png" },
+        { id: "daga-daedrica", name: "Daga Daédrica", price: 250, description: "Daga daédrica.", image: "assets/img/Herreria/Armas/Una_mano/Daga_daedrica.png" },
+        { id: "daga-ebano", name: "Daga Ébano", price: 180, description: "Daga de ébano.", image: "assets/img/Herreria/Armas/Una_mano/Daga_ebano.png" },
+        { id: "daga-elfica", name: "Daga Élfica", price: 80, description: "Daga élfica.", image: "assets/img/Herreria/Armas/Una_mano/Daga_elfica.png" },
+        { id: "daga-enana", name: "Daga Enana", price: 120, description: "Daga enana.", image: "assets/img/Herreria/Armas/Una_mano/Daga_enana.png" },
+        { id: "daga-hierro", name: "Daga Hierro", price: 20, description: "Daga de hierro.", image: "assets/img/Herreria/Armas/Una_mano/Daga_hierro.png" },
+        { id: "daga-nordica", name: "Daga Nórdica", price: 70, description: "Daga nórdica.", image: "assets/img/Herreria/Armas/Una_mano/Daga_nordica.png" },
+        { id: "daga-nordica-antigua", name: "Daga Nórdica Antigua", price: 80, description: "Daga nórdica antigua.", image: "assets/img/Herreria/Armas/Una_mano/Daga_nordica_antigua.png" },
+        { id: "daga-orca", name: "Daga Orca", price: 90, description: "Daga orca.", image: "assets/img/Herreria/Armas/Una_mano/Daga_orca.png" },
+        { id: "daga-stalhrim", name: "Daga Stalhrim", price: 160, description: "Daga de stalhrim.", image: "assets/img/Herreria/Armas/Una_mano/Daga_stalhrim.png" },
+        { id: "espada-acero", name: "Espada Acero", price: 60, description: "Espada de acero.", image: "assets/img/Herreria/Armas/Una_mano/Espada_acero.png" },
+        { id: "espada-cristal", name: "Espada Cristal", price: 200, description: "Espada de cristal.", image: "assets/img/Herreria/Armas/Una_mano/Espada_cristal.png" },
+        { id: "espada-daedrica", name: "Espada Daédrica", price: 400, description: "Espada daédrica.", image: "assets/img/Herreria/Armas/Una_mano/Espada_daedrica.png" },
+        { id: "espada-ebano", name: "Espada Ébano", price: 300, description: "Espada de ébano.", image: "assets/img/Herreria/Armas/Una_mano/Espada_ebano.png" },
+        { id: "espada-elfica", name: "Espada Élfica", price: 150, description: "Espada élfica.", image: "assets/img/Herreria/Armas/Una_mano/Espada_elfica.png" },
+        { id: "espada-enana", name: "Espada Enana", price: 200, description: "Espada enana.", image: "assets/img/Herreria/Armas/Una_mano/Espada_enana.png" },
+        { id: "espada-hierro", name: "Espada Hierro", price: 40, description: "Espada de hierro.", image: "assets/img/Herreria/Armas/Una_mano/Espada_hierro.png" },
+        { id: "espada-nordica", name: "Espada Nórdica", price: 120, description: "Espada nórdica.", image: "assets/img/Herreria/Armas/Una_mano/Espada_nordica.png" },
+        { id: "espada-nordica-antigua", name: "Espada Nórdica Antigua", price: 140, description: "Espada nórdica antigua.", image: "assets/img/Herreria/Armas/Una_mano/Espada_nordica_antigua.png" },
+        { id: "espada-orca", name: "Espada Orca", price: 160, description: "Espada orca.", image: "assets/img/Herreria/Armas/Una_mano/Espada_orca.png" },
+        { id: "espada-stalhrim", name: "Espada Stalhrim", price: 260, description: "Espada de stalhrim.", image: "assets/img/Herreria/Armas/Una_mano/Espada_stalhrim.png" },
+        { id: "hacha-guerra-acero", name: "Hacha Guerra Acero", price: 70, description: "Hacha de guerra de acero.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_acero.png" },
+        { id: "hacha-guerra-cristal", name: "Hacha Guerra Cristal", price: 220, description: "Hacha de guerra de cristal.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_cristal.png" },
+        { id: "hacha-guerra-daedrica", name: "Hacha Guerra Daédrica", price: 450, description: "Hacha de guerra daédrica.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_daedrica.png" },
+        { id: "hacha-guerra-ebano", name: "Hacha Guerra Ébano", price: 320, description: "Hacha de guerra de ébano.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_ebano.png" },
+        { id: "hacha-guerra-elfica", name: "Hacha Guerra Élfica", price: 160, description: "Hacha de guerra élfica.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_elfica.png" },
+        { id: "hacha-guerra-enano", name: "Hacha Guerra Enano", price: 210, description: "Hacha de guerra enana.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_enano.png" },
+        { id: "hacha-guerra-hierro", name: "Hacha Guerra Hierro", price: 45, description: "Hacha de guerra de hierro.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_hierro.png" },
+        { id: "hacha-guerra-nordica", name: "Hacha Guerra Nórdica", price: 130, description: "Hacha de guerra nórdica.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_nordica.png" },
+        { id: "hacha-guerra-orca", name: "Hacha Guerra Orca", price: 170, description: "Hacha de guerra orca.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_orca.png" },
+        { id: "hacha-guerra-stalhrim", name: "Hacha Guerra Stalhrim", price: 280, description: "Hacha de guerra de stalhrim.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_stalhrim.png" },
+        { id: "maza-acero", name: "Maza Acero", price: 70, description: "Maza de acero.", image: "assets/img/Herreria/Armas/Una_mano/Maza_acero.png" },
+        { id: "maza-cristal", name: "Maza Cristal", price: 200, description: "Maza de cristal.", image: "assets/img/Herreria/Armas/Una_mano/Maza_cristal.png" },
+        { id: "maza-daedrica", name: "Maza Daédrica", price: 420, description: "Maza daédrica.", image: "assets/img/Herreria/Armas/Una_mano/Maza_daedrica.png" },
+        { id: "maza-ebano", name: "Maza Ébano", price: 300, description: "Maza de ébano.", image: "assets/img/Herreria/Armas/Una_mano/Maza_ebano.png" },
+        { id: "maza-elfica", name: "Maza Élfica", price: 150, description: "Maza élfica.", image: "assets/img/Herreria/Armas/Una_mano/Maza_elfica.png" },
+        { id: "maza-enana", name: "Maza Enana", price: 190, description: "Maza enana.", image: "assets/img/Herreria/Armas/Una_mano/Maza_enana.png" },
+        { id: "maza-hierro", name: "Maza Hierro", price: 40, description: "Maza de hierro.", image: "assets/img/Herreria/Armas/Una_mano/Maza_hierro.png" },
+        { id: "maza-nordica", name: "Maza Nórdica", price: 120, description: "Maza nórdica.", image: "assets/img/Herreria/Armas/Una_mano/Maza_nordica.png" },
+        { id: "maza-nordica-antigua", name: "Maza Nórdica Antigua", price: 130, description: "Maza nórdica antigua.", image: "assets/img/Herreria/Armas/Una_mano/Maza_nordica_antigua.png" },
+        { id: "maza-orca", name: "Maza Orca", price: 160, description: "Maza orca.", image: "assets/img/Herreria/Armas/Una_mano/Maza_orca.png" },
+        { id: "maza-stalhrim", name: "Maza Stalhrim", price: 260, description: "Maza de stalhrim.", image: "assets/img/Herreria/Armas/Una_mano/Maza_stalhrim.png" }
       ]
     },
     {
-      titulo: "Legendarias",
+      titulo: "Armas de Dos Manos",
       items: [
-        { id: "her-leg-daedrico", name: "Daédrico", price: 700 },
-        { id: "her-leg-hueso-dragon", name: "Hueso de Dragón", price: 650 },
-        { id: "her-leg-stalhrim", name: "Stalhrim", price: 550 },
-        { id: "her-leg-nordico", name: "Nórdico", price: 300 }
+        { id: "gran-espada-acero", name: "Gran Espada Acero", price: 100, description: "Gran espada de acero.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_acero.png" },
+        { id: "gran-espada-cristal", name: "Gran Espada Cristal", price: 280, description: "Gran espada de cristal.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_cristal.png" },
+        { id: "gran-espada-daedrica", name: "Gran Espada Daédrica", price: 550, description: "Gran espada daédrica.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_daedrica.png" },
+        { id: "gran-espada-ebano", name: "Gran Espada Ébano", price: 400, description: "Gran espada de ébano.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_ebano.png" },
+        { id: "gran-espada-elfica", name: "Gran Espada Élfica", price: 220, description: "Gran espada élfica.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_elfica.png" },
+        { id: "gran-espada-enana", name: "Gran Espada Enana", price: 280, description: "Gran espada enana.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_enana.png" },
+        { id: "gran-espada-heroe-nordico", name: "Gran Espada Héroe Nórdico", price: 350, description: "Gran espada de héroe nórdico.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_heroe-nordico.png" },
+        { id: "gran-espada-hierro", name: "Gran Espada Hierro", price: 70, description: "Gran espada de hierro.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_hierro.png" },
+        { id: "gran-espada-nordica", name: "Gran Espada Nórdica", price: 180, description: "Gran espada nórdica.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_nordica.png" },
+        { id: "gran-espada-orca", name: "Gran Espada Orca", price: 230, description: "Gran espada orca.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_orca.png" },
+        { id: "gran-espada-stalhrim", name: "Gran Espada Stalhrim", price: 380, description: "Gran espada de stalhrim.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_stalhrim.png" }
+      ]
+    },
+    {
+      titulo: "Minerales, Lingotes y Herramientas",
+      items: [
+        { id: "ambar", name: "Ámbar", price: 15, description: "Ámbar natural.", image: "assets/img/Herreria/Varios/Ambar.png" },
+        { id: "ambar-refinado", name: "Ámbar Refinado", price: 25, description: "Ámbar refinado.", image: "assets/img/Herreria/Varios/Ambar_refinado.png" },
+        { id: "cuero", name: "Cuero", price: 10, description: "Cuero curtido.", image: "assets/img/Herreria/Varios/Cuero.png" },
+        { id: "lingote-acero", name: "Lingote Acero", price: 20, description: "Lingote de acero.", image: "assets/img/Herreria/Varios/Lingote_acero.png" },
+        { id: "lingote-azogue", name: "Lingote Azogue", price: 18, description: "Lingote de azogue.", image: "assets/img/Herreria/Varios/Lingote_azogue.png" },
+        { id: "lingote-corindon", name: "Lingote Corindón", price: 16, description: "Lingote de corindón.", image: "assets/img/Herreria/Varios/Lingote_corindon.png" },
+        { id: "lingote-ebano", name: "Lingote Ébano", price: 50, description: "Lingote de ébano.", image: "assets/img/Herreria/Varios/Lingote_ebano.png" },
+        { id: "lingote-hierro", name: "Lingote Hierro", price: 8, description: "Lingote de hierro.", image: "assets/img/Herreria/Varios/Lingote_hierro.png" },
+        { id: "lingote-metal-enano", name: "Lingote Metal Enano", price: 30, description: "Lingote de metal enano.", image: "assets/img/Herreria/Varios/Lingote_metal_enano.png" },
+        { id: "lingote-oricalco", name: "Lingote Oricalco", price: 20, description: "Lingote de oricalco.", image: "assets/img/Herreria/Varios/Lingote_oricalco.png" },
+        { id: "lingote-oro", name: "Lingote Oro", price: 40, description: "Lingote de oro.", image: "assets/img/Herreria/Varios/Lingote_oro.png" },
+        { id: "lingote-plata", name: "Lingote Plata", price: 25, description: "Lingote de plata.", image: "assets/img/Herreria/Varios/Lingote_plata.png" },
+        { id: "malaquita-refinada", name: "Malaquita Refinada", price: 20, description: "Malaquita refinada.", image: "assets/img/Herreria/Varios/Malaquita_refinada.png" },
+        { id: "mineral-azogue", name: "Mineral Azogue", price: 12, description: "Mineral de azogue.", image: "assets/img/Herreria/Varios/Mineral_azogue.png" },
+        { id: "mineral-corindon", name: "Mineral Corindón", price: 10, description: "Mineral de corindón.", image: "assets/img/Herreria/Varios/Mineral_corindon.png" },
+        { id: "mineral-ebano", name: "Mineral Ébano", price: 35, description: "Mineral de ébano.", image: "assets/img/Herreria/Varios/Mineral_ebano.png" },
+        { id: "mineral-hierro", name: "Mineral Hierro", price: 5, description: "Mineral de hierro.", image: "assets/img/Herreria/Varios/Mineral_hierro.png" },
+        { id: "mineral-malaquita", name: "Mineral Malaquita", price: 12, description: "Mineral de malaquita.", image: "assets/img/Herreria/Varios/Mineral_malaquita.png" },
+        { id: "mineral-oricalco", name: "Mineral Oricalco", price: 15, description: "Mineral de oricalco.", image: "assets/img/Herreria/Varios/Mineral_oricalco.png" },
+        { id: "mineral-oro", name: "Mineral Oro", price: 25, description: "Mineral de oro.", image: "assets/img/Herreria/Varios/Mineral_oro.png" },
+        { id: "mineral-piedra-lunar", name: "Mineral Piedra Lunar", price: 18, description: "Mineral de piedra lunar.", image: "assets/img/Herreria/Varios/Mineral_piedra_lunar.png" },
+        { id: "mineral-plata", name: "Mineral Plata", price: 15, description: "Mineral de plata.", image: "assets/img/Herreria/Varios/Mineral_plata.png" },
+        { id: "pala", name: "Pala", price: 10, description: "Pala de herrero.", image: "assets/img/Herreria/Varios/Pala.png" },
+        { id: "piedra-lunar-refinada", name: "Piedra Lunar Refinada", price: 25, description: "Piedra lunar refinada.", image: "assets/img/Herreria/Varios/Piedra_lunar_refinada.png" },
+        { id: "piel-caballo", name: "Piel Caballo", price: 15, description: "Piel de caballo.", image: "assets/img/Herreria/Varios/Piel_caballo.png" },
+        { id: "piel-cabra", name: "Piel Cabra", price: 10, description: "Piel de cabra.", image: "assets/img/Herreria/Varios/Piel_cabra.png" },
+        { id: "piel-ciervo", name: "Piel Ciervo", price: 12, description: "Piel de ciervo.", image: "assets/img/Herreria/Varios/Piel_ciervo.png" },
+        { id: "piel-ciervo-2", name: "Piel Ciervo 2", price: 12, description: "Piel de ciervo.", image: "assets/img/Herreria/Varios/Piel_ciervo_2.png" },
+        { id: "piel-gato-sable", name: "Piel Gato Sable", price: 18, description: "Piel de gato sable.", image: "assets/img/Herreria/Varios/Piel_gato_sable.png" },
+        { id: "piel-hombre-lobo", name: "Piel Hombre Lobo", price: 25, description: "Piel de hombre lobo.", image: "assets/img/Herreria/Varios/Piel_hombre_lobo.png" },
+        { id: "piel-lobo", name: "Piel Lobo", price: 10, description: "Piel de lobo.", image: "assets/img/Herreria/Varios/Piel_lobo.png" },
+        { id: "piel-oso", name: "Piel Oso", price: 16, description: "Piel de oso.", image: "assets/img/Herreria/Varios/Piel_oso.png" },
+        { id: "piel-vaca", name: "Piel Vaca", price: 12, description: "Piel de vaca.", image: "assets/img/Herreria/Varios/Piel_vaca.png" },
+        { id: "piel-zorro", name: "Piel Zorro", price: 10, description: "Piel de zorro.", image: "assets/img/Herreria/Varios/Piel_zorro.png" },
+        { id: "pinzas", name: "Pinzas", price: 8, description: "Pinzas de herrero.", image: "assets/img/Herreria/Varios/Pinzas.png" },
+        { id: "sierra", name: "Sierra", price: 10, description: "Sierra de herrero.", image: "assets/img/Herreria/Varios/Sierra.png" },
+        { id: "stalhrim", name: "Stalhrim", price: 40, description: "Stalhrim en bruto.", image: "assets/img/Herreria/Varios/Stalhrim.png" },
+        { id: "tiras-cuero", name: "Tiras Cuero", price: 8, description: "Tiras de cuero.", image: "assets/img/Herreria/Varios/Tiras_cuero.png" }
       ]
     }
   ],
 
+  // ----------------------------------------------------------
+  // 3. ROPA FINA – Radiant Raiment
+  // ----------------------------------------------------------
+  ropaFina: [
+    {
+      titulo: "Ropa y Vestimenta",
+      items: [
+        { id: "botas-fiesta", name: "Botas Fiesta", price: 40, description: "Botas elegantes para ocasiones especiales.", image: "assets/img/Ropa_fina/Botas_fiesta.png" },
+        { id: "botas-finas", name: "Botas Finas", price: 35, description: "Botas de calidad.", image: "assets/img/Ropa_fina/Botas_finas.png" },
+        { id: "colgante-imperio-oriental", name: "Colgante Imperio Oriental", price: 80, description: "Colgante del Imperio Oriental.", image: "assets/img/Ropa_fina/Colgante_imperio_oriental.png" },
+        { id: "collar-oro", name: "Collar Oro", price: 100, description: "Collar de oro.", image: "assets/img/Ropa_fina/Collar_oro.png" },
+        { id: "collar-oro-con-joyas", name: "Collar Oro con Joyas", price: 150, description: "Collar de oro con joyas.", image: "assets/img/Ropa_fina/Collar_oro_con_joyas.png" },
+        { id: "collar-oro-y-diamante", name: "Collar Oro y Diamante", price: 200, description: "Collar de oro y diamante.", image: "assets/img/Ropa_fina/Collar_oro_y_diamante.png" },
+        { id: "collar-oro-y-rubi", name: "Collar Oro y Rubí", price: 180, description: "Collar de oro y rubí.", image: "assets/img/Ropa_fina/Collar_oro_y_rubi.png" },
+        { id: "collar-plata", name: "Collar Plata", price: 60, description: "Collar de plata.", image: "assets/img/Ropa_fina/Collar_plata.png" },
+        { id: "collar-plata-con-joyas", name: "Collar Plata con Joyas", price: 90, description: "Collar de plata con joyas.", image: "assets/img/Ropa_fina/Collar_plata_con_joyas.png" },
+        { id: "collar-plata-y-esmeralda", name: "Collar Plata y Esmeralda", price: 120, description: "Collar de plata y esmeralda.", image: "assets/img/Ropa_fina/Collar_plata_y_esmeralda.png" },
+        { id: "corona-boda", name: "Corona Boda", price: 250, description: "Corona nupcial.", image: "assets/img/Ropa_fina/Corona_boda.png" },
+        { id: "delantal-herrero", name: "Delantal Herrero", price: 30, description: "Delantal de herrero.", image: "assets/img/Ropa_fina/Delantal_herrero.png" },
+        { id: "guantes", name: "Guantes", price: 15, description: "Guantes comunes.", image: "assets/img/Ropa_fina/Guantes.png" },
+        { id: "ropa-fina-1", name: "Ropa Fina 1", price: 80, description: "Vestimenta fina.", image: "assets/img/Ropa_fina/Ropa_fina_1.png" },
+        { id: "ropa-fina-2", name: "Ropa Fina 2", price: 90, description: "Vestimenta fina.", image: "assets/img/Ropa_fina/Ropa_fina_2.png" },
+        { id: "ropa-fina-3", name: "Ropa Fina 3", price: 85, description: "Vestimenta fina.", image: "assets/img/Ropa_fina/Ropa_fina_3.png" },
+        { id: "ropa-fina-4", name: "Ropa Fina 4", price: 95, description: "Vestimenta fina.", image: "assets/img/Ropa_fina/Ropa_fina_4.png" },
+        { id: "ropa-noble", name: "Ropa Noble", price: 150, description: "Atuendo de noble.", image: "assets/img/Ropa_fina/Ropa_noble.png" },
+        { id: "sombrero-chef", name: "Sombrero Chef", price: 20, description: "Gorro de chef.", image: "assets/img/Ropa_fina/Sombrero_chef.png" },
+        { id: "sombrero-fino", name: "Sombrero Fino", price: 40, description: "Sombrero elegante.", image: "assets/img/Ropa_fina/Sombrero_fino.png" },
+        { id: "tunica-chef", name: "Túnica Chef", price: 35, description: "Túnica de chef.", image: "assets/img/Ropa_fina/Tunica_chef.png" },
+        { id: "weddingdress-f", name: "Vestido de Novia (F)", price: 200, description: "Vestido de novia femenino.", image: "assets/img/Ropa_fina/WeddingDress(f).png" },
+        { id: "weddingdress-m", name: "Vestido de Novia (M)", price: 200, description: "Traje de novio masculino.", image: "assets/img/Ropa_fina/WeddingDress(m).png" },
+        { id: "zapatos", name: "Zapatos", price: 20, description: "Zapatos comunes.", image: "assets/img/Ropa_fina/Zapatos.png" }
+      ]
+    },
+    {
+      titulo: "Joyas y Aros",
+      items: [
+        { id: "amuleto-nordico", name: "Amuleto Nórdico", price: 80, description: "Amuleto de estilo nórdico.", image: "assets/img/Ropa_fina/Amuleto_nordico.png" },
+        { id: "anillo-nordico", name: "Anillo Nórdico", price: 70, description: "Anillo de estilo nórdico.", image: "assets/img/Ropa_fina/Anillo_nordico.png" },
+        { id: "anillo-oro", name: "Anillo Oro", price: 60, description: "Anillo de oro.", image: "assets/img/Ropa_fina/Anillo_oro.png" },
+        { id: "anillo-oro-y-diamante", name: "Anillo Oro y Diamante", price: 150, description: "Anillo de oro con diamante.", image: "assets/img/Ropa_fina/Anillo_oro_y_diamante.png" },
+        { id: "anillo-oro-y-esmeralda", name: "Anillo Oro y Esmeralda", price: 120, description: "Anillo de oro con esmeralda.", image: "assets/img/Ropa_fina/Anillo_oro_y_esmeralda.png" },
+        { id: "anillo-oro-y-safiro", name: "Anillo Oro y Zafiro", price: 130, description: "Anillo de oro con zafiro.", image: "assets/img/Ropa_fina/Anillo_oro_y_safiro.png" },
+        { id: "anillo-plata", name: "Anillo Plata", price: 40, description: "Anillo de plata.", image: "assets/img/Ropa_fina/Anillo_plata.png" },
+        { id: "anillo-plata-y-amatista", name: "Anillo Plata y Amatista", price: 70, description: "Anillo de plata con amatista.", image: "assets/img/Ropa_fina/Anillo_plata_y_amatista.png" },
+        { id: "anillo-plata-y-granate", name: "Anillo Plata y Granate", price: 80, description: "Anillo de plata con granate.", image: "assets/img/Ropa_fina/Anillo_plata_y_granate.png" },
+        { id: "anillo-plata-y-rubi", name: "Anillo Plata y Rubí", price: 90, description: "Anillo de plata con rubí.", image: "assets/img/Ropa_fina/Anillo_plata_y_rubi.png" },
+        { id: "aro-cobre-y-onice", name: "Aro Cobre y Ónice", price: 40, description: "Aro de cobre con ónice.", image: "assets/img/Ropa_fina/Aro_cobre_y_onice.png" },
+        { id: "aro-cobre-y-piedra-lunar", name: "Aro Cobre y Piedra Lunar", price: 50, description: "Aro de cobre con piedra lunar.", image: "assets/img/Ropa_fina/Aro_cobre_y_piedra_lunar.png" },
+        { id: "aro-cobre-y-rubi", name: "Aro Cobre y Rubí", price: 60, description: "Aro de cobre con rubí.", image: "assets/img/Ropa_fina/Aro_cobre_y_rubi.png" },
+        { id: "aro-cobre-y-safiro", name: "Aro Cobre y Zafiro", price: 55, description: "Aro de cobre con zafiro.", image: "assets/img/Ropa_fina/Aro_cobre_y_safiro.png" },
+        { id: "aro-jade-y-esmeralda", name: "Aro Jade y Esmeralda", price: 100, description: "Aro de jade con esmeralda.", image: "assets/img/Ropa_fina/Aro_jade_y_esmeralda.png" },
+        { id: "aro-jade-y-safiro", name: "Aro Jade y Zafiro", price: 110, description: "Aro de jade con zafiro.", image: "assets/img/Ropa_fina/Aro_jade_y_safiro.png" },
+        { id: "aro-nordico", name: "Aro Nórdico", price: 80, description: "Aro de estilo nórdico.", image: "assets/img/Ropa_fina/Aro_nordico.png" },
+        { id: "aro-oro-y-esmeralda", name: "Aro Oro y Esmeralda", price: 120, description: "Aro de oro con esmeralda.", image: "assets/img/Ropa_fina/Aro_oro_y_esmeralda.png" },
+        { id: "aro-oro-y-rubi", name: "Aro Oro y Rubí", price: 130, description: "Aro de oro con rubí.", image: "assets/img/Ropa_fina/Aro_oro_y_rubi.png" },
+        { id: "aro-plata-y-piedra-lunar", name: "Aro Plata y Piedra Lunar", price: 70, description: "Aro de plata con piedra lunar.", image: "assets/img/Ropa_fina/Aro_plata_y_piedra_lunar.png" },
+        { id: "aro-plata-y-safiro", name: "Aro Plata y Zafiro", price: 80, description: "Aro de plata con zafiro.", image: "assets/img/Ropa_fina/Aro_plata_y_safiro.png" }
+      ]
+    }
+  ],
+
+  // ----------------------------------------------------------
+  // 4. COMIDA Y TABERNA – Anoriath's Stall
+  // ----------------------------------------------------------
   comida: [
     {
-      titulo: "Bebidas alcohólicas",
+      titulo: "Bebidas Alcohólicas",
       items: [
-        { id: "com-beb-hidromiel", name: "Hidromiel", price: 10 },
-        { id: "com-beb-hidromiel-espino-negro", name: "Hidromiel de Espino Negro", price: 15 },
-        { id: "com-beb-cerveza", name: "Cerveza", price: 8 },
-        { id: "com-beb-cerveza-negra", name: "Cerveza negra", price: 10 },
-        { id: "com-beb-vino", name: "Vino", price: 12 },
-        { id: "com-beb-vino-tinto", name: "Vino tinto", price: 12 },
-        { id: "com-beb-vino-blanco", name: "Vino blanco", price: 12 },
-        { id: "com-beb-vino-fuego", name: "Vino de fuego", price: 20 },
-        { id: "com-beb-brandy", name: "Brandy", price: 18 }
+        { id: "brandi-coloviano", name: "Brandi Coloviano", price: 20, description: "Brandi de Colovia.", image: "assets/img/Taberna/Comida/Brandi_coloviano.png" },
+        { id: "cerveza", name: "Cerveza", price: 8, description: "Cerveza común.", image: "assets/img/Taberna/Comida/Cerveza.png" },
+        { id: "reserva-espino-negro", name: "Reserva Espino Negro", price: 15, description: "Hidromiel de espino negro.", image: "assets/img/Taberna/Comida/Reserva_espino_negro.png" },
+        { id: "vino", name: "Vino", price: 12, description: "Vino común.", image: "assets/img/Taberna/Comida/Vino_altopng" },
+        { id: "vino-especiado-san", name: "Vino Especiado San", price: 18, description: "Vino especiado.", image: "assets/img/Taberna/Comida/Vino_especiado_san.png" }
       ]
     },
     {
-      titulo: "Comida preparada",
+      titulo: "Comida Preparada",
       items: [
-        { id: "com-prep-estofado-manzana-col", name: "Estofado de manzana y col", price: 6 },
-        { id: "com-prep-estofado-ternera", name: "Estofado de ternera", price: 8 },
-        { id: "com-prep-pan", name: "Pan", price: 2 },
-        { id: "com-prep-pan-mantequilla", name: "Pan con mantequilla", price: 3 },
-        { id: "com-prep-queso", name: "Queso", price: 3 },
-        { id: "com-prep-torta", name: "Torta", price: 5 },
-        { id: "com-prep-torta-manzana", name: "Torta de manzana", price: 6 },
-        { id: "com-prep-empanada", name: "Empanada", price: 4 },
-        { id: "com-prep-empanada-manzana", name: "Empanada de manzana", price: 5 },
-        { id: "com-prep-pescado-ahumado", name: "Pescado ahumado", price: 4 },
-        { id: "com-prep-salmon-ahumado", name: "Salmón ahumado", price: 5 }
+        { id: "anca-caballo-cocida", name: "Anca Caballo Cocida", price: 10, description: "Anca de caballo cocida.", image: "assets/img/Taberna/Comida/Anca_caballo_cocida.png" },
+        { id: "asado-pata-cabra", name: "Asado Pata Cabra", price: 12, description: "Asado de pata de cabra.", image: "assets/img/Taberna/Comida/Asado_pata_cabra.png" },
+        { id: "bisque-cangrejo-con-tomate-asado", name: "Bisque Cangrejo con Tomate Asado", price: 14, description: "Sopa de cangrejo con tomate.", image: "assets/img/Taberna/Comida/Bisque_cangrejo_con_tomate_asado.png" },
+        { id: "calabaza", name: "Calabaza", price: 3, description: "Calabaza entera.", image: "assets/img/Taberna/Comida/Calabaza.png" },
+        { id: "carne-almeja", name: "Carne Almeja", price: 6, description: "Carne de almeja.", image: "assets/img/Taberna/Comida/Carne_almeja.png" },
+        { id: "carne-caballo", name: "Carne Caballo", price: 8, description: "Carne de caballo.", image: "assets/img/Taberna/Comida/Carne_caballo.png" },
+        { id: "carne-cangrejo", name: "Carne Cangrejo", price: 7, description: "Carne de cangrejo.", image: "assets/img/Taberna/Comida/Carne_cangrejo.png" },
+        { id: "carne-horker", name: "Carne Horker", price: 9, description: "Carne de horker.", image: "assets/img/Taberna/Comida/Carne_horker.png" },
+        { id: "carne-jabali", name: "Carne Jabalí", price: 8, description: "Carne de jabalí.", image: "assets/img/Taberna/Comida/Carne_jabali.png" },
+        { id: "carne-jabali-cocida", name: "Carne Jabalí Cocida", price: 10, description: "Carne de jabalí cocida.", image: "assets/img/Taberna/Comida/Carne_jabali_cocida.png" },
+        { id: "carne-perro", name: "Carne Perro", price: 6, description: "Carne de perro.", image: "assets/img/Taberna/Comida/Carne_perro.png" },
+        { id: "carne-res-cocida", name: "Carne Res Cocida", price: 10, description: "Carne de res cocida.", image: "assets/img/Taberna/Comida/Carne_res_cocida.png" },
+        { id: "carne-res-cruda", name: "Carne Res Cruda", price: 5, description: "Carne de res cruda.", image: "assets/img/Taberna/Comida/Carne_res_cruda.png" },
+        { id: "carne-skeever-chamuscada", name: "Carne Skeever Chamuscada", price: 8, description: "Carne de skeever chamuscada.", image: "assets/img/Taberna/Comida/Carne_skeever_chamuscada.png" },
+        { id: "carpa", name: "Carpa", price: 5, description: "Carpa fresca.", image: "assets/img/Taberna/Comida/Carpa.png" },
+        { id: "carpa-cocida", name: "Carpa Cocida", price: 7, description: "Carpa cocida.", image: "assets/img/Taberna/Comida/Carpa_cocida.png" },
+        { id: "chuleta-ciervo", name: "Chuleta Ciervo", price: 10, description: "Chuleta de ciervo.", image: "assets/img/Taberna/Comida/Chuleta_ciervo.png" },
+        { id: "col", name: "Col", price: 2, description: "Col entera.", image: "assets/img/Taberna/Comida/Col.png" },
+        { id: "mantequilla", name: "Mantequilla", price: 4, description: "Mantequilla.", image: "assets/img/Taberna/Comida/Manquilla.png" },
+        { id: "porcion-queso-eidar", name: "Porción Queso Eidar", price: 5, description: "Queso Eidar en porción.", image: "assets/img/Taberna/Comida/Porcion_queso_eidar.png" },
+        { id: "puerro", name: "Puerro", price: 2, description: "Puerro fresco.", image: "assets/img/Taberna/Comida/Puerro.png" },
+        { id: "puerros-asados", name: "Puerros Asados", price: 4, description: "Puerros asados.", image: "assets/img/Taberna/Comida/Puerros_asados.png" },
+        { id: "queso-cabra-empezado", name: "Queso Cabra Empezado", price: 6, description: "Queso de cabra.", image: "assets/img/Taberna/Comida/Queso_cabra_empezado.png" },
+        { id: "rollo-dulce", name: "Rollo Dulce", price: 5, description: "Rollo dulce.", image: "assets/img/Taberna/Comida/Rollo_dulce.png" },
+        { id: "rueda-queso-cabra", name: "Rueda Queso Cabra", price: 8, description: "Rueda de queso de cabra.", image: "assets/img/Taberna/Comida/Rueda_queso_cabra.png" },
+        { id: "rueda-queso-eidar", name: "Rueda Queso Eidar", price: 10, description: "Rueda de queso Eidar.", image: "assets/img/Taberna/Comida/Rueda_queso_eidar.png" },
+        { id: "salmon", name: "Salmón", price: 8, description: "Salmón fresco.", image: "assets/img/Taberna/Comida/Salmon.png" },
+        { id: "sopa", name: "Sopa", price: 6, description: "Sopa básica.", image: "assets/img/Taberna/Comida/Sopa.png" },
+        { id: "sopa-cremosa-cangrejo", name: "Sopa Cremosa Cangrejo", price: 10, description: "Sopa cremosa de cangrejo.", image: "assets/img/Taberna/Comida/Sopa_cremosa_cangrejo.png" },
+        { id: "sopa-patata", name: "Sopa Patata", price: 6, description: "Sopa de patata.", image: "assets/img/Taberna/Comida/Sopa_patata.png" },
+        { id: "sopa-repollo-patata", name: "Sopa Repollo Patata", price: 7, description: "Sopa de repollo y patata.", image: "assets/img/Taberna/Comida/Sopa_repollo_patata.png" },
+        { id: "sopa-tomate", name: "Sopa Tomate", price: 6, description: "Sopa de tomate.", image: "assets/img/Taberna/Comida/Sopa_tomate.png" },
+        { id: "tarta-jazbay", name: "Tarta Jazbay", price: 8, description: "Tarta de jazbay.", image: "assets/img/Taberna/Comida/Tarta_jazbay.png" },
+        { id: "tomate", name: "Tomate", price: 2, description: "Tomate fresco.", image: "assets/img/Taberna/Comida/Tomate.png" },
+        { id: "tortitas-cangrejo", name: "Tortitas Cangrejo", price: 9, description: "Tortitas de cangrejo.", image: "assets/img/Taberna/Comida/Tortitas_cangrejo.png" },
+        { id: "venado", name: "Venado", price: 12, description: "Carne de venado.", image: "assets/img/Taberna/Comida/Venado.png" }
       ]
     },
     {
-      titulo: "Frutas y verduras",
+      titulo: "Ingredientes de Cocina",
       items: [
-        { id: "com-fv-manzana", name: "Manzana", price: 1 },
-        { id: "com-fv-zanahoria", name: "Zanahoria", price: 1 },
-        { id: "com-fv-cebolla", name: "Cebolla", price: 1 },
-        { id: "com-fv-puerro", name: "Puerro", price: 1 },
-        { id: "com-fv-tomate", name: "Tomate", price: 1 }
+        { id: "ajo-cocina", name: "Ajo", price: 3, description: "Ajo para cocinar.", image: "assets/img/Taberna/Ingredientes/Ajo.png" },
+        { id: "lavanda-cocina", name: "Lavanda", price: 4, description: "Lavanda para cocinar.", image: "assets/img/Taberna/Ingredientes/Lavanda.png" },
+        { id: "monton-sal-cocina", name: "Montón Sal", price: 3, description: "Sal para cocinar.", image: "assets/img/Taberna/Ingredientes/Monton_sal.png" },
+        { id: "sales-fuego-cocina", name: "Sales Fuego", price: 12, description: "Sales de fuego (para cocinar).", image: "assets/img/Taberna/Ingredientes/Sales_fuego.png" },
+        { id: "carne-salmon-cocina", name: "Carne Salmón", price: 7, description: "Carne de salmón.", image: "assets/img/Taberna/Ingredientes/Carne_salmon.png" }
       ]
     },
     {
-      titulo: "Ingredientes crudos",
+      titulo: "Utensilios y Vajilla",
       items: [
-        { id: "com-ing-ajo", name: "Ajo", price: 1 },
-        { id: "com-ing-carne-caballo", name: "Carne de caballo", price: 3 },
-        { id: "com-ing-carne-ciervo", name: "Carne de ciervo", price: 3 },
-        { id: "com-ing-pollo", name: "Pollo", price: 3 },
-        { id: "com-ing-huevo-gallina", name: "Huevo de gallina", price: 1 },
-        { id: "com-ing-leche", name: "Leche", price: 2 },
-        { id: "com-ing-mantequilla", name: "Mantequilla", price: 2 },
-        { id: "com-ing-miel", name: "Miel", price: 3 },
-        { id: "com-ing-sal", name: "Sal", price: 1 },
-        { id: "com-ing-saco-harina", name: "Saco de harina", price: 5 },
-        { id: "com-ing-trigo", name: "Trigo", price: 1 }
+        { id: "bowl-1-comida", name: "Bowl", price: 3, description: "Cuenco.", image: "assets/img/Taberna/Comida/Bowl_1.png" },
+        { id: "caliz-comida", name: "Cáliz", price: 5, description: "Cáliz.", image: "assets/img/Taberna/Comida/Caliz.png" },
+        { id: "caliz-1-comida", name: "Cáliz 1", price: 5, description: "Cáliz.", image: "assets/img/Taberna/Comida/Caliz_1.png" },
+        { id: "caliz2-comida", name: "Cáliz 2", price: 6, description: "Cáliz.", image: "assets/img/Taberna/Comida/Caliz2.png" },
+        { id: "cuenco-madera-comida", name: "Cuenco Madera", price: 3, description: "Cuenco de madera.", image: "assets/img/Taberna/Comida/Cuenco_madera.png" },
+        { id: "pichel-comida", name: "Pichel", price: 4, description: "Pichel.", image: "assets/img/Taberna/Comida/Pichel.png" },
+        { id: "plato-comida", name: "Plato", price: 2, description: "Plato.", image: "assets/img/Taberna/Comida/Plato.png" },
+        { id: "plato2-comida", name: "Plato 2", price: 3, description: "Plato.", image: "assets/img/Taberna/Comida/Plato2.png" },
+        { id: "plato-madera-comida", name: "Plato Madera", price: 2, description: "Plato de madera.", image: "assets/img/Taberna/Comida/Plato_madera.png" },
+        { id: "taza-comida", name: "Taza", price: 3, description: "Taza.", image: "assets/img/Taberna/Comida/Taza.png" },
+        { id: "tenedor-comida", name: "Tenedor", price: 2, description: "Tenedor.", image: "assets/img/Taberna/Comida/Tenedor.png" }
+      ]
+    }
+  ],
+
+  // ----------------------------------------------------------
+  // 5. MAGIA – College of Winterhold
+  // ----------------------------------------------------------
+  magia: [
+    {
+      titulo: "Bastones",
+      items: [
+        { id: "baston-alteracion", name: "Bastón Alteración", price: 150, description: "Bastón de alteración.", image: "assets/img/Magia/Bastones/Baston_alteracion.png" },
+        { id: "baston-conjuracion", name: "Bastón Conjuración", price: 160, description: "Bastón de conjuración.", image: "assets/img/Magia/Bastones/Baston_conjuración.png" },
+        { id: "baston-destruccion", name: "Bastón Destrucción", price: 170, description: "Bastón de destrucción.", image: "assets/img/Magia/Bastones/Baston_destruccion.png" },
+        { id: "baston-falmer", name: "Bastón Falmer", price: 130, description: "Bastón falmer.", image: "assets/img/Magia/Bastones/Baston_falmer.png" },
+        { id: "baston-ilusion", name: "Bastón Ilusión", price: 140, description: "Bastón de ilusión.", image: "assets/img/Magia/Bastones/Baston_llusion.png" },
+        { id: "baston-magnus", name: "Bastón Magnus", price: 300, description: "Bastón de Magnus.", image: "assets/img/Magia/Bastones/Baston_magnus.png" },
+        { id: "baston-restauracion", name: "Bastón Restauración", price: 150, description: "Bastón de restauración.", image: "assets/img/Magia/Bastones/Baston_restauración.png" }
       ]
     },
     {
-      titulo: "Varios",
+      titulo: "Libros de Hechizos",
       items: [
-        { id: "com-var-plato", name: "Plato", price: 1 },
-        { id: "com-var-tazon", name: "Tazón", price: 1 },
-        { id: "com-var-copa", name: "Copa", price: 2 },
-        { id: "com-var-jarra", name: "Jarra", price: 2 },
-        { id: "com-var-botella-vino", name: "Botella de vino", price: 3 }
+        { id: "hechizo-alteracion", name: "Hechizo Alteración", price: 100, description: "Tomo de alteración.", image: "assets/img/Magia/Libros/Hechizo_alteracion.png" },
+        { id: "hechizo-conjuracion", name: "Hechizo Conjuración", price: 100, description: "Tomo de conjuración.", image: "assets/img/Magia/Libros/Hechizo_conjuracion.png" },
+        { id: "hechizo-destruccion", name: "Hechizo Destrucción", price: 100, description: "Tomo de destrucción.", image: "assets/img/Magia/Libros/Hechizo_destruccion.png" },
+        { id: "hechizo-ilusion", name: "Hechizo Ilusión", price: 100, description: "Tomo de ilusión.", image: "assets/img/Magia/Libros/Hechizo_ilusion.png" },
+        { id: "hechizo-restauracion", name: "Hechizo Restauración", price: 100, description: "Tomo de restauración.", image: "assets/img/Magia/Libros/Hechizo_restauration.png" }
+      ]
+    },
+    {
+      titulo: "Pergaminos",
+      items: [
+        { id: "pergamino-1", name: "Pergamino 1", price: 50, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_1.png" },
+        { id: "pergamino-2", name: "Pergamino 2", price: 55, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_2.png" },
+        { id: "pergamino-3", name: "Pergamino 3", price: 60, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Perg amino_3.png" },
+        { id: "pergamino-4", name: "Pergamino 4", price: 65, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_4.png" },
+        { id: "pergamino-5", name: "Pergamino 5", price: 70, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergmino_5.png" },
+        { id: "pergamino-6", name: "Pergamino 6", price: 75, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_6.png" }
+      ]
+    },
+    {
+      titulo: "Gemas de Alma y Varios",
+      items: [
+        { id: "carbon-vegetal", name: "Carbón Vegetal", price: 5, description: "Carbón vegetal.", image: "assets/img/Magia/Varios/Carbon_vegetal.png" },
+        { id: "estrella-azura", name: "Estrella Azura", price: 500, description: "Estrella de Azura.", image: "assets/img/Magia/Varios/Estrella_azura.png" },
+        { id: "estrellanegra", name: "Estrella Negra", price: 600, description: "Estrella negra.", image: "assets/img/Magia/Varios/Estrellanegra.png" },
+        { id: "gema-alma-comun", name: "Gema Alma Común", price: 40, description: "Gema de alma común.", image: "assets/img/Magia/Varios/Gema_alma_comun.png" },
+        { id: "gema-almagrande", name: "Gema Alma Grande", price: 100, description: "Gema de alma grande.", image: "assets/img/Magia/Varios/Gema_almagrande.png" },
+        { id: "gema-alma-insignificante", name: "Gema Alma Insignificante", price: 10, description: "Gema de alma insignificante.", image: "assets/img/Magia/Varios/Gema_alma_insignificante.png" },
+        { id: "gema-almamenor", name: "Gema Alma Menor", price: 20, description: "Gema de alma menor.", image: "assets/img/Magia/Varios/Gema_almamenor.png" },
+        { id: "gema-almanegra", name: "Gema Alma Negra", price: 150, description: "Gema de alma negra.", image: "assets/img/Magia/Varios/Gema_almanegra.png" },
+        { id: "gema-almasuperior", name: "Gema Alma Superior", price: 80, description: "Gema de alma superior.", image: "assets/img/Magia/Varios/Gema_almasuperior.png" },
+        { id: "inkwell", name: "Tintero", price: 10, description: "Tintero.", image: "assets/img/Magia/Varios/Inkwell.png" },
+        { id: "piedravarladefectuosa", name: "Piedra Varla Defectuosa", price: 30, description: "Piedra varla defectuosa.", image: "assets/img/Magia/Varios/Piedravarladefectuosa.png" },
+        { id: "pluma", name: "Pluma", price: 5, description: "Pluma para escribir.", image: "assets/img/Magia/Varios/Pluma.png" },
+        { id: "rollo-papel", name: "Rollo Papel", price: 8, description: "Rollo de papel.", image: "assets/img/Magia/Varios/Rollo_papel.png" },
+        { id: "tomate-alma", name: "Tomate Alma", price: 30, description: "Tomate de alma (curioso).", image: "assets/img/Magia/Varios/Tomate_alma.png" }
+      ]
+    },
+    {
+      titulo: "Atuendos de Mago",
+      items: [
+        { id: "botas-mago", name: "Botas Mago", price: 30, description: "Botas de mago.", image: "assets/img/Magia/Atuendos/Botas.png" },
+        { id: "botas-sacerdote-templo", name: "Botas Sacerdote Templo", price: 40, description: "Botas de sacerdote del templo.", image: "assets/img/Magia/Atuendos/Botas_sacerdote_templo.png" },
+        { id: "capucha-mago-1", name: "Capucha Mago 1", price: 30, description: "Capucha de mago.", image: "assets/img/Magia/Atuendos/Capucha_mago_1.png" },
+        { id: "capucha-mago-2", name: "Capucha Mago 2", price: 32, description: "Capucha de mago.", image: "assets/img/Magia/Atuendos/Capucha_mago_2.png" },
+        { id: "capucha-mago-3", name: "Capucha Mago 3", price: 34, description: "Capucha de mago.", image: "assets/img/Magia/Atuendos/Capucha_mago_3.png" },
+        { id: "capucha-mago-4", name: "Capucha Mago 4", price: 36, description: "Capucha de mago.", image: "assets/img/Magia/Atuendos/Capucha_mago_4.png" },
+        { id: "capucha-mago-5", name: "Capucha Mago 5", price: 38, description: "Capucha de mago.", image: "assets/img/Magia/Atuendos/Capucha_mago_5.png" },
+        { id: "capucha-mago-6", name: "Capucha Mago 6", price: 40, description: "Capucha de mago.", image: "assets/img/Magia/Atuendos/Capucha_mago_6.png" },
+        { id: "capucha-sacerdote-templo", name: "Capucha Sacerdote Templo", price: 45, description: "Capucha de sacerdote.", image: "assets/img/Magia/Atuendos/Capucha_sacerdote_templo.png" },
+        { id: "tunica-azul", name: "Túnica Azul", price: 50, description: "Túnica azul.", image: "assets/img/Magia/Atuendos/Tunica_azul.png" },
+        { id: "tunica-colegio-roja", name: "Túnica Colegio Roja", price: 60, description: "Túnica roja del colegio.", image: "assets/img/Magia/Atuendos/Tunica_colegio_roja.png" },
+        { id: "tunica-colegio-verde", name: "Túnica Colegio Verde", price: 60, description: "Túnica verde del colegio.", image: "assets/img/Magia/Atuendos/Tunica_colegio_verde.png" },
+        { id: "tunica-mago-aprendiz", name: "Túnica Mago Aprendiz", price: 40, description: "Túnica de aprendiz.", image: "assets/img/Magia/Atuendos/Tunica_mago_aprendiz.png" },
+        { id: "tunica-mago-azul", name: "Túnica Mago Azul", price: 50, description: "Túnica de mago azul.", image: "assets/img/Magia/Atuendos/Tunica_mago_azul.png" },
+        { id: "tunica-mago-experto", name: "Túnica Mago Experto", price: 80, description: "Túnica de mago experto.", image: "assets/img/Magia/Atuendos/Tunica_mago_experto.png" },
+        { id: "tunica-mago-principiante", name: "Túnica Mago Principiante", price: 30, description: "Túnica de mago principiante.", image: "assets/img/Magia/Atuendos/Tunica_mago_principiante.png" },
+        { id: "tunica-mago-roja", name: "Túnica Mago Roja", price: 50, description: "Túnica de mago roja.", image: "assets/img/Magia/Atuendos/Tunica_mago_roja.png" },
+        { id: "tunica-monje", name: "Túnica Monje", price: 45, description: "Túnica de monje.", image: "assets/img/Magia/Atuendos/Tunica_monje.png" },
+        { id: "tunica-negra", name: "Túnica Negra", price: 55, description: "Túnica negra.", image: "assets/img/Magia/Atuendos/Tunica_negra.png" },
+        { id: "tunica-verde", name: "Túnica Verde", price: 50, description: "Túnica verde.", image: "assets/img/Magia/Atuendos/Tunica_verde.png" }
+      ]
+    }
+  ],
+
+  // ----------------------------------------------------------
+  // 6. BIENES GENERALES – Belethor's General Goods
+  // ----------------------------------------------------------
+  bienesGenerales: [
+    {
+      titulo: "Utensilios y Herramientas",
+      items: [
+        { id: "antorcha", name: "Antorcha", price: 10, description: "Antorcha encendida.", image: "assets/img/Bienes_generales/Antorcha.png" },
+        { id: "bowl", name: "Bowl", price: 3, description: "Cuenco.", image: "assets/img/Bienes_generales/Bowl.png" },
+        { id: "bowl-1", name: "Bowl 1", price: 3, description: "Cuenco.", image: "assets/img/Bienes_generales/Bowl_1.png" },
+        { id: "bowl-3", name: "Bowl 3", price: 4, description: "Cuenco.", image: "assets/img/Bienes_generales/Bowl_3.png" },
+        { id: "cabeza-bruja-glennoril", name: "Cabeza Bruja Glennoril", price: 50, description: "Cabeza de bruja Glennoril.", image: "assets/img/Bienes_generales/Cabeza_bruja_Glennoril.png" },
+        { id: "calavera-troll", name: "Calavera Troll", price: 30, description: "Calavera de troll.", image: "assets/img/Bienes_generales/Calavera_troll.png" },
+        { id: "caliz", name: "Cáliz", price: 5, description: "Cáliz.", image: "assets/img/Bienes_generales/Caliz.png" },
+        { id: "caliz-1", name: "Cáliz 1", price: 5, description: "Cáliz.", image: "assets/img/Bienes_generales/Caliz_1.png" },
+        { id: "caliz-2", name: "Cáliz 2", price: 6, description: "Cáliz.", image: "assets/img/Bienes_generales/Caliz_2.png" },
+        { id: "candelabro", name: "Candelabro", price: 15, description: "Candelabro.", image: "assets/img/Bienes_generales/Candelabro.png" },
+        { id: "candelero", name: "Candelero", price: 12, description: "Candelero.", image: "assets/img/Bienes_generales/Candelero.png" },
+        { id: "colmillo-horker", name: "Colmillo Horker", price: 15, description: "Colmillo de horker.", image: "assets/img/Bienes_generales/Colmillo_horker.png" },
+        { id: "colmillo-mamut", name: "Colmillo Mamut", price: 20, description: "Colmillo de mamut.", image: "assets/img/Bienes_generales/Colmillo_mamut.png" },
+        { id: "cubo", name: "Cubo", price: 5, description: "Cubo.", image: "assets/img/Bienes_generales/Cubo.png" },
+        { id: "cucharon-madera", name: "Cucharón Madera", price: 3, description: "Cucharón de madera.", image: "assets/img/Bienes_generales/Cucharon_madera.png" },
+        { id: "cuchillo", name: "Cuchillo", price: 4, description: "Cuchillo.", image: "assets/img/Bienes_generales/Cuchillo.png" },
+        { id: "cuenco-madera", name: "Cuenco Madera", price: 3, description: "Cuenco de madera.", image: "assets/img/Bienes_generales/Cuenco_madera.png" },
+        { id: "cuernos-cabra", name: "Cuernos Cabra", price: 8, description: "Cuernos de cabra.", image: "assets/img/Bienes_generales/Cuernos_cabra.png" },
+        { id: "escamas-dragon", name: "Escamas Dragón", price: 50, description: "Escamas de dragón.", image: "assets/img/Bienes_generales/Escamas_dragon.png" },
+        { id: "flauta", name: "Flauta", price: 12, description: "Flauta.", image: "assets/img/Bienes_generales/Flauta.png" },
+        { id: "fuente", name: "Fuente", price: 20, description: "Fuente decorativa.", image: "assets/img/Bienes_generales/Fuente.png" },
+        { id: "huesos-dragon", name: "Huesos Dragón", price: 80, description: "Huesos de dragón.", image: "assets/img/Bienes_generales/Huesos_dragon.png" },
+        { id: "jarra", name: "Jarra", price: 4, description: "Jarra.", image: "assets/img/Bienes_generales/Jarra.png" },
+        { id: "jarra-1", name: "Jarra 1", price: 4, description: "Jarra.", image: "assets/img/Bienes_generales/Jarra_1.png" },
+        { id: "jarra-2", name: "Jarra 2", price: 5, description: "Jarra.", image: "assets/img/Bienes_generales/Jarra_2.png" },
+        { id: "jarra-3", name: "Jarra 3", price: 5, description: "Jarra.", image: "assets/img/Bienes_generales/Jarra_3.png" },
+        { id: "jarron", name: "Jarrón", price: 8, description: "Jarrón.", image: "assets/img/Bienes_generales/Jarron.png" },
+        { id: "laud", name: "Laúd", price: 18, description: "Laúd.", image: "assets/img/Bienes_generales/Laud.png" },
+        { id: "lena", name: "Leña", price: 2, description: "Leña.", image: "assets/img/Bienes_generales/Leña.png" },
+        { id: "muneca", name: "Muñeca", price: 8, description: "Muñeca.", image: "assets/img/Bienes_generales/Muñeca.png" },
+        { id: "olla-hierro-fundido", name: "Olla Hierro Fundido", price: 15, description: "Olla de hierro fundido.", image: "assets/img/Bienes_generales/Olla_hierro_fundido.png" },
+        { id: "paja", name: "Paja", price: 1, description: "Paja.", image: "assets/img/Bienes_generales/Paja.png" },
+        { id: "pichel", name: "Pichel", price: 4, description: "Pichel.", image: "assets/img/Bienes_generales/Pichel.png" },
+        { id: "plancha-ropa", name: "Plancha Ropa", price: 6, description: "Plancha de ropa.", image: "assets/img/Bienes_generales/Plancha_ropa.png" },
+        { id: "plato", name: "Plato", price: 2, description: "Plato.", image: "assets/img/Bienes_generales/Plato.png" },
+        { id: "plato-2", name: "Plato 2", price: 3, description: "Plato.", image: "assets/img/Bienes_generales/Plato_2.png" },
+        { id: "plato-madera", name: "Plato Madera", price: 2, description: "Plato de madera.", image: "assets/img/Bienes_generales/Plato_madera.png" },
+        { id: "rollo-papel", name: "Rollo Papel", price: 5, description: "Rollo de papel.", image: "assets/img/Bienes_generales/Rollo_papel.png" },
+        { id: "tambor", name: "Tambor", price: 15, description: "Tambor.", image: "assets/img/Bienes_generales/Tambor.png" },
+        { id: "taz", name: "Taz", price: 3, description: "Tazón.", image: "assets/img/Bienes_generales/Taz.png" },
+        { id: "tenedor", name: "Tenedor", price: 2, description: "Tenedor.", image: "assets/img/Bienes_generales/Tenedor.png" },
+        { id: "tenedor-1", name: "Tenedor 1", price: 2, description: "Tenedor.", image: "assets/img/Bienes_generales/Tenedor_1.png" }
       ]
     }
   ]
-
-  // A medida que Cris y Vale terminen sus tiendas, agregan aquí
-  // inventario.herreria, inventario.alquimia, inventario.general
-  // y inventario.comida con la misma estructura.
-
 };
+
+// Exportar para usar en otros archivos (módulos)
+// export default inventario;

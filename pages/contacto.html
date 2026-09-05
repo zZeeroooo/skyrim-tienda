@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+        <a class="brand" href="index.html">Skyrim Emporium</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Gremios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+        <button id="cartButton" class="cart-button" type="button" aria-label="Ver carrito">
+            Carrito (<span id="cartCount">0</span>)
+        </button>
+    </nav>
+</header>
+<main>
+
+<section class="form-section">
+    <div class="form-card">
+        <h1>Contacto</h1>
+        <p class="form-intro">Envía un mensaje a la tienda.</p>
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="contactName">Nombre</label>
+                <input type="text" id="contactName" name="name" maxlength="100" autocomplete="name" required>
+                <small id="contactNameError" class="error-message"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="contactEmail">Correo electrónico</label>
+                <input type="email" id="contactEmail" name="email" maxlength="100" autocomplete="email" placeholder="ejemplo@duoc.cl">
+                <small id="contactEmailError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="contactMessage">Comentario</label>
+                <textarea id="contactMessage" name="message" maxlength="500" rows="7" required></textarea>
+                <small id="contactMessageError" class="error-message"></small>
+            </div>
+            
+                <button class="button full-width" type="submit">Enviar mensaje</button>
+            <p id="contactSuccess" class="success-message" role="status"></p>
+        </form>
+    </div>
+</section>
+</main>
+
+<footer style="text-align:center; color:#888; font-style:italic; padding:20px 0;">
+  <div class="container footer-content">
+    <div>
+        <h2>Skyrim Emporium</h2>
+        <p>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</p>
+    </div>
+
+    <div>
+      <h3>Enlaces</h3>
+      <a class="nav-link" href="../index.html">Inicio</a>
+      <a class="nav-link" href="../index.html#gremios">Gremios</a>
+      <a class="nav-link" href="./nosotros.html">Nosotros</a>
+      <a class="nav-link" href="./blogs.html">Blogs</a>
+      <a class="nav-link" href="./contacto.html">Contacto</a>
+      <a class="nav-link" href="../index.html#direcciones">Direcciones</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+      <p>&copy; <span id="currentYear"></span> Skyrim Emporium</p>
+  </div>
+</footer>
+
+<script src="js/formularios.js"></script>
+</body>
+</html>
