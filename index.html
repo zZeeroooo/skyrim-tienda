@@ -28,7 +28,17 @@
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#gremios">Gremios</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownGremios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gremios</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownGremios">
+            <li><a class="dropdown-item" href="gremios/adrianne-herreria.html">⚔️ Herrería de Adrianne Avenicci</a></li>
+            <li><a class="dropdown-item" href="gremios/arcadias-cauldron.html">🧪 Arcadia's Cauldron</a></li>
+            <li><a class="dropdown-item" href="gremios/belethor.html">🛒 Belethor - Bienes Generales</a></li>
+            <li><a class="dropdown-item" href="gremios/comerciantes-solitude.html">💍 Comerciantes de Solitude</a></li>
+            <li><a class="dropdown-item" href="gremios/corcel-encabritado.html">🍖 El Corcel Encabritado</a></li>
+            <li><a class="dropdown-item" href="gremios/colegio-winterhold.html">🔮 Colegio de Winterhold</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link" href="#direcciones">Direcciones</a></li>
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
@@ -76,12 +86,13 @@
 </section>
 
 <!-- ================= GREMIOS ================= -->
-<section id="gremios">
+<section id="gremios" style="padding: 30px 0;">
   <div class="contenido">
     <h2 class="seccion-titulo">Gremios y Mercaderes</h2>
     <div class="seccion-linea"></div>
-    <p class="subtitulo">Consulta antes de comerciar: quién compra, qué vende y dónde encontrarlos.</p>
-    <div id="lista"></div>
+    <p style="text-align:center; max-width:640px; margin:0 auto; color:#cccccc;">
+      Cada gremio y mercader de Skyrim se especializa en su propio oficio: herrería, alquimia, magia, ropa fina, bienes generales y comida. Encuéntralos todos en el menú <strong style="color:#d4af37;">Gremios</strong> de la barra de navegación e ingresa directo a la tienda que te interese.
+    </p>
   </div>
 </section>
 
@@ -157,90 +168,6 @@
 
 <script src="js/cart.js"></script>
 <script>
-  const datos = [
-    {
-      nombre: "Herrería de Adrianne Avenicci",
-      tipo: "mercader",
-      categoria: "herreria",
-      icono: "⚔️",
-      ubicacion: "Whiterun",
-      nota: "Especialista en herrería, buenos precios en metal.",
-      pagina: "gremios/adrianne-herreria.html"
-    },
-    {
-      nombre: "Arcadia's Cauldron",
-      tipo: "mercader",
-      categoria: "alquimia",
-      icono: "🧪",
-      ubicacion: "Whiterun",
-      nota: "La mejor opción para vender cosechas de alquimia.",
-      pagina: "gremios/arcadias-cauldron.html"
-    },
-    {
-      nombre: "Belethor - Bienes Generales",
-      tipo: "mercader",
-      categoria: "general",
-      icono: "🛒",
-      ubicacion: "Whiterun",
-      nota: "Buen punto de partida para vender excedentes.",
-      pagina: "gremios/belethor.html"
-    },
-    {
-      nombre: "Gremio de Comerciantes de Solitude",
-      tipo: "gremio",
-      categoria: "ropa",
-      icono: "💍",
-      ubicacion: "Solitude",
-      nota: "Los mejores precios están en la ciudad imperial.",
-      pagina: "gremios/comerciantes-solitude.html"
-    },
-    {
-      nombre: "El Corcel Encabritado",
-      tipo: "mercader",
-      categoria: "comida",
-      icono: "🍖",
-      ubicacion: "Whiterun",
-      nota: "La mejor taberna para reponer provisiones.",
-      pagina: "gremios/corcel-encabritado.html"
-    },
-    {
-      nombre: "Colegio de Winterhold",
-      tipo: "gremio",
-      categoria: "magia",
-      icono: "🔮",
-      ubicacion: "Winterhold",
-      nota: "Los precios mejoran con la reputación mágica.",
-      pagina: "gremios/colegio-winterhold.html"
-    }
-  ];
-
-  const nombresCategoria = {
-    herreria: "Herrería",
-    alquimia: "Alquimia",
-    general: "Bienes Generales",
-    ropa: "Ropa Fina",
-    comida: "Comida y Taberna",
-    magia: "Magia"
-  };
-
-  function render(lista) {
-    const cont = document.getElementById("lista");
-    cont.innerHTML = lista.map(d => `
-      <div class="tarjeta borde-${d.categoria}">
-        <div class="icono">${d.icono}</div>
-        <div class="info">
-          <span class="tipo cat-${d.categoria}">${nombresCategoria[d.categoria]} · ${d.tipo === "gremio" ? "Gremio" : "Mercader"}</span>
-          <h2>${d.nombre}</h2>
-          <p><span class="etiqueta">Ubicación:</span> ${d.ubicacion}</p>
-          <p><span class="etiqueta">Nota:</span> ${d.nota}</p>
-          <a class="btn-ingresar" href="${d.pagina}">Ingresar tienda</a>
-        </div>
-      </div>
-    `).join("");
-  }
-
-  render(datos);
-
   /* ---------- Validación del formulario de contacto ---------- */
   const nombreContacto = document.getElementById('nombre-contacto');
   const correoContacto = document.getElementById('correo-contacto');
