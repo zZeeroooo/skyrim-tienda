@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de orden</title>
+    <link rel="stylesheet" href="../assets/css/styles-admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <a class="brand" href="index.html">ADMINISTRACIÓN</a>
+        <a class="button small secondary" href="ordenes.html">Volver a órdenes</a>
+        <a class="button small secondary" href="../index.html">Ir a tienda</a>
+    </header>
+    <nav class="admin-sidebar" aria-label="Menú vendedor">
+        <a href="productos.html">Productos</a>
+        <a href="ordenes.html">Órdenes</a>
+    </nav>
+    <main class="admin-main">
+        <section class="page-header">
+            <div class="container">
+                <p class="eyebrow">Detalle de orden</p>
+                <h1 id="orderTitle">Detalle de orden</h1>
+                <p id="orderCustomer"></p>
+                <p id="orderStatus"></p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container table-wrapper">
+                <table>
+                    <thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Total</th></tr></thead>
+                    <tbody id="adminOrderDetailTable"></tbody>
+                </table>
+                <p>Total: <strong id="orderTotal">$0</strong></p>
+            </div>
+        </section>
+    </main>
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/ordenes.js"></script>
+</body>
+</html>

@@ -7,7 +7,11 @@ const Cart = {
 
     // Lee el carrito guardado (o un arreglo vacío si no hay nada aún)
     get() {
-        return JSON.parse(localStorage.getItem(this.key)) || [];
+        const items = JSON.parse(localStorage.getItem(this.key)) || [];
+        return items
+            .filter(item => Number(item.stock ?? 0) > 0)
+            .map(item => ({ ...item, qty: Math.min(item.qty, Number(item.stock)) }))
+            .filter(item => item.qty > 0);
     },
 
     // Guarda el carrito y refresca la burbuja con el contador
@@ -18,9 +22,18 @@ const Cart = {
 
     // Agrega un producto. Si ya existe, solo suma 1 a la cantidad.
     add(product) {
+        const stock = Number(product.stock ?? 0);
+        if (stock <= 0) {
+            alert('Este producto no tiene stock disponible.');
+            return;
+        }
         const items = this.get();
         const existente = items.find(i => i.id === product.id);
         if (existente) {
+            if (existente.qty >= stock) {
+                alert('No puedes agregar más unidades que el stock disponible.');
+                return;
+            }
             existente.qty += 1;
         } else {
             items.push({ ...product, qty: 1 });
@@ -42,6 +55,7 @@ const Cart = {
         const items = this.get();
         const item = items.find(i => i.id === id);
         if (!item) return;
+        if (delta > 0 && item.qty >= Number(item.stock ?? 0)) return;
         item.qty += delta;
         if (item.qty <= 0) {
             return this.remove(id);
@@ -119,6 +133,41 @@ const Cart = {
     }
 };
 
+const CLAVE_ORDENES = "skyrimOrdenes";
+
+function obtenerOrdenes() {
+    try {
+        const ordenes = JSON.parse(localStorage.getItem(CLAVE_ORDENES) || "[]");
+        return Array.isArray(ordenes) ? ordenes : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function registrarOrden(items, total) {
+    const sesion = typeof obtenerSesion === "function" ? obtenerSesion() : null;
+    const ordenes = obtenerOrdenes();
+    const numero = `SK-${String(Date.now()).slice(-8)}`;
+    const orden = {
+        id: numero,
+        cliente: sesion?.nombre || "Viajero",
+        correo: sesion?.correo || "",
+        fecha: new Date().toISOString(),
+        estado: "Preparando",
+        total,
+        items: items.map(item => ({
+            id: item.id,
+            nombre: item.name,
+            cantidad: item.qty,
+            precio: item.price,
+            total: item.price * item.qty
+        }))
+    };
+    ordenes.push(orden);
+    localStorage.setItem(CLAVE_ORDENES, JSON.stringify(ordenes));
+    return orden;
+}
+
 // Abre/cierra el panel lateral del carrito
 function toggleCart() {
     document.getElementById('cart-drawer').classList.toggle('open');
@@ -129,11 +178,27 @@ function toggleCart() {
 // Muy simple: vacía el carrito y avisa. Aquí después podrías conectar
 // un formulario de pago real o enviar el pedido a un servidor.
 function checkout() {
-    if (Cart.get().length === 0) {
+    const items = Cart.get();
+    if (items.length === 0) {
         alert('Tu bolsa está vacía, viajero.');
         return;
     }
-    alert('¡Trato cerrado! Total: ' + Cart.formatGold(Cart.total()));
+
+    const stockDisponible = items.every(item => {
+        const producto = typeof obtenerProductoInventario === 'function'
+            ? obtenerProductoInventario(item.id)
+            : item;
+        return producto && Number(producto.stock ?? 0) >= item.qty;
+    });
+    if (!stockDisponible) {
+        alert('El stock de uno de los productos cambió. Revisa tu bolsa.');
+        Cart.render();
+        return;
+    }
+
+    items.forEach(item => actualizarStockProducto(item.id, item.qty));
+    const orden = registrarOrden(items, Cart.total());
+    alert(`¡Trato cerrado! Orden ${orden.id}. Total: ${Cart.formatGold(orden.total)}`);
     Cart.save([]);
     Cart.render();
     toggleCart();

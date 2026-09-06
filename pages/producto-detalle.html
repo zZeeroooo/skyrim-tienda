@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="../assets/img/skyrim-logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/gremios-catalogo.css">
 </head>
 <body class="tiene-navbar">
 <!-- ================= NAVBAR ================= -->
@@ -47,22 +48,22 @@
     </nav>
 
 <main>
-    <section class="page-header">
-    <div class="container"><p class="eyebrow">Producto</p><h1 id="detailTitle">Detalle del producto</h1></div>
-    </section>
-    <section class="section">
-    <div class="container product-detail">
-        <div id="detailImage" class="product-detail-image image-placeholder">Imagen del producto</div>
-        <article class="product-detail-content">
-            <p id="detailCategory" class="eyebrow">Categoría</p>
-            <h2 id="detailName">Nombre del producto</h2>
-            <p id="detailDescription">Descripción del producto.</p>
-            <p id="detailPrice" class="price">$0</p>
-            <button id="detailAddButton" class="button" type="button">Agregar al carrito</button>
-            <a class="button secondary" href="productos.html">Volver a productos</a>
-        </article>
-    </div>
-    </section>
+<section class="catalogo-detail-header">
+<div class="catalogo-detail-container"><p class="catalogo-sub">Producto</p><h1 id="detailTitle">Detalle del producto</h1></div>
+</section>
+<section class="catalogo-detail-section">
+<div class="catalogo-detail-container catalogo-product-detail">
+    <div id="detailImage" class="catalogo-detail-image image-placeholder">Imagen del producto</div>
+    <article class="catalogo-detail-content">
+        <p id="detailCategory" class="catalogo-sub">Categoría</p>
+        <h2 id="detailName">Nombre del producto</h2>
+        <p id="detailDescription" class="catalogo-detail-description">Descripción del producto.</p>
+        <p id="detailStock" class="catalogo-stock">Stock: 0</p>
+        <p id="detailPrice" class="catalogo-bigprice">$0</p>
+        <div class="catalogo-detail-actions"><button id="detailAddButton" class="catalogo-add" type="button">Agregar al carrito</button><a class="catalogo-detail-link" href="../index.html">Volver a la tienda</a></div>
+    </article>
+</div>
+</section>
 </main>
 
 <footer>
@@ -103,9 +104,10 @@
     </div>
 </div>
 <div id="cartOverlay" class="cart-overlay"></div>
-<script src="js/cart.js"></script>
-<script src="js/inventario.js"></script>
-<script src="js/datos-gremios.js"></script>
-<script src="js/tienda.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/inventario.js"></script>
+<script src="../js/datos-gremios.js"></script>
+<script src="../js/tienda.js"></script>
+<script src="../js/auth.js"></script>
 </body>
 </html>

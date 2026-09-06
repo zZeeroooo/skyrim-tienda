@@ -12,7 +12,7 @@ const inventario = {
         { id: "pocima-fuerza", name: "Pócima Fuerza", price: 35, description: "Aumenta la fuerza temporalmente.", image: "assets/img/Alquimia/Pociones/Pocima_fuerza.png" },
         { id: "pocima-magia", name: "Pócima Magia", price: 30, description: "Restaura magia.", image: "assets/img/Alquimia/Pociones/Pocima_magia.png" },
         { id: "pocima-salud", name: "Pócima Salud", price: 30, description: "Restaura salud.", image: "assets/img/Alquimia/Pociones/Pocima_salud.png" },
-        { id: "pocion-abrir-cerraderas", name: "Poción Abrir Cerraderas", price: 40, description: "Abre cerraduras más fácilmente.", image: "assets/img/Alquimia/Pociones/Pocion_abrir_cerraderas.png" },
+        { id: "pocion-abrir-cerraderas", name: "Poción Abrir Cerraderas", price: 40, description: "Abre cerraduras más fácilmente.", image: "assets/img/Alquimia/Pociones/Pocion_abrir_cerraduras.png" },
         { id: "pocion-aguante", name: "Poción Aguante", price: 25, description: "Restaura aguante.", image: "assets/img/Alquimia/Pociones/Pocion_aguante.png" },
         { id: "pocion-alteracion", name: "Poción Alteración", price: 45, description: "Mejora la alteración.", image: "assets/img/Alquimia/Pociones/Pocion_alteracion.png" },
         { id: "pocion-del-berserk", name: "Poción del Berserk", price: 60, description: "Aumenta el daño cuerpo a cuerpo.", image: "assets/img/Alquimia/Pociones/Pocion_del_berserk.png" },
@@ -103,7 +103,7 @@ const inventario = {
         { id: "flor-de-montana-roja", name: "Flor de Montaña Roja", price: 6, description: "Flor roja de montaña.", image: "assets/img/Alquimia/Ingredients/Flor_de_montaña_roja.png" },
         { id: "garra-bruja-cuervo", name: "Garra Bruja Cuervo", price: 8, description: "Garra de bruja cuervo.", image: "assets/img/Alquimia/Ingredients/Garra_bruja_cuervo.png" },
         { id: "garra-oso", name: "Garra Oso", price: 10, description: "Garra de oso.", image: "assets/img/Alquimia/Ingredients/Garra_oso.png" },
-        { id: "graca-trol", name: "Grasa Trol", price: 12, description: "Grasa de trol.", image: "assets/img/Alquimia/Ingredients/Graca_trol.png" },
+        { id: "graca-trol", name: "Grasa Trol", price: 12, description: "Grasa de trol.", image: "assets/img/Alquimia/Ingredients/Grasa_trol.png" },
         { id: "hierba-ampollada", name: "Hierba Ampollada", price: 5, description: "Hierba con ampollas.", image: "assets/img/Alquimia/Ingredients/Hierba_ampollada.png" },
         { id: "huevo-arana", name: "Huevo Araña", price: 8, description: "Huevo de araña.", image: "assets/img/Alquimia/Ingredients/Huevo_araña.png" },
         { id: "huevo-cauro", name: "Huevo Cauro", price: 8, description: "Huevo de cauro.", image: "assets/img/Alquimia/Ingredients/Huevo_cauro.png" },
@@ -267,7 +267,10 @@ const inventario = {
         { id: "ballesta-elfica", name: "Ballesta Élfica", price: 200, description: "Ballesta élfica.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_elfica.png" },
         { id: "ballesta-enana", name: "Ballesta Enana", price: 250, description: "Ballesta enana.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_enana.png" },
         { id: "ballesta-imperial", name: "Ballesta Imperial", price: 140, description: "Ballesta imperial.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_imperial.png" },
-        { id: "ballesta-nordica", name: "Ballesta Nórdica", price: 160, description: "Ballesta nórdica.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_nordica.png" }
+        { id: "ballesta-nordica", name: "Ballesta Nórdica", price: 160, description: "Ballesta nórdica.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_nordica.png" },
+        { id: "ballesta-orca", name: "Ballesta Orca", price: 180, description: "Ballesta orca.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_orca.png" },
+        { id: "ballesta-plata", name: "Ballesta de Plata", price: 190, description: "Ballesta de plata.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_plata.png" },
+        { id: "ballesta-stalhrim", name: "Ballesta Stalhrim", price: 300, description: "Ballesta de stalhrim.", image: "assets/img/Herreria/Armas/Arquería/Ballesta_stalhrim.png" }
       ]
     },
     {
@@ -311,7 +314,7 @@ const inventario = {
         { id: "espada-enana", name: "Espada Enana", price: 200, description: "Espada enana.", image: "assets/img/Herreria/Armas/Una_mano/Espada_enana.png" },
         { id: "espada-hierro", name: "Espada Hierro", price: 40, description: "Espada de hierro.", image: "assets/img/Herreria/Armas/Una_mano/Espada_hierro.png" },
         { id: "espada-nordica", name: "Espada Nórdica", price: 120, description: "Espada nórdica.", image: "assets/img/Herreria/Armas/Una_mano/Espada_nordica.png" },
-        { id: "espada-nordica-antigua", name: "Espada Nórdica Antigua", price: 140, description: "Espada nórdica antigua.", image: "assets/img/Herreria/Armas/Una_mano/Espada_nordica_antigua.png" },
+        { id: "espada-nordica-antigua", name: "Espada Nórdica Antigua", price: 140, description: "Espada nórdica antigua.", image: "assets/img/Herreria/Armas/Una_mano/Espada_nordica.png" },
         { id: "espada-orca", name: "Espada Orca", price: 160, description: "Espada orca.", image: "assets/img/Herreria/Armas/Una_mano/Espada_orca.png" },
         { id: "espada-stalhrim", name: "Espada Stalhrim", price: 260, description: "Espada de stalhrim.", image: "assets/img/Herreria/Armas/Una_mano/Espada_stalhrim.png" },
         { id: "hacha-guerra-acero", name: "Hacha Guerra Acero", price: 70, description: "Hacha de guerra de acero.", image: "assets/img/Herreria/Armas/Una_mano/Hacha_guerra_acero.png" },
@@ -350,7 +353,29 @@ const inventario = {
         { id: "gran-espada-hierro", name: "Gran Espada Hierro", price: 70, description: "Gran espada de hierro.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_hierro.png" },
         { id: "gran-espada-nordica", name: "Gran Espada Nórdica", price: 180, description: "Gran espada nórdica.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_nordica.png" },
         { id: "gran-espada-orca", name: "Gran Espada Orca", price: 230, description: "Gran espada orca.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_orca.png" },
-        { id: "gran-espada-stalhrim", name: "Gran Espada Stalhrim", price: 380, description: "Gran espada de stalhrim.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_stalhrim.png" }
+        { id: "gran-espada-stalhrim", name: "Gran Espada Stalhrim", price: 380, description: "Gran espada de stalhrim.", image: "assets/img/Herreria/Armas/Dos_manos/Gran_espada_stalhrim.png" },
+        { id: "hacha-batalla-acero", name: "Hacha de Batalla de Acero", price: 110, description: "Hacha de batalla de acero.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_acero.png" },
+        { id: "hacha-batalla-cristal", name: "Hacha de Batalla de Cristal", price: 290, description: "Hacha de batalla de cristal.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_cristal.png" },
+        { id: "hacha-batalla-daedrica", name: "Hacha de Batalla Daédrica", price: 560, description: "Hacha de batalla daédrica.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_daedrica.png" },
+        { id: "hacha-batalla-ebano", name: "Hacha de Batalla de Ébano", price: 420, description: "Hacha de batalla de ébano.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_ebano.png" },
+        { id: "hacha-batalla-elfica", name: "Hacha de Batalla Élfica", price: 230, description: "Hacha de batalla élfica.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_elfica.png" },
+        { id: "hacha-batalla-enana", name: "Hacha de Batalla Enana", price: 290, description: "Hacha de batalla enana.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_enana.png" },
+        { id: "hacha-batalla-heroe-nordico", name: "Hacha de Batalla del Héroe Nórdico", price: 360, description: "Hacha de batalla del héroe nórdico.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_heroe_nordico.png" },
+        { id: "hacha-batalla-hierro", name: "Hacha de Batalla de Hierro", price: 75, description: "Hacha de batalla de hierro.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_hierro.png" },
+        { id: "hacha-batalla-nordica", name: "Hacha de Batalla Nórdica", price: 190, description: "Hacha de batalla nórdica.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_nordica.png" },
+        { id: "hacha-batalla-orca", name: "Hacha de Batalla Orca", price: 240, description: "Hacha de batalla orca.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_orca.png" },
+        { id: "hacha-batalla-stalhrim", name: "Hacha de Batalla Stalhrim", price: 390, description: "Hacha de batalla de stalhrim.", image: "assets/img/Herreria/Armas/Dos_manos/Hacha_batalla_stalhrim.png" },
+        { id: "martillo-guerra-acero", name: "Martillo de Guerra de Acero", price: 100, description: "Martillo de guerra de acero.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_acero.png" },
+        { id: "martillo-guerra-cristal", name: "Martillo de Guerra de Cristal", price: 280, description: "Martillo de guerra de cristal.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_cristal.png" },
+        { id: "martillo-guerra-daedrico", name: "Martillo de Guerra Daédrico", price: 550, description: "Martillo de guerra daédrico.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_daedrico.png" },
+        { id: "martillo-guerra-ebano", name: "Martillo de Guerra de Ébano", price: 400, description: "Martillo de guerra de ébano.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_ebano.png" },
+        { id: "martillo-guerra-elfico", name: "Martillo de Guerra Élfico", price: 220, description: "Martillo de guerra élfico.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_elfico.png" },
+        { id: "martillo-guerra-enano", name: "Martillo de Guerra Enano", price: 280, description: "Martillo de guerra enano.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_enana.png" },
+        { id: "martillo-guerra-hierro", name: "Martillo de Guerra de Hierro", price: 70, description: "Martillo de guerra de hierro.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_hierro.png" },
+        { id: "martillo-guerra-nordico", name: "Martillo de Guerra Nórdico", price: 180, description: "Martillo de guerra nórdico.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_nordico.png" },
+        { id: "martillo-guerra-nordico-antiguo", name: "Martillo de Guerra Nórdico Antiguo", price: 190, description: "Martillo de guerra nórdico antiguo.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_nordico_antiguo.png" },
+        { id: "martillo-guerra-orca", name: "Martillo de Guerra Orco", price: 230, description: "Martillo de guerra orco.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_orca.png" },
+        { id: "martillo-guerra-stalhrim", name: "Martillo de Guerra Stalhrim", price: 380, description: "Martillo de guerra de stalhrim.", image: "assets/img/Herreria/Armas/Dos_manos/Martillo_guerra_stalhrim.png" }
       ]
     },
     {
@@ -553,7 +578,7 @@ const inventario = {
         { id: "baston-conjuracion", name: "Bastón Conjuración", price: 160, description: "Bastón de conjuración.", image: "assets/img/Magia/Bastones/Baston_conjuración.png" },
         { id: "baston-destruccion", name: "Bastón Destrucción", price: 170, description: "Bastón de destrucción.", image: "assets/img/Magia/Bastones/Baston_destruccion.png" },
         { id: "baston-falmer", name: "Bastón Falmer", price: 130, description: "Bastón falmer.", image: "assets/img/Magia/Bastones/Baston_falmer.png" },
-        { id: "baston-ilusion", name: "Bastón Ilusión", price: 140, description: "Bastón de ilusión.", image: "assets/img/Magia/Bastones/Baston_llusion.png" },
+        { id: "baston-ilusion", name: "Bastón Ilusión", price: 140, description: "Bastón de ilusión.", image: "assets/img/Magia/Bastones/Baston_Ilusion.png" },
         { id: "baston-magnus", name: "Bastón Magnus", price: 300, description: "Bastón de Magnus.", image: "assets/img/Magia/Bastones/Baston_magnus.png" },
         { id: "baston-restauracion", name: "Bastón Restauración", price: 150, description: "Bastón de restauración.", image: "assets/img/Magia/Bastones/Baston_restauración.png" }
       ]
@@ -565,7 +590,7 @@ const inventario = {
         { id: "hechizo-conjuracion", name: "Hechizo Conjuración", price: 100, description: "Tomo de conjuración.", image: "assets/img/Magia/Libros/Hechizo_conjuracion.png" },
         { id: "hechizo-destruccion", name: "Hechizo Destrucción", price: 100, description: "Tomo de destrucción.", image: "assets/img/Magia/Libros/Hechizo_destruccion.png" },
         { id: "hechizo-ilusion", name: "Hechizo Ilusión", price: 100, description: "Tomo de ilusión.", image: "assets/img/Magia/Libros/Hechizo_ilusion.png" },
-        { id: "hechizo-restauracion", name: "Hechizo Restauración", price: 100, description: "Tomo de restauración.", image: "assets/img/Magia/Libros/Hechizo_restauration.png" }
+        { id: "hechizo-restauracion", name: "Hechizo Restauración", price: 100, description: "Tomo de restauración.", image: "assets/img/Magia/Libros/Hechizo_restauracion.png" }
       ]
     },
     {
@@ -573,9 +598,9 @@ const inventario = {
       items: [
         { id: "pergamino-1", name: "Pergamino 1", price: 50, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_1.png" },
         { id: "pergamino-2", name: "Pergamino 2", price: 55, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_2.png" },
-        { id: "pergamino-3", name: "Pergamino 3", price: 60, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Perg amino_3.png" },
+        { id: "pergamino-3", name: "Pergamino 3", price: 60, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_3.png" },
         { id: "pergamino-4", name: "Pergamino 4", price: 65, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_4.png" },
-        { id: "pergamino-5", name: "Pergamino 5", price: 70, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergmino_5.png" },
+        { id: "pergamino-5", name: "Pergamino 5", price: 70, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_5.png" },
         { id: "pergamino-6", name: "Pergamino 6", price: 75, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_6.png" }
       ]
     },
@@ -584,7 +609,7 @@ const inventario = {
       items: [
         { id: "carbon-vegetal", name: "Carbón Vegetal", price: 5, description: "Carbón vegetal.", image: "assets/img/Magia/Varios/Carbon_vegetal.png" },
         { id: "estrella-azura", name: "Estrella Azura", price: 500, description: "Estrella de Azura.", image: "assets/img/Magia/Varios/Estrella_azura.png" },
-        { id: "estrellanegra", name: "Estrella Negra", price: 600, description: "Estrella negra.", image: "assets/img/Magia/Varios/Estrellanegra.png" },
+        { id: "estrellanegra", name: "Estrella Negra", price: 600, description: "Estrella negra.", image: "assets/img/Magia/Varios/Estrella_negra.png" },
         { id: "gema-alma-comun", name: "Gema Alma Común", price: 40, description: "Gema de alma común.", image: "assets/img/Magia/Varios/Gema_alma_comun.png" },
         { id: "gema-almagrande", name: "Gema Alma Grande", price: 100, description: "Gema de alma grande.", image: "assets/img/Magia/Varios/Gema_almagrande.png" },
         { id: "gema-alma-insignificante", name: "Gema Alma Insignificante", price: 10, description: "Gema de alma insignificante.", image: "assets/img/Magia/Varios/Gema_alma_insignificante.png" },
@@ -592,7 +617,7 @@ const inventario = {
         { id: "gema-almanegra", name: "Gema Alma Negra", price: 150, description: "Gema de alma negra.", image: "assets/img/Magia/Varios/Gema_almanegra.png" },
         { id: "gema-almasuperior", name: "Gema Alma Superior", price: 80, description: "Gema de alma superior.", image: "assets/img/Magia/Varios/Gema_almasuperior.png" },
         { id: "inkwell", name: "Tintero", price: 10, description: "Tintero.", image: "assets/img/Magia/Varios/Inkwell.png" },
-        { id: "piedravarladefectuosa", name: "Piedra Varla Defectuosa", price: 30, description: "Piedra varla defectuosa.", image: "assets/img/Magia/Varios/Piedravarladefectuosa.png" },
+        { id: "piedravarladefectuosa", name: "Piedra Varla Defectuosa", price: 30, description: "Piedra varla defectuosa.", image: "assets/img/Magia/Varios/Piedra_varla_defectuosa.png" },
         { id: "pluma", name: "Pluma", price: 5, description: "Pluma para escribir.", image: "assets/img/Magia/Varios/Pluma.png" },
         { id: "rollo-papel", name: "Rollo Papel", price: 8, description: "Rollo de papel.", image: "assets/img/Magia/Varios/Rollo_papel.png" },
         { id: "tomate-alma", name: "Tomate Alma", price: 30, description: "Tomate de alma (curioso).", image: "assets/img/Magia/Varios/Tomate_alma.png" }
@@ -671,13 +696,143 @@ const inventario = {
         { id: "plato-madera", name: "Plato Madera", price: 2, description: "Plato de madera.", image: "assets/img/Bienes_generales/Plato_madera.png" },
         { id: "rollo-papel", name: "Rollo Papel", price: 5, description: "Rollo de papel.", image: "assets/img/Bienes_generales/Rollo_papel.png" },
         { id: "tambor", name: "Tambor", price: 15, description: "Tambor.", image: "assets/img/Bienes_generales/Tambor.png" },
-        { id: "taz", name: "Taz", price: 3, description: "Tazón.", image: "assets/img/Bienes_generales/Taz.png" },
+        { id: "taz", name: "Taz", price: 3, description: "Tazón.", image: "assets/img/Bienes_generales/Taza.png" },
         { id: "tenedor", name: "Tenedor", price: 2, description: "Tenedor.", image: "assets/img/Bienes_generales/Tenedor.png" },
         { id: "tenedor-1", name: "Tenedor 1", price: 2, description: "Tenedor.", image: "assets/img/Bienes_generales/Tenedor_1.png" }
       ]
     }
   ]
 };
+
+const CLAVE_PRODUCTOS_ADMIN = "skyrimProductosAdmin";
+const CLAVE_STOCK_PRODUCTOS = "skyrimStockProductos";
+const CLAVE_PRODUCTOS_EDITADOS = "skyrimProductosEditados";
+const STOCK_POR_GREMIO = {
+  alquimia: 20,
+  bienesGenerales: 5,
+  ropaFina: 10,
+  comida: 15,
+  magia: 7,
+  herreria: 5
+};
+
+function esProductoLegendario(producto) {
+  const nombre = String(producto.name || producto.nombre || "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  return /daedric|stalhrim|nordic/.test(nombre);
+}
+
+function asignarStockInicial() {
+  Object.entries(inventario).forEach(([gremio, secciones]) => {
+    const stockGremio = STOCK_POR_GREMIO[gremio];
+    secciones.forEach(seccion => seccion.items.forEach(producto => {
+      if (producto.stock === undefined) {
+        producto.stock = gremio === "herreria" && esProductoLegendario(producto)
+          ? 2
+          : stockGremio;
+      }
+    }));
+  });
+}
+
+function obtenerProductoInventario(id) {
+  return Object.values(inventario).flatMap(secciones => secciones.flatMap(seccion => seccion.items))
+    .find(producto => producto.id === id);
+}
+
+function cargarStockGuardado() {
+  try {
+    const stocks = JSON.parse(localStorage.getItem(CLAVE_STOCK_PRODUCTOS) || "{}");
+    Object.entries(stocks).forEach(([id, stock]) => {
+      const producto = obtenerProductoInventario(id);
+      if (producto) producto.stock = Number(stock);
+    });
+  } catch (error) {
+    localStorage.removeItem(CLAVE_STOCK_PRODUCTOS);
+  }
+}
+
+function cargarProductosEditados() {
+  try {
+    const editados = JSON.parse(localStorage.getItem(CLAVE_PRODUCTOS_EDITADOS) || "{}");
+    Object.entries(editados).forEach(([id, cambios]) => {
+      const producto = obtenerProductoInventario(id);
+      if (producto) Object.assign(producto, cambios);
+    });
+  } catch (error) {
+    localStorage.removeItem(CLAVE_PRODUCTOS_EDITADOS);
+  }
+}
+
+function actualizarProductoAdmin(productoActualizado) {
+  const producto = obtenerProductoInventario(productoActualizado.id);
+  if (!producto) return false;
+  Object.assign(producto, productoActualizado);
+
+  const productosAdmin = JSON.parse(localStorage.getItem(CLAVE_PRODUCTOS_ADMIN) || "[]");
+  const indiceAdmin = productosAdmin.findIndex(item => item.id === producto.id);
+  if (indiceAdmin >= 0) {
+    productosAdmin[indiceAdmin] = { ...productosAdmin[indiceAdmin], ...productoActualizado };
+    localStorage.setItem(CLAVE_PRODUCTOS_ADMIN, JSON.stringify(productosAdmin));
+  } else {
+    const editados = JSON.parse(localStorage.getItem(CLAVE_PRODUCTOS_EDITADOS) || "{}");
+    editados[producto.id] = { ...editados[producto.id], ...productoActualizado };
+    localStorage.setItem(CLAVE_PRODUCTOS_EDITADOS, JSON.stringify(editados));
+  }
+  return true;
+}
+
+function actualizarStockProducto(id, cantidad) {
+  const producto = obtenerProductoInventario(id);
+  if (!producto || Number(producto.stock) < cantidad) return false;
+
+  producto.stock -= cantidad;
+  const stocks = JSON.parse(localStorage.getItem(CLAVE_STOCK_PRODUCTOS) || "{}");
+  stocks[id] = producto.stock;
+  localStorage.setItem(CLAVE_STOCK_PRODUCTOS, JSON.stringify(stocks));
+
+  const productosAdmin = JSON.parse(localStorage.getItem(CLAVE_PRODUCTOS_ADMIN) || "[]");
+  const productoAdmin = productosAdmin.find(item => item.id === id);
+  if (productoAdmin) {
+    productoAdmin.stock = producto.stock;
+    localStorage.setItem(CLAVE_PRODUCTOS_ADMIN, JSON.stringify(productosAdmin));
+  }
+  return true;
+}
+
+function cargarProductosAdmin() {
+  try {
+    const productos = JSON.parse(localStorage.getItem(CLAVE_PRODUCTOS_ADMIN) || "[]");
+    if (!Array.isArray(productos)) return;
+    productos.forEach(producto => {
+      const gremio = inventario[producto.gremio];
+      if (!gremio) return;
+      let seccion = gremio.find(item => item.titulo === producto.categoria);
+      if (!seccion) {
+        seccion = { titulo: producto.categoria, items: [] };
+        gremio.push(seccion);
+      }
+      if (!seccion.items.some(item => item.id === producto.id)) {
+        seccion.items.push(producto);
+      }
+    });
+  } catch (error) {
+    localStorage.removeItem(CLAVE_PRODUCTOS_ADMIN);
+  }
+}
+
+function guardarProductoAdmin(producto) {
+  const productos = JSON.parse(localStorage.getItem(CLAVE_PRODUCTOS_ADMIN) || "[]");
+  productos.push(producto);
+  localStorage.setItem(CLAVE_PRODUCTOS_ADMIN, JSON.stringify(productos));
+  const seccion = inventario[producto.gremio].find(item => item.titulo === producto.categoria);
+  if (seccion) seccion.items.push(producto);
+}
+
+asignarStockInicial();
+cargarProductosAdmin();
+cargarStockGuardado();
+cargarProductosEditados();
 
 // Exportar para usar en otros archivos (módulos)
 // export default inventario;
