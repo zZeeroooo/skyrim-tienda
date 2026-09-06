@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="tiene-navbar">
+
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
@@ -59,31 +60,106 @@
   <button class="accion" id="btn-clear" onclick="clearCart()">Vaciar bolsa</button>
 </div>
 
-<!-- ================= INTRODUCCIÓN ================= -->
-<section id="inicio">
-  <div class="contenido">
-    <h1 class="seccion-titulo">Gremios y Mercaderes de Skyrim</h1>
-    <div class="seccion-linea"></div>
-    <p>Bienvenido, viajero.</p>
+<!-- ================= HERO / PRESENTACIÓN ================= -->
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <h1>Gremios y Mercaderes de Skyrim</h1>
+    <p class="hero-sub">Bienvenido, viajero. Equípate para la aventura.</p>
     <p>Has llegado al lugar indicado si buscas buen equipo para continuar tu viaje por Skyrim. Aquí podrás encontrar armas, armaduras, pociones y otros artículos útiles para cualquier aventurero que se atreva a recorrer las tierras del norte.</p>
-    <p>Todo lo que ofrecemos ha sido seleccionado pensando en quienes necesitan estar preparados para lo que pueda aparecer en el camino, ya sea un grupo de bandidos, un draugr o, con un poco de mala suerte, un dragón.</p>
-    <p>Tómate tu tiempo para revisar nuestras mercancías. Lo que compres aquí podría ser la diferencia entre volver a casa con vida o terminar en una cripta nórdica.</p>
+    <a href="#catalogo" class="btn-hero">Ver productos</a>
   </div>
 </section>
-
-<!-- ================= GREMIOS ================= -->
-<section id="gremios" style="padding: 30px 0;">
-  <div class="contenido">
-    <h2 class="seccion-titulo">Gremios y Mercaderes</h2>
+<!-- ================= CATÁLOGO DE PRODUCTOS DESTACADOS ================= -->
+<section id="catalogo" class="catalogo-section">
+  <div class="container-fluid">
+    <h2 class="seccion-titulo">Abalorios, bagatelas, esa clase de cosas...</h2>
     <div class="seccion-linea"></div>
-    <p style="text-align:center; max-width:640px; margin:0 auto; color:#cccccc;">
-      Cada gremio y mercader de Skyrim se especializa en su propio oficio: herrería, alquimia, magia, ropa fina, bienes generales y comida. Encuéntralos todos en el menú <strong style="color:#d4af37;">Gremios</strong> de la barra de navegación e ingresa directo a la tienda que te interese.
-    </p>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="catalogo-subtitulo">Productos destacados</h3>
+    </div>
+
+    <div class="row g-4">
+      <!-- Tarjeta 1: Herrería -->
+      <div class="col-md-3 col-sm-6">
+        <div class="tarjeta-producto">
+          <div class="producto-img-wrapper">
+            <img src="assets/img/Herreria/Armadura/Pesada/Armadura_acero.png" alt="Armadura de acero" class="producto-img">
+          </div>
+          <div class="producto-body">
+            <span class="producto-categoria cat-herreria">Herrería</span>
+            <h4 class="producto-nombre">Armadura de acero</h4>
+            <p class="producto-desc">Protección resistente para cualquier guerrero.</p>
+            <p class="producto-precio">200 🪙</p>
+            <div class="producto-acciones">
+              <a href="gremios/adrianne-herreria.html" class="btn-detalle">Ver detalle</a>
+              <button class="btn-anadir" onclick="agregarAlCarrito('Armadura de acero', 200, 'assets/img/Herreria/Armadura/Pesada/Armadura_acero.png')">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: Alquimia -->
+      <div class="col-md-3 col-sm-6">
+        <div class="tarjeta-producto">
+          <div class="producto-img-wrapper">
+            <img src="assets/img/Alquimia/Pociones/Pocima_salud.png" alt="Poción de salud" class="producto-img">
+          </div>
+          <div class="producto-body">
+            <span class="producto-categoria cat-alquimia">Alquimia</span>
+            <h4 class="producto-nombre">Poción de salud</h4>
+            <p class="producto-desc">Restaura vitalidad al instante.</p>
+            <p class="producto-precio">30 🪙</p>
+            <div class="producto-acciones">
+              <a href="gremios/arcadias-cauldron.html" class="btn-detalle">Ver detalle</a>
+              <button class="btn-anadir" onclick="agregarAlCarrito('Poción de salud', 30, 'assets/img/Alquimia/Pociones/Pocima_salud.png')">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3: Magia -->
+      <div class="col-md-3 col-sm-6">
+        <div class="tarjeta-producto">
+          <div class="producto-img-wrapper">
+            <img src="assets/img/Magia/Bastones/Baston_destruccion.png" alt="Bastón de destrucción" class="producto-img">
+          </div>
+          <div class="producto-body">
+            <span class="producto-categoria cat-magia">Magia</span>
+            <h4 class="producto-nombre">Bastón de destrucción</h4>
+            <p class="producto-desc">Lanza llamas y descargas a tus enemigos.</p>
+            <p class="producto-precio">170 🪙</p>
+            <div class="producto-acciones">
+              <a href="gremios/colegio-winterhold.html" class="btn-detalle">Ver detalle</a>
+              <button class="btn-anadir" onclick="agregarAlCarrito('Bastón de destrucción', 170, 'assets/img/Magia/Bastones/Baston_destruccion.png')">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4: Comida -->
+      <div class="col-md-3 col-sm-6">
+        <div class="tarjeta-producto">
+          <div class="producto-img-wrapper">
+            <img src="assets/img/Taberna/Comida/Rollo_dulce.png" alt="Rollo dulce" class="producto-img">
+          </div>
+          <div class="producto-body">
+            <span class="producto-categoria cat-comida">Comida</span>
+            <h4 class="producto-nombre">Rollo dulce</h4>
+            <p class="producto-desc">Delicia típica de las tabernas de Skyrim.</p>
+            <p class="producto-precio">5 🪙</p>
+            <div class="producto-acciones">
+              <a href="gremios/corcel-encabritado.html" class="btn-detalle">Ver detalle</a>
+              <button class="btn-anadir" onclick="agregarAlCarrito('Rollo dulce', 5, 'assets/img/Taberna/Comida/Rollo_dulce.png')">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ================= DIRECCIONES ================= -->
-<section id="direcciones">
+<section id="direcciones" class="seccion-interna">
   <div class="contenido">
     <h2 class="seccion-titulo">Direcciones</h2>
     <div class="seccion-linea"></div>
@@ -153,9 +229,20 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="js/cart.js"></script>
 <script>
+  // Año dinámico en el footer
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  // Función para añadir al carrito (debe estar definida en cart.js)
+  function agregarAlCarrito(nombre, precio, imagen) {
+    if (typeof addToCart === 'function') {
+      addToCart(nombre, precio, imagen);
+    } else {
+      alert('Función de carrito no disponible.');
+    }
+  }
+
   /* ---------- Validación del formulario de contacto ---------- */
   const nombreContacto = document.getElementById('nombre-contacto');
   const correoContacto = document.getElementById('correo-contacto');
