@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;600;700&family=EB+Garamond:ital@0;1&display=swap');
 
 /* =========================================================
-   TOKENS — paleta, tipografía y espaciado del sitio
-   Pensado como un "ledger" de gremio: pergamino, hierro forjado
-   y sellos de cera dorados, no un panel de app genérico.
-========================================================= */
+   01. VARIABLES Y ESTILOS GLOBALES
+   ========================================================= */
 :root {
   --color-void:        #0c0a08;   /* fondo principal, negro cálido (hollín, no gris azulado) */
   --color-obsidian:     #17130f;   /* paneles / tarjetas */
@@ -83,6 +81,94 @@ p.subtitulo {
   font-style: italic;
   margin-bottom: var(--space-4);
 }
+
+
+/* =========================================================
+   02. NAVBAR Y NAVEGACIÓN
+   ========================================================= */
+
+.navbar {
+  background-color: var(--color-void);
+  border-bottom: 1px solid var(--color-iron);
+  padding: 0 20px;
+}
+.navbar .container {
+  max-width: 100%;
+  padding: 0;
+}
+.navbar-brand {
+  font-family: var(--font-display);
+  color: var(--color-gold) !important;
+  letter-spacing: 1px;
+}
+.nav-link {
+  font-family: var(--font-heading);
+  color: var(--color-parchment) !important;
+  position: relative;
+}
+.nav-link:not(.dropdown-toggle)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-gold) !important;
+}
+.nav-link:not(.dropdown-toggle):hover::after,
+.nav-link:not(.dropdown-toggle).active::after { transform: scaleX(1); }
+
+/* Flecha del dropdown "Gremios" en tono dorado suave, coherente con el resto del nav */
+.navbar .dropdown-toggle::after {
+  vertical-align: 1px;
+  border-top-color: var(--color-parchment-dim);
+  transition: border-top-color var(--transition-fast);
+}
+.navbar .dropdown-toggle:hover::after,
+.navbar .dropdown-toggle:focus::after {
+  border-top-color: var(--color-gold);
+}
+.navbar #cart-icon {
+  position: static;
+  margin-left: 8px;
+}
+
+/* ---------- Dropdown de Gremios ---------- */
+.navbar .dropdown-menu {
+  background-color: var(--color-obsidian-alt);
+  border: 1px solid var(--color-iron-light);
+  border-radius: var(--radius-md);
+}
+.navbar .dropdown-item {
+  font-family: var(--font-heading);
+  color: var(--color-parchment);
+  border-left: 2px solid transparent;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: var(--color-obsidian);
+  color: var(--color-gold);
+  border-left-color: var(--color-gold);
+}
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   03. CARRITO
+   ========================================================= */
 
 /* ---------- Ícono del carrito ---------- */
 #cart-icon {
@@ -223,7 +309,226 @@ p.subtitulo {
 #btn-clear { background-color: transparent; color: var(--color-parchment-dim); }
 #btn-clear:hover { background-color: var(--color-obsidian-alt); color: var(--color-parchment); }
 
-/* ---------- Filtros (páginas de gremio) ---------- */
+
+/* =========================================================
+   04. PÁGINA DE INICIO
+   ========================================================= */
+
+.hero {
+  background-image:
+    linear-gradient(100deg, rgba(12,10,8,0.92) 30%, rgba(12,10,8,0.55) 65%, rgba(12,10,8,0.3) 100%),
+    url('../img/wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 100px 20px 80px;
+  border-bottom: 1px solid var(--color-iron);
+  width: 100%;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+}
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 1.15;
+  margin: 0 0 var(--space-3);
+  letter-spacing: 1.5px;
+}
+.hero-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-gold);
+  font-size: 1.25rem;
+  letter-spacing: 0.3px;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-iron-light);
+  max-width: 420px;
+}
+.hero-content p {
+  color: var(--color-parchment-dim);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 560px;
+  margin: 0 0 var(--space-4) 0;
+  text-align: left;
+}
+.btn-hero {
+  display: inline-block;
+  font-family: var(--font-heading);
+  background-color: transparent;
+  color: var(--color-gold);
+  padding: 13px 34px;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  outline: 1px solid rgba(198, 161, 58, 0.3);
+  outline-offset: 4px;
+  transition: background-color var(--transition-fast), color var(--transition-fast), outline-color var(--transition-fast);
+}
+.btn-hero:hover {
+  background-color: var(--color-gold);
+  color: var(--color-void);
+  outline-color: transparent;
+}
+
+/* ---------- Catálogo de productos destacados ---------- */
+.catalogo-section {
+  padding: var(--space-6) 20px;
+  background-color: var(--color-void);
+  width: 100%;
+}
+.catalogo-section .container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.row.g-4 {
+  --bs-gutter-y: 1.5rem;
+}
+.catalogo-subtitulo {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  margin: 0;
+}
+.catalogo-ver-todos {
+  color: var(--color-parchment-dim);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.catalogo-ver-todos:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* ---------- Tarjetas de productos del catálogo ---------- */
+.tarjeta-producto {
+  background-color: var(--color-obsidian);
+  border: 1px solid var(--color-iron);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+.tarjeta-producto:has(.cat-herreria) { border-top: 3px solid var(--cat-herreria); }
+.tarjeta-producto:has(.cat-alquimia) { border-top: 3px solid var(--cat-alquimia); }
+.tarjeta-producto:has(.cat-general)  { border-top: 3px solid var(--cat-general); }
+.tarjeta-producto:has(.cat-ropa)     { border-top: 3px solid var(--cat-ropa); }
+.tarjeta-producto:has(.cat-comida)   { border-top: 3px solid var(--cat-comida); }
+.tarjeta-producto:has(.cat-magia)    { border-top: 3px solid var(--cat-magia); }
+.tarjeta-producto:hover {
+  border-color: var(--color-iron-light);
+  transform: translateY(-3px);
+}
+.producto-img-wrapper {
+  background-color: var(--color-void);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  overflow: hidden;
+  padding: var(--space-2);
+}
+.producto-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+.tarjeta-producto:hover .producto-img { transform: scale(1.04); }
+.producto-body {
+  padding: var(--space-3) var(--space-3) var(--space-4);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.producto-categoria {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  align-self: flex-start;
+  margin-bottom: var(--space-2);
+}
+.producto-nombre {
+  font-family: var(--font-heading);
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin: 0 0 4px 0;
+}
+.producto-desc {
+  color: var(--color-parchment-dim);
+  font-size: 0.88rem;
+  margin: 0 0 var(--space-2) 0;
+  flex: 1;
+}
+.producto-precio {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  font-size: 1.05rem;
+  margin: 0 0 var(--space-2) 0;
+}
+.producto-acciones {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.btn-detalle,
+.btn-anadir {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-iron-light);
+  background-color: transparent;
+  color: var(--color-parchment);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+}
+.btn-detalle:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+.btn-anadir {
+  background-color: var(--color-gold);
+  color: var(--color-void);
+  border-color: var(--color-gold);
+  font-weight: 600;
+}
+.btn-anadir:hover {
+  background-color: var(--color-gold-bright);
+  border-color: var(--color-gold-bright);
+}
+
+
+/* =========================================================
+   05. PÁGINAS DE GREMIOS
+   ========================================================= */
+
 .filtros {
   text-align: center;
   margin-bottom: var(--space-4);
@@ -378,87 +683,9 @@ p.subtitulo {
 }
 .subcategoria:first-child { margin-top: 0; }
 
-/* ---------- Navbar ---------- */
-.navbar {
-  background-color: var(--color-void);
-  border-bottom: 1px solid var(--color-iron);
-  padding: 0 20px;
-}
-.navbar .container {
-  max-width: 100%;
-  padding: 0;
-}
-.navbar-brand {
-  font-family: var(--font-display);
-  color: var(--color-gold) !important;
-  letter-spacing: 1px;
-}
-.nav-link {
-  font-family: var(--font-heading);
-  color: var(--color-parchment) !important;
-  position: relative;
-}
-.nav-link:not(.dropdown-toggle)::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 2px;
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-fast);
-}
-.nav-link:hover,
-.nav-link.active {
-  color: var(--color-gold) !important;
-}
-.nav-link:not(.dropdown-toggle):hover::after,
-.nav-link:not(.dropdown-toggle).active::after { transform: scaleX(1); }
-
-/* Flecha del dropdown "Gremios" en tono dorado suave, coherente con el resto del nav */
-.navbar .dropdown-toggle::after {
-  vertical-align: 1px;
-  border-top-color: var(--color-parchment-dim);
-  transition: border-top-color var(--transition-fast);
-}
-.navbar .dropdown-toggle:hover::after,
-.navbar .dropdown-toggle:focus::after {
-  border-top-color: var(--color-gold);
-}
-.navbar #cart-icon {
-  position: static;
-  margin-left: 8px;
-}
-
-/* ---------- Dropdown de Gremios ---------- */
-.navbar .dropdown-menu {
-  background-color: var(--color-obsidian-alt);
-  border: 1px solid var(--color-iron-light);
-  border-radius: var(--radius-md);
-}
-.navbar .dropdown-item {
-  font-family: var(--font-heading);
-  color: var(--color-parchment);
-  border-left: 2px solid transparent;
-  transition: border-color var(--transition-fast), background-color var(--transition-fast);
-}
-.navbar .dropdown-item:hover,
-.navbar .dropdown-item:focus {
-  background-color: var(--color-obsidian);
-  color: var(--color-gold);
-  border-left-color: var(--color-gold);
-}
-@media (min-width: 992px) {
-  .navbar .dropdown:hover > .dropdown-menu {
-    display: block;
-    margin-top: 0;
-  }
-}
 
 /* =========================================================
-   NOSOTROS — LOS TRES GUARDIANES
+   06. PÁGINA NOSOTROS
    ========================================================= */
 
 body.pagina-nosotros {
@@ -470,9 +697,7 @@ body.pagina-nosotros {
     background-color: #05070a;
 }
 
-
 /* ---------- Contenedor principal ---------- */
-
 .main-nosotros {
     position: relative;
     min-height: calc(100vh - 90px);
@@ -480,13 +705,10 @@ body.pagina-nosotros {
     overflow: hidden;
 }
 
-
 /* ---------- Oscurecimiento general ---------- */
-
 .nosotros-overlay {
     position: relative;
     min-height: calc(100vh - 90px);
-
     background:
         linear-gradient(
             180deg,
@@ -494,13 +716,10 @@ body.pagina-nosotros {
             rgba(3, 5, 10, 0.05) 35%,
             rgba(3, 5, 10, 0.72) 100%
         );
-
     padding: 55px 35px 90px;
 }
 
-
 /* ---------- Título ---------- */
-
 .nosotros-header {
     position: relative;
     z-index: 5;
@@ -514,63 +733,50 @@ body.pagina-nosotros {
     font-size: clamp(2rem, 4vw, 3.2rem);
     margin: 0;
     letter-spacing: 2px;
-
     text-shadow:
         0 2px 8px rgba(0, 0, 0, 0.9),
         0 0 20px rgba(198, 161, 58, 0.2);
 }
 
-
 /* ---------- Línea dorada ---------- */
-
 .nosotros-header .seccion-linea {
     margin-top: 15px;
     margin-bottom: 0;
 }
 
-
 /* ---------- Los tres personajes ---------- */
-
 .equipo-grid {
     width: 100%;
     max-width: 1450px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-
 /* ---------- Cada personaje ---------- */
-
 .miembro {
     position: relative;
     min-height: 440px;
-
     display: flex;
     justify-content: center;
     align-items: flex-end;
-
     border: none !important;
     padding: 0 !important;
     margin: 0;
-
     background: transparent;
-
     overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
-
 /* ---------- Degradado individual ---------- */
-
 .miembro::after {
     content: "";
     position: absolute;
     inset: 0;
-
     pointer-events: none;
-
     background: linear-gradient(
         180deg,
         transparent 35%,
@@ -579,82 +785,57 @@ body.pagina-nosotros {
     );
 }
 
-
 /* ---------- Contenido ---------- */
-
 .miembro-contenido {
     position: relative;
     z-index: 3;
-
     width: 100%;
     max-width: 470px;
-
     text-align: center;
-
     padding: 25px 30px 20px;
+    transition: transform 0.35s ease;
 }
 
-
 /* ---------- Icono ---------- */
-
 .miembro-icono {
     font-size: 2.1rem;
     line-height: 1;
     margin-bottom: 10px;
-
     font-family: var(--font-heading);
     font-weight: 700;
-
     text-shadow:
         0 0 8px currentColor,
         0 0 20px currentColor;
 }
 
-
 /* ---------- Nombre ---------- */
-
 .miembro-nombre {
     font-family: var(--font-display);
-
     font-size: clamp(1.7rem, 3vw, 2.5rem);
-
     text-transform: uppercase;
     letter-spacing: 2px;
-
     margin: 0;
-
     color: #ffffff;
-
     text-shadow:
         0 2px 7px rgba(0, 0, 0, 0.95),
         0 0 15px currentColor;
 }
 
-
 /* ---------- Línea del personaje ---------- */
-
 .miembro-linea {
     width: 145px;
     height: 2px;
-
     margin: 12px auto 18px;
-
     position: relative;
 }
 
-
 /* ---------- Descripción ---------- */
-
 .miembro-descripcion {
     font-family: var(--font-body);
-
     font-size: 1.05rem;
     line-height: 1.55;
-
     margin: 0 auto;
-
     color: #eee8d9;
-
     text-shadow:
         0 2px 5px rgba(0, 0, 0, 1);
 }
@@ -665,7 +846,6 @@ body.pagina-nosotros {
 
 .equipo-lysara .miembro-nombre {
     color: #ffffff;
-
     text-shadow:
         0 0 12px rgba(55, 200, 255, 0.75),
         0 2px 8px rgba(0, 0, 0, 1);
@@ -678,14 +858,8 @@ body.pagina-nosotros {
         #48cfff,
         transparent
     );
-
     box-shadow: 0 0 10px rgba(72, 207, 255, 0.7);
 }
-
-
-/* =========================================================
-   KAELTHOR — ROJO
-   ========================================================= */
 
 .equipo-kaelthor .miembro-icono {
     color: #ff6548;
@@ -693,7 +867,6 @@ body.pagina-nosotros {
 
 .equipo-kaelthor .miembro-nombre {
     color: #ffffff;
-
     text-shadow:
         0 0 12px rgba(255, 75, 45, 0.8),
         0 2px 8px rgba(0, 0, 0, 1);
@@ -706,14 +879,8 @@ body.pagina-nosotros {
         #ff6548,
         transparent
     );
-
     box-shadow: 0 0 10px rgba(255, 75, 45, 0.7);
 }
-
-
-/* =========================================================
-   THALEN — VERDE
-   ========================================================= */
 
 .equipo-thalen .miembro-icono {
     color: #8fe65b;
@@ -721,7 +888,6 @@ body.pagina-nosotros {
 
 .equipo-thalen .miembro-nombre {
     color: #ffffff;
-
     text-shadow:
         0 0 12px rgba(100, 220, 70, 0.8),
         0 2px 8px rgba(0, 0, 0, 1);
@@ -734,28 +900,14 @@ body.pagina-nosotros {
         #8fe65b,
         transparent
     );
-
     box-shadow: 0 0 10px rgba(100, 220, 70, 0.7);
 }
 
 
-/* =========================================================
-   EFECTO HOVER
-   ========================================================= */
-
-.miembro {
-    transition:
-        transform 0.35s ease,
-        filter 0.35s ease;
-}
-
+/* ---------- Hover de los personajes ---------- */
 .miembro:hover {
     transform: translateY(-5px);
     filter: brightness(1.12);
-}
-
-.miembro-contenido {
-    transition: transform 0.35s ease;
 }
 
 .miembro:hover .miembro-contenido {
@@ -763,7 +915,6 @@ body.pagina-nosotros {
 }
 
 @media (max-width: 900px) {
-
     .nosotros-overlay {
         padding: 45px 20px 70px;
     }
@@ -785,7 +936,6 @@ body.pagina-nosotros {
 
 
 @media (max-width: 576px) {
-
     .nosotros-overlay {
         padding: 35px 15px 50px;
     }
@@ -807,216 +957,11 @@ body.pagina-nosotros {
     }
 }
 
-/* ---------- Hero (full-width, contenido a la izquierda) ---------- */
-.hero {
-  background-image:
-    linear-gradient(100deg, rgba(12,10,8,0.92) 30%, rgba(12,10,8,0.55) 65%, rgba(12,10,8,0.3) 100%),
-    url('../img/wallpaper.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  padding: 100px 20px 80px;
-  border-bottom: 1px solid var(--color-iron);
-  width: 100%;
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 640px;
-  margin: 0;
-  padding-left: 0;
-  text-align: left;
-}
-.hero-content h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
-  color: #ffffff;
-  text-transform: uppercase;
-  text-align: left;
-  line-height: 1.15;
-  margin: 0 0 var(--space-3);
-  letter-spacing: 1.5px;
-}
-.hero-sub {
-  font-family: var(--font-body);
-  font-style: italic;
-  color: var(--color-gold);
-  font-size: 1.25rem;
-  letter-spacing: 0.3px;
-  margin-bottom: var(--space-3);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-iron-light);
-  max-width: 420px;
-}
-.hero-content p {
-  color: var(--color-parchment-dim);
-  font-size: 1.05rem;
-  line-height: 1.75;
-  max-width: 560px;
-  margin: 0 0 var(--space-4) 0;
-  text-align: left;
-}
-.btn-hero {
-  display: inline-block;
-  font-family: var(--font-heading);
-  background-color: transparent;
-  color: var(--color-gold);
-  padding: 13px 34px;
-  border: 1px solid var(--color-gold);
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  outline: 1px solid rgba(198, 161, 58, 0.3);
-  outline-offset: 4px;
-  transition: background-color var(--transition-fast), color var(--transition-fast), outline-color var(--transition-fast);
-}
-.btn-hero:hover {
-  background-color: var(--color-gold);
-  color: var(--color-void);
-  outline-color: transparent;
-}
 
-/* ---------- Catálogo de productos destacados (full-width) ---------- */
-.catalogo-section {
-  padding: var(--space-6) 20px;
-  background-color: var(--color-void);
-  width: 100%;
-}
-.catalogo-section .container-fluid {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.row.g-4 {
-  --bs-gutter-y: 1.5rem;
-}
-.catalogo-subtitulo {
-  font-family: var(--font-heading);
-  color: var(--color-gold);
-  font-size: 1.2rem;
-  margin: 0;
-}
-.catalogo-ver-todos {
-  color: var(--color-parchment-dim);
-  text-decoration: none;
-  font-family: var(--font-heading);
-  border-bottom: 1px solid transparent;
-  transition: color var(--transition-fast), border-color var(--transition-fast);
-}
-.catalogo-ver-todos:hover {
-  color: var(--color-gold);
-  border-color: var(--color-gold);
-}
-
-/* ---------- Tarjetas de productos del catálogo ---------- */
-.tarjeta-producto {
-  background-color: var(--color-obsidian);
-  border: 1px solid var(--color-iron);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: border-color var(--transition-fast), transform var(--transition-fast);
-}
-.tarjeta-producto:has(.cat-herreria) { border-top: 3px solid var(--cat-herreria); }
-.tarjeta-producto:has(.cat-alquimia) { border-top: 3px solid var(--cat-alquimia); }
-.tarjeta-producto:has(.cat-general)  { border-top: 3px solid var(--cat-general); }
-.tarjeta-producto:has(.cat-ropa)     { border-top: 3px solid var(--cat-ropa); }
-.tarjeta-producto:has(.cat-comida)   { border-top: 3px solid var(--cat-comida); }
-.tarjeta-producto:has(.cat-magia)    { border-top: 3px solid var(--cat-magia); }
-.tarjeta-producto:hover {
-  border-color: var(--color-iron-light);
-  transform: translateY(-3px);
-}
-.producto-img-wrapper {
-  background-color: var(--color-void);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 180px;
-  overflow: hidden;
-  padding: var(--space-2);
-}
-.producto-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  transition: transform var(--transition-slow);
-}
-.tarjeta-producto:hover .producto-img { transform: scale(1.04); }
-.producto-body {
-  padding: var(--space-3) var(--space-3) var(--space-4);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.producto-categoria {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 2px 10px;
-  border-radius: var(--radius-sm);
-  color: #fff;
-  align-self: flex-start;
-  margin-bottom: var(--space-2);
-}
-.producto-nombre {
-  font-family: var(--font-heading);
-  color: #ffffff;
-  font-size: 1.05rem;
-  margin: 0 0 4px 0;
-}
-.producto-desc {
-  color: var(--color-parchment-dim);
-  font-size: 0.88rem;
-  margin: 0 0 var(--space-2) 0;
-  flex: 1;
-}
-.producto-precio {
-  font-family: var(--font-heading);
-  color: var(--color-gold);
-  font-size: 1.05rem;
-  margin: 0 0 var(--space-2) 0;
-}
-.producto-acciones {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-.btn-detalle,
-.btn-anadir {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-iron-light);
-  background-color: transparent;
-  color: var(--color-parchment);
-  text-decoration: none;
-  cursor: pointer;
-  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
-}
-.btn-detalle:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-}
-.btn-anadir {
-  background-color: var(--color-gold);
-  color: var(--color-void);
-  border-color: var(--color-gold);
-  font-weight: 600;
-}
-.btn-anadir:hover {
-  background-color: var(--color-gold-bright);
-  border-color: var(--color-gold-bright);
-}
+/* =========================================================
+   07. PÁGINAS INTERNAS
+   Direcciones, formularios y elementos compartidos
+   ========================================================= */
 
 /* ---------- Secciones internas (Gremios, Direcciones, etc.) ---------- */
 .contenido {
@@ -1141,14 +1086,16 @@ section:last-of-type {
   min-height: 20px;
 }
 
-/* ---------- Ajuste para páginas con navbar ---------- */
+/* =========================================================
+   08. LAYOUT COMPARTIDO
+   ========================================================= */
 body.tiene-navbar {
   padding-top: 90px;
 }
 
 /* =========================================================
-   FOOTER (full-width)
-========================================================= */
+   09. FOOTER
+   ========================================================= */
 footer {
   position: relative;
   background-color: var(--color-void);
@@ -1244,6 +1191,10 @@ footer .footer-bottom p {
   letter-spacing: 0.4px;
   margin: 0;
 }
+
+/* =========================================================
+   10. RESPONSIVE
+   ========================================================= */
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 576px) {
