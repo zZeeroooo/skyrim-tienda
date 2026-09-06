@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herrería de Adrianne Avenicci - Herrería</title>
+    <title>Blogs - Skyrim Emporium</title>
     <link rel="icon" type="image/png" href="../assets/img/skyrim-logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body class="tiene-navbar">
-<!-- ================= NAVBAR ================= -->
+
+    <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="../index.html">
-            <img src="../assets/img/skyrim-logo.png" alt="Skyrim Emporium" style="height:34px; vertical-align:middle; margin-right:8px;">
-            Skyrim Emporium
+                <img src="../assets/img/skyrim-logo.png" alt="Skyrim Emporium" style="height:34px; vertical-align:middle; margin-right:8px;">
+                Skyrim Emporium
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGremios" aria-label="Abrir menú">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarGremios">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownGremios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gremios</a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownGremios">
-                        <li><a class="dropdown-item" href="../gremios/adrianne-herreria.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Herrería de Adrianne Avenicci</a></li>
-                        <li><a class="dropdown-item" href="../gremios/arcadias-cauldron.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Arcadia's Cauldron</a></li>
-                        <li><a class="dropdown-item" href="../gremios/belethor.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Belethor - Bienes Generales</a></li>
-                        <li><a class="dropdown-item" href="../gremios/comerciantes-solitude.html"><img src="assets/img/Iconos/Solitude.png" alt="Solitude" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Comerciantes de Solitude</a></li>
-                        <li><a class="dropdown-item" href="../gremios/corcel-encabritado.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">El Corcel Encabritado</a></li>
-                        <li><a class="dropdown-item" href="../gremios/colegio-winterhold.html"><img src="../assets/img/Iconos/Winterhold.png" alt="Winterhold" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Colegio de Winterhold</a></li>
-                    </ul>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownGremios" role="button" data-bs-toggle="dropdown">Gremios</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownGremios">
+                            <li><a class="dropdown-item" href="../gremios/adrianne-herreria.html">Herrería de Adrianne Avenicci</a></li>
+                            <li><a class="dropdown-item" href="../gremios/arcadias-cauldron.html">Arcadia's Cauldron</a></li>
+                            <li><a class="dropdown-item" href="../gremios/belethor.html">Belethor - Bienes Generales</a></li>
+                            <li><a class="dropdown-item" href="../gremios/comerciantes-solitude.html">Comerciantes de Solitude</a></li>
+                            <li><a class="dropdown-item" href="../gremios/corcel-encabritado.html">El Corcel Encabritado</a></li>
+                            <li><a class="dropdown-item" href="../gremios/colegio-winterhold.html">Colegio de Winterhold</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./blogs.html">Blogs</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.html#direcciones">Direcciones</a></li>
                     <li class="nav-item"><a class="nav-link" href="../login.html">Iniciar sesión</a></li>
                     <li class="nav-item">
-                    <button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+                        <button id="cart-icon" onclick="toggleCart()">
+                            🛒 Carrito <span id="cart-count">0</span>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -49,28 +52,63 @@
     <main>
         <section class="page-header">
             <div class="container">
-                <p class="eyebrow">Noticias</p>
+                <p class="eyebrow">Noticias de Tamriel</p>
                 <h1>Blogs</h1>
-                <p>Noticias, datos curiosos o contenido relacionado con la tienda.</p>
+                <p>Noticias, curiosidades y pensamientos de un aventurero que todavía sigue esperando su próxima gran aventura.</p>
             </div>
         </section>
-        
+
         <section class="section">
             <div class="container blog-grid">
-                <article class="card">
-                    <div class="image-placeholder">Imagen del blog 1</div>
+                <article class="card featured">
+                    <img src="../assets/img/blog-tes6-meme.png" alt="Esqueleto sentado">
                     <div class="card-body">
-                        <h2>Título del blog 1</h2>
-                        <p>Descripción corta del primer artículo.</p>
-                        <a class="button secondary" href="blogs/blog-1.html">Leer más</a>
+                        <div class="card-tags">
+                            <span class="tipo">Actualidad</span>
+                            <span class="card-meta">The Elder Scrolls VI · 2026 · 4 min de lectura</span>
+                        </div>
+                        <h2>Seguimos esperando... pero al menos ya respira</h2>
+                        <p>Durante años los fans de The Elder Scrolls hemos aprendido una habilidad que no aparece en ningún árbol de habilidades: esperar.</p>
+                        <p>El teaser de The Elder Scrolls VI apareció en 2018 y durante muchísimo tiempo Bethesda apenas mostró información concreta. Pero en 2026 llegó una señal bastante más interesante: Bethesda confirmó que TES VI es actualmente su principal foco de desarrollo y que la mayoría del equipo está trabajando en él.</p>
+                        <p>¿Tenemos fecha de lanzamiento? No. ¿Tenemos gameplay público? Tampoco. ¿Seguimos mirando el horizonte como ese esqueleto? Absolutamente.</p>
                     </div>
                 </article>
+
                 <article class="card">
-                    <div class="image-placeholder">Imagen del blog 2</div>
+                    <div class="image-placeholder">
+                        <img class="image-placeholder" src="../assets/img/bg-TESVI.jpg" alt="Paisaje y titulo TES VI">
+                    </div>
                     <div class="card-body">
-                        <h2>Título del blog 2</h2>
-                        <p>Descripción corta del segundo artículo.</p>
-                        <a class="button secondary" href="blogs/blog-2.html">Leer más</a>
+                        <div class="card-tags">
+                            <span class="tipo">Desarrollo</span>
+                            <span class="card-meta">3 min de lectura</span>
+                        </div>
+                        <h2>¿Qué sabemos realmente de TES VI?</h2>
+                        <p>La información oficial sigue siendo escasa, pero ya hay algo importante confirmado: Bethesda afirma que The Elder Scrolls VI es su principal proyecto de desarrollo actual.</p>
+                        <p>El estudio también señaló que el juego está siendo desarrollado sobre Creation Engine 3, la plataforma tecnológica que Bethesda está utilizando para su nueva generación de RPG.</p>
+                        <p>Todo lo demás sigue envuelto en misterio. El nombre completo, la fecha de lanzamiento y buena parte de los detalles del juego todavía no han sido anunciados oficialmente.</p>
+                        <a class="button secondary" href="https://bethesda.net/es-ES/news/a-note-from-bethesda-game-studios" target="_blank" rel="noopener noreferrer">
+                            Ver anuncio de Bethesda
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="image-placeholder">
+                        <img class="image-placeholder" src="../assets/img/bg-TES-blog.jpg" alt="Paisaje y titulo TES VI">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tags">
+                            <span class="tipo">Retrospectiva</span>
+                            <span class="card-meta">3 min de lectura</span>
+                        </div>
+                        <h2>Quince años después, seguimos volviendo a Skyrim</h2>
+                        <p>Mientras esperamos la siguiente entrega, Skyrim continúa siendo uno de los rincones más visitados de Tamriel. Dragones, gremios, mazmorras, mods y cientos de horas de aventuras siguen manteniendo vivo el juego.</p>
+                        <p>Quizás esa sea la verdadera razón por la que la espera por TES VI se siente tan larga: todavía no hemos terminado de explorar Skyrim.</p>
+                        <p>Y siendo sinceros... siempre queda una misión secundaria que hacer.</p>
+                        <a class="button secondary" href="../index.html">
+                            Volver a Skyrim Emporium
+                        </a>
                     </div>
                 </article>
             </div>
@@ -80,20 +118,20 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-            <img src="../assets/img/skyrim-logo.png" alt="Skyrim Emporium" class="footer-logo">
-            <div>
-                <h2>Skyrim Emporium</h2>
-                <p>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</p>
-            </div>
+                <img src="../assets/img/skyrim-logo.png" alt="Skyrim Emporium" class="footer-logo">
+                <div>
+                    <h2>Skyrim Emporium</h2>
+                    <p>Fus Ro Dah • Página ficticia con fines educativos, sin afiliación con Bethesda</p>
+                </div>
             </div>
             <div class="footer-links">
-            <h3>Enlaces</h3>
-            <ul>
-                <li><a href="./nosotros.html">Nosotros</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="../index.html#direcciones">Direcciones</a></li>
-            </ul>
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./blogs.html">Blogs</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                    <li><a href="../index.html#direcciones">Direcciones</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -101,6 +139,11 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 <script src="../js/auth.js"></script>
 </body>
 </html>

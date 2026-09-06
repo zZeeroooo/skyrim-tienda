@@ -9,8 +9,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="tiene-navbar">
-
-<!-- ================= NAVBAR ================= -->
+  <!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -41,7 +40,7 @@
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html" data-auth-link>Iniciar sesión</a></li>
         <li class="nav-item">
-          <button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+          <button id="cart-icon" onclick="toggleCart()"><img src="assets/img/Iconos/Shipwreck.png" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Carrito <span id="cart-count">0</span></button>
         </li>
       </ul>
     </div>
@@ -238,7 +237,7 @@
   // Año dinámico en el footer
   document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-  // Función para añadir al carrito (debe estar definida en cart.js)
+  // Función para añadir al carrito
   function agregarAlCarrito(nombre, precio, imagen) {
     if (typeof addToCart === 'function') {
       addToCart(nombre, precio, imagen);
@@ -246,72 +245,6 @@
       alert('Función de carrito no disponible.');
     }
   }
-
-  /* ---------- Validación del formulario de contacto ---------- */
-  const nombreContacto = document.getElementById('nombre-contacto');
-  const correoContacto = document.getElementById('correo-contacto');
-  const mensajeContactoInput = document.getElementById('mensaje-contacto-input');
-  const formContacto = document.getElementById('form-contacto');
-
-  const errNombreContacto = document.getElementById('error-nombre-contacto');
-  const errCorreoContacto = document.getElementById('error-correo-contacto');
-  const errMensajeContacto = document.getElementById('error-mensaje-contacto');
-
-  const REGEX_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  function validarContacto() {
-    let valido = true;
-
-    const nombre = nombreContacto.value.trim();
-    if (nombre.length === 0) {
-      errNombreContacto.textContent = 'El nombre es obligatorio.';
-      valido = false;
-    } else if (nombre.length > 100) {
-      errNombreContacto.textContent = 'Máximo 100 caracteres.';
-      valido = false;
-    } else {
-      errNombreContacto.textContent = '';
-    }
-
-    const correo = correoContacto.value.trim();
-    if (correo.length === 0) {
-      errCorreoContacto.textContent = '';
-    } else if (correo.length > 100) {
-      errCorreoContacto.textContent = 'Máximo 100 caracteres.';
-      valido = false;
-    } else if (!REGEX_CORREO.test(correo)) {
-      errCorreoContacto.textContent = 'Ingresa un correo válido.';
-      valido = false;
-    } else {
-      errCorreoContacto.textContent = '';
-    }
-
-    const mensaje = mensajeContactoInput.value.trim();
-    if (mensaje.length === 0) {
-      errMensajeContacto.textContent = 'El mensaje es obligatorio.';
-      valido = false;
-    } else if (mensaje.length > 500) {
-      errMensajeContacto.textContent = 'Máximo 500 caracteres.';
-      valido = false;
-    } else {
-      errMensajeContacto.textContent = '';
-    }
-
-    return valido;
-  }
-
-  [nombreContacto, correoContacto, mensajeContactoInput].forEach(campo => {
-    campo.addEventListener('input', validarContacto);
-  });
-
-  formContacto.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!validarContacto()) return;
-
-    document.getElementById('mensaje-contacto').textContent =
-      '¡Mensaje enviado! Un cuervo mensajero lo llevará pronto.';
-    formContacto.reset();
-  });
 </script>
 
 </body>
