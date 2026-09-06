@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="../assets/css/styles-admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <a class="brand" href="index.html">ADMINISTRACIÓN</a>
+        <a class="button small secondary" href="../index.html">Ir a tienda</a>
+    </header>
+
+    <nav class="admin-sidebar" aria-label="Menú administrador">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="ordenes.html">Órdenes</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="nuevo-producto.html">Nuevo producto</a>
+        <a href="nuevo-usuario.html">Nuevo usuario</a>
+    </nav>
+    
+    <main class="admin-main">
+        <section class="page-header">
+            <div class="container">
+                <p class="eyebrow">Panel</p>
+                <h1>Inicio administrador</h1>
+                <p>Base del sistema de gestión. En futuras etapas puede protegerse mediante autenticación y permisos.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container admin-cards">
+                <a class="admin-card" href="productos.html">
+                    <h2>Productos</h2>
+                    <p>Visualizar y gestionar productos.</p>
+                </a>
+                <a class="admin-card" href="usuarios.html">
+                    <h2>Usuarios</h2>
+                    <p>Visualizar y gestionar usuarios.</p>
+                </a>
+                <a class="admin-card" href="nuevo-producto.html">
+                    <h2>Nuevo producto</h2>
+                    <p>Crear un producto.</p>
+                </a>
+                <a class="admin-card" href="nuevo-usuario.html">
+                    <h2>Nuevo usuario</h2>
+                    <p>Crear un usuario.</p>
+                </a>
+                </div>
+        </section>
+    </main>
+<script src="../js/auth.js"></script>
+</body>
+</html>

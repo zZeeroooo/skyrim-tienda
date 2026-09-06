@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo usuario</title>
+    <link rel="stylesheet" href="../assets/css/styles-admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <a class="brand" href="index.html">ADMINISTRACIÓN</a>
+        <a class="button small secondary" href="../index.html">Ir a tienda</a>
+    </header>
+
+    <nav class="admin-sidebar" aria-label="Menú administrador">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="ordenes.html">Órdenes</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="nuevo-producto.html">Nuevo producto</a>
+        <a href="nuevo-usuario.html">Nuevo usuario</a>
+    </nav>
+    
+<main class="admin-main">
+    <section class="form-section">
+        <div class="form-card wide">
+            <h1>Nuevo usuario</h1>
+            <p class="form-intro">Formulario base para crear un usuario.</p>
+            <form id="adminUserForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="adminRun">RUN</label>
+                        <input id="adminRun" type="text" minlength="7" maxlength="9" required>
+                        <small id="adminRunError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminName">Nombre</label>
+                        <input id="adminName" type="text" maxlength="50" required>
+                        <small id="adminNameError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminLastName">Apellidos</label>
+                        <input id="adminLastName" type="text" maxlength="100" required>
+                        <small id="adminLastNameError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminEmail">Correo</label>
+                        <input id="adminEmail" type="email" maxlength="100" required>
+                        <small id="adminEmailError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminPassword">Contraseña</label>
+                        <input id="adminPassword" type="password" minlength="4" maxlength="10" required>
+                        <small id="adminPasswordError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminBirthDate">Fecha nacimiento</label>
+                        <input id="adminBirthDate" type="date">
+                        <small id="adminBirthDateError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminType">Tipo de usuario</label>
+                        <select id="adminType" required>
+                            <option>Administrador</option>
+                            <option>Cliente</option>
+                            <option>Vendedor</option>
+                        </select>
+                        <small id="adminTypeError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminRegion">Región</label>
+                        <select id="adminRegion" required>
+                            <option value="">Selecciona una región</option>
+                        </select>
+                        <small id="adminRegionError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminComuna">Comuna</label>
+                        <select id="adminComuna" required disabled>
+                            <option>Selecciona primero una región</option>
+                        </select>
+                        <small id="adminComunaError" class="error-message"></small>
+                    </div>
+
+                    <div class="form-group form-span-2">
+                        <label for="adminAddress">Dirección</label>
+                        <textarea id="adminAddress" maxlength="300" rows="3" required></textarea>
+                        <small id="adminAddressError" class="error-message"></small>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a class="button secondary" href="usuarios.html">Cancelar</a>
+                    <button class="button" type="submit">Guardar usuario</button>
+                </div>
+                <p id="adminUserSuccess" class="success-message"></p>
+            </form>
+        </div>
+    </section>
+</main>
+<script src="../js/datos-usuarios.js"></script><script src="../js/auth.js"></script><script src="../js/formularios.js"></script>
+</body>
+</html>

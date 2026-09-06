@@ -7,6 +7,9 @@
 <link rel="icon" type="image/png" href="../assets/img/skyrim-logo.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/gremios-catalogo.css">
+<link rel="stylesheet" href="../assets/css/gremios-stats.css">
+<link rel="stylesheet" href="../assets/css/gremios-stock.css">
 </head>
 <body class="tiene-navbar">
 
@@ -27,17 +30,17 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownGremios" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gremios</a>
           <ul class="dropdown-menu" aria-labelledby="dropdownGremios">
-            <li><a class="dropdown-item" href="adrianne-herreria.html">⚔️ Herrería de Adrianne Avenicci</a></li>
-            <li><a class="dropdown-item" href="arcadias-cauldron.html">🧪 Arcadia's Cauldron</a></li>
-            <li><a class="dropdown-item" href="belethor.html">🛒 Belethor - Bienes Generales</a></li>
-            <li><a class="dropdown-item" href="comerciantes-solitude.html">💍 Comerciantes de Solitude</a></li>
-            <li><a class="dropdown-item" href="corcel-encabritado.html">🍖 El Corcel Encabritado</a></li>
-            <li><a class="dropdown-item" href="colegio-winterhold.html">🔮 Colegio de Winterhold</a></li>
+            <li><a class="dropdown-item" href="adrianne-herreria.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Herrería de Adrianne Avenicci</a></li>
+            <li><a class="dropdown-item" href="arcadias-cauldron.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Arcadia's Cauldron</a></li>
+            <li><a class="dropdown-item" href="belethor.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Belethor - Bienes Generales</a></li>
+            <li><a class="dropdown-item" href="comerciantes-solitude.html"><img src="../assets/img/Iconos/Solitude.png" alt="Solitude" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Comerciantes de Solitude</a></li>
+            <li><a class="dropdown-item" href="corcel-encabritado.html"><img src="../assets/img/Iconos/Whiterun.png" alt="Whiterun" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">El Corcel Encabritado</a></li>
+            <li><a class="dropdown-item" href="colegio-winterhold.html"><img src="../assets/img/Iconos/Winterhold.png" alt="Winterhold" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Colegio de Winterhold</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="../index.html#direcciones">Direcciones</a></li>
         <li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="../login.html">Iniciar sesión</a></li>
+        <li class="nav-item"><a class="nav-link" href="../login.html" data-auth-link>Iniciar sesión</a></li>
         <li class="nav-item">
           <button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
         </li>
@@ -59,7 +62,7 @@
   <button class="accion" id="btn-clear" onclick="clearCart()">Vaciar bolsa</button>
 </div>
 
-<h1 style="color:#d59aff;">💍 Gremio de Comerciantes de Solitude</h1>
+<h1 style="color:#d59aff;"><img class="gremio-title-icon" src="../assets/img/Iconos/Solitude.png" alt="">Gremio de Comerciantes de Solitude</h1>
 <p class="subtitulo">Solitude · Ropa, calzado, joyas y accesorios de la más alta calidad imperial.</p>
 
 <div id="lista"></div>
@@ -69,8 +72,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="../js/cart.js"></script>
+<script src="../js/auth.js"></script>
 <script src="../js/inventario.js"></script>
-<script>document.getElementById("pie-pagina").textContent = textos.footer;</script>
 <script>
   const catalogo = inventario.ropa;
 
@@ -78,7 +81,7 @@
     const cont = document.getElementById("lista");
     cont.innerHTML = `
       <div class="tarjeta borde-ropa">
-        <div class="icono">💍</div>
+        <div class="icono"><img src="../assets/img/Iconos/Solitude.png" alt=""></div>
         <div class="info">
           <span class="tipo cat-ropa">Ropa Fina · Gremio</span>
           <h2>Gremio de Comerciantes de Solitude</h2>
@@ -103,5 +106,6 @@
   render();
 </script>
 
+<script src="../js/gremios.js"></script>
 </body>
 </html>

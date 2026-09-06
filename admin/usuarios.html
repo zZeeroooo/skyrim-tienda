@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar usuarios</title>
+    <link rel="stylesheet" href="../assets/css/styles-admin.css">
+</head>
+
+<body>
+    <header class="admin-header">
+        <a class="brand" href="index.html">ADMINISTRACIÓN</a>
+        <a class="button small secondary" href="../index.html">Ir a tienda</a>
+    </header>
+
+    <nav class="admin-sidebar" aria-label="Menú administrador">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="ordenes.html">Órdenes</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="nuevo-producto.html">Nuevo producto</a>
+        <a href="nuevo-usuario.html">Nuevo usuario</a>
+    </nav>
+
+<main class="admin-main">
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Mantenedor</p>
+                    <h1>Usuarios</h1>
+                </div>
+                <a class="button" href="nuevo-usuario.html">Nuevo usuario</a>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RUN</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Correo</th>
+                            <th>Tipo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminUserTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="../js/datos-usuarios.js"></script>
+<script src="../js/admin.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

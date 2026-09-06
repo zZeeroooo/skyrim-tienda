@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro - Gremios y Mercaderes de Skyrim</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="login-page registro-page">
+
+    <main class="login-container registro-container">
+
+        <!-- Volver -->
+        <a href="index.html" class="login-volver">
+            ← Volver a la tienda
+        </a>
+
+        <!-- Logo -->
+        <img
+            src="assets/img/skyrim-logo.png"
+            alt="Skyrim"
+            class="login-logo"
+        >
+
+        <!-- Título -->
+        <h1>Crear Cuenta</h1>
+
+        <p class="login-subtitulo">
+            Gremios y Mercaderes de Skyrim
+        </p>
+
+        <!-- FORMULARIO -->
+        <form id="registerForm" novalidate>
+
+            <!-- RUN -->
+            <div class="campo registro-campo">
+                <label for="run">RUN</label>
+
+                <input
+                    id="run"
+                    name="run"
+                    type="text"
+                    maxlength="9"
+                    minlength="7"
+                    placeholder="19011022K"
+                    required
+                >
+
+                <span id="runError" class="error"></span>
+            </div>
+
+
+            <!-- NOMBRE -->
+            <div class="campo registro-campo">
+                <label for="registerName">Nombre</label>
+
+                <input
+                    id="registerName"
+                    name="name"
+                    type="text"
+                    maxlength="50"
+                    required
+                >
+
+                <span id="registerNameError" class="error"></span>
+            </div>
+
+
+            <!-- APELLIDOS -->
+            <div class="campo registro-campo">
+                <label for="registerLastName">Apellidos</label>
+
+                <input
+                    id="registerLastName"
+                    name="lastName"
+                    type="text"
+                    maxlength="100"
+                    required
+                >
+
+                <span id="registerLastNameError" class="error"></span>
+            </div>
+
+            <!-- CONTRASEÑA -->
+            <div class="campo registro-campo">
+                <label for="registerContrasena">Contraseña</label>
+
+                <input
+                    id="registerContrasena"
+                    name="contrasena"
+                    type="password"
+                    maxlength="100"
+                    placeholder="Ingresa tu contraseña"
+                    required
+                >
+
+                <span id="registerContrasenaError" class="error"></span>
+            </div>
+
+
+            <!-- CORREO -->
+            <div class="campo registro-campo">
+                <label for="registerEmail">Correo electrónico</label>
+
+                <input
+                    id="registerEmail"
+                    name="email"
+                    type="email"
+                    maxlength="100"
+                    placeholder="ejemplo@duoc.cl"
+                    required
+                >
+
+                <span id="registerEmailError" class="error"></span>
+            </div>
+
+
+            <!-- FECHA DE NACIMIENTO -->
+            <div class="campo registro-campo">
+                <label for="birthDate">Fecha de nacimiento</label>
+
+                <input
+                    id="birthDate"
+                    name="birthDate"
+                    type="date"
+                >
+
+                <span id="birthDateError" class="error"></span>
+            </div>
+
+
+            <!-- TIPO DE USUARIO -->
+            <div class="campo registro-campo">
+                <label for="userType">Tipo de usuario</label>
+
+                <select
+                    id="userType"
+                    name="userType"
+                >
+                    <option value="Cliente">Cliente</option>
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Administrador">Administrador</option>
+                </select>
+
+                <small class="registro-ayuda">
+                    En la tienda pública normalmente se utilizará Cliente.
+                </small>
+            </div>
+
+
+            <!-- REGION -->
+            <div class="campo registro-campo">
+                <label for="region">Región</label>
+
+                <select
+                    id="region"
+                    name="region"
+                    required
+                >
+                    <option value="">Selecciona una región</option>
+                </select>
+
+                <span id="regionError" class="error"></span>
+            </div>
+
+
+            <!-- COMUNA -->
+            <div class="campo registro-campo">
+                <label for="comuna">Comuna</label>
+
+                <select
+                    id="comuna"
+                    name="comuna"
+                    required
+                    disabled
+                >
+                    <option value="">
+                        Selecciona primero una región
+                    </option>
+                </select>
+
+                <span id="comunaError" class="error"></span>
+            </div>
+
+
+            <!-- DIRECCION -->
+            <div class="campo registro-campo">
+                <label for="address">Dirección</label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    maxlength="300"
+                    rows="3"
+                    required
+                ></textarea>
+
+                <span id="addressError" class="error"></span>
+            </div>
+
+
+            <!-- BOTON -->
+            <button
+                type="submit"
+                id="btn-registrar"
+            >
+                Crear cuenta
+            </button>
+
+
+            <!-- MENSAJE DE ÉXITO -->
+            <p
+                id="registerSuccess"
+                class="success"
+            ></p>
+
+        </form>
+
+
+        <!-- LOGIN -->
+        <p class="login-registro">
+            ¿Ya tienes una cuenta?
+            <a href="login.html">Iniciar sesión</a>
+        </p>
+
+    </main>
+
+
+    <!-- JS -->
+    <script src="js/datos-usuarios.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/formularios.js"></script>
+
+</body>
+
+</html>

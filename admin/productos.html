@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Administrar productos</title>
+    <link rel="stylesheet" href="../assets/css/styles-admin.css"></head>
+<body><header class="admin-header">
+    <a class="brand" href="index.html">ADMINISTRACIÓN</a>
+    <a class="button small secondary" href="../index.html">Ir a tienda</a>
+</header>
+<nav class="admin-sidebar" aria-label="Menú administrador">
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="ordenes.html">Órdenes</a>
+    <a href="usuarios.html">Usuarios</a>
+    <a href="nuevo-producto.html">Nuevo producto</a>
+    <a href="nuevo-usuario.html">Nuevo usuario</a>
+</nav>
+<main class="admin-main">
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Mantenedor</p>
+                    <h1>Productos</h1>
+                </div>
+                
+                <a class="button" href="nuevo-producto.html">Nuevo producto</a>
+            </div>
+
+            <div class="admin-filters">
+                <label for="productGuildFilter">Gremio</label>
+                <select id="productGuildFilter">
+                    <option value="">Todos los gremios</option>
+                    <option value="herreria">Herrería</option>
+                    <option value="alquimia">Alquimia</option>
+                    <option value="bienesGenerales">Bienes generales</option>
+                    <option value="ropaFina">Ropa fina</option>
+                    <option value="comida">Comida y taberna</option>
+                    <option value="magia">Magia</option>
+                </select>
+                <label for="productCategoryFilter">Tipo de producto</label>
+                <select id="productCategoryFilter"><option value="">Todos los tipos</option></select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminProductTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="../js/inventario.js"></script>
+<script src="../js/admin.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

@@ -299,6 +299,28 @@ p.subtitulo {
   align-items: center;
   padding: 4px 0;
   font-size: 0.9em;
+  gap: 10px;
+}
+
+.producto-imagen {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex: 0 0 48px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.producto-nombre {
+  flex: 1;
+  min-width: 0;
+}
+
+.producto-nombre small {
+  display: block;
+  color: #999;
+  font-size: 0.8em;
+  margin-top: 2px;
 }
 
 .producto .precio {
@@ -531,4 +553,311 @@ body.tiene-navbar {
     display: block;
     margin-top: 0;
   }
+}
+
+ /* =========================================
+   LOGIN 
+   ========================================= */
+
+.login-page {
+    min-height: 100vh;
+    background: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #1c1c1c;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.login-logo {
+    display: block;
+    width: 180px;
+    max-width: 80%;
+    margin: 0 auto 15px;
+}
+
+.login-container h1 {
+    font-family: "Cinzel Decorative", serif;
+    text-align: center;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.login-subtitulo {
+    text-align: center;
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    font-family: "Cinzel", serif;
+    color: #ffffff;
+    margin-bottom: 7px;
+}
+
+.campo input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    background: #111111;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.campo input.input-error {
+    border-color: #ff6f6f;
+}
+
+.error {
+    display: block;
+    color: #ff6f6f;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.success {
+    color: #8bcf8b;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#btn-entrar {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    background: #d4af37;
+    color: #111111;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-entrar:hover {
+    background: #e5c45a;
+}
+
+.login-registro {
+    text-align: center;
+    color: #aaaaaa;
+    margin-top: 20px;
+}
+
+.login-registro a,
+.login-volver {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.login-registro a:hover,
+.login-volver:hover {
+    text-decoration: underline;
+}
+
+.login-volver {
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   REGISTRO
+   Mismo estilo visual que LOGIN
+   ========================================= */
+
+.registro-page {
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+
+/* Tarjeta del registro */
+
+.registro-container {
+    max-width: 700px;
+}
+
+
+/* Campos */
+
+.registro-campo {
+    margin-bottom: 18px;
+}
+
+
+/* Inputs */
+
+.registro-campo input,
+.registro-campo select,
+.registro-campo textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+
+    background: #111111;
+
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
+}
+
+
+/* Select */
+
+.registro-campo select {
+    cursor: pointer;
+}
+
+
+/* Textarea */
+
+.registro-campo textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+
+/* Focus */
+
+.registro-campo input:focus,
+.registro-campo select:focus,
+.registro-campo textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+
+/* Campo con error */
+
+.registro-campo input.input-error,
+.registro-campo select.input-error,
+.registro-campo textarea.input-error {
+    border-color: #ff6f6f;
+}
+
+
+/* Texto de ayuda */
+
+.registro-ayuda {
+    display: block;
+    color: #888888;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/* Botón registrar */
+
+#btn-registrar {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+
+    background: #d4af37;
+    color: #111111;
+
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#btn-registrar:hover {
+    background: #e5c45a;
+}
+
+
+/* Mensaje de éxito */
+
+#registerSuccess {
+    color: #8bcf8b;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   REGISTRO EN PANTALLAS GRANDES
+   ========================================= */
+
+@media (min-width: 700px) {
+
+    .registro-container form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 18px;
+    }
+
+    .registro-campo {
+        margin-bottom: 18px;
+    }
+
+    /* Campos que ocupan todo el ancho */
+
+    .registro-campo:nth-child(3),
+    .registro-campo:nth-child(4),
+    .registro-campo:nth-child(7),
+    .registro-campo:nth-child(8),
+    .registro-campo:nth-child(9),
+
+    #btn-registrar,
+    #registerSuccess {
+        grid-column: 1 / -1;
+    }
+
+    /* El mensaje de ayuda no rompe el diseño */
+
+    .registro-ayuda {
+        grid-column: auto;
+    }
+}
+
+
+/* =========================================
+   REGISTRO EN CELULAR
+   ========================================= */
+
+@media (max-width: 699px) {
+
+    .registro-container {
+        max-width: 420px;
+    }
+
+    .registro-container form {
+        display: block;
+    }
 }

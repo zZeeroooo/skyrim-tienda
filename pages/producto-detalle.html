@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del producto</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/gremios-catalogo.css">
 </head>
-<body>
+<body class="catalogo-detail-page">
 <header class="site-header">
     <nav class="navbar" aria-label="Navegación principal">
         <a class="brand" href="index.html">Skyrim Emporium</a>
         <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
         <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="../index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="blogs.html">Blogs</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="login.html">Iniciar sesión</a></li>
+            <li><a href="../login.html" data-auth-link>Iniciar sesión</a></li>
         </ul>
         <button id="cartButton" class="cart-button" type="button" aria-label="Ver carrito">
             Carrito (<span id="cartCount">0</span>)
@@ -25,19 +26,19 @@
     </nav>
 </header>
 <main>
-<section class="page-header">
-<div class="container"><p class="eyebrow">Producto</p><h1 id="detailTitle">Detalle del producto</h1></div>
+<section class="catalogo-detail-header">
+<div class="catalogo-detail-container"><p class="catalogo-sub">Producto</p><h1 id="detailTitle">Detalle del producto</h1></div>
 </section>
-<section class="section">
-<div class="container product-detail">
-    <div id="detailImage" class="product-detail-image image-placeholder">Imagen del producto</div>
-    <article class="product-detail-content">
-        <p id="detailCategory" class="eyebrow">Categoría</p>
+<section class="catalogo-detail-section">
+<div class="catalogo-detail-container catalogo-product-detail">
+    <div id="detailImage" class="catalogo-detail-image image-placeholder">Imagen del producto</div>
+    <article class="catalogo-detail-content">
+        <p id="detailCategory" class="catalogo-sub">Categoría</p>
         <h2 id="detailName">Nombre del producto</h2>
-        <p id="detailDescription">Descripción del producto.</p>
-        <p id="detailPrice" class="price">$0</p>
-        <button id="detailAddButton" class="button" type="button">Agregar al carrito</button>
-        <a class="button secondary" href="productos.html">Volver a productos</a>
+        <p id="detailDescription" class="catalogo-detail-description">Descripción del producto.</p>
+        <p id="detailStock" class="catalogo-stock">Stock: 0</p>
+        <p id="detailPrice" class="catalogo-bigprice">$0</p>
+        <div class="catalogo-detail-actions"><button id="detailAddButton" class="catalogo-add" type="button">Agregar al carrito</button><a class="catalogo-detail-link" href="../index.html">Volver a la tienda</a></div>
     </article>
 </div>
 </section>
@@ -80,9 +81,10 @@
     </div>
 </div>
 <div id="cartOverlay" class="cart-overlay"></div>
-<script src="js/cart.js"></script>
-<script src="js/inventario.js"></script>
-<script src="js/datos-gremios.js"></script>
-<script src="js/tienda.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/inventario.js"></script>
+<script src="../js/datos-gremios.js"></script>
+<script src="../js/tienda.js"></script>
+<script src="../js/auth.js"></script>
 </body>
 </html>
