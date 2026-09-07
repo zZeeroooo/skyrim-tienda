@@ -84,6 +84,25 @@ python -m http.server 8000
 
 Luego visita `http://localhost:8000`.
 
+### Usuarios de Prueba para Iniciar Sesión
+
+```
+CLIENTE
+correo: ejemplo@gmail.com
+contraseña: 123456
+```
+```
+ADMINISTRADOR
+correo: vale.rodrigueza@duoc.cl
+contraseña: 1234567
+```
+
+```
+VENDEDOR
+correo: vendedor@duoc.cl
+contraseña: 123456
+```
+
 ## Aviso
 
 Proyecto ficticio con fines educativos. Sin afiliación con Bethesda Softworks.
