@@ -90,11 +90,37 @@
   </div>
 </footer>
 
-<div id="cartOverlay" class="cart-overlay"></div>
+<div id="cart-overlay" onclick="toggleCart()"></div>
+<div id="cart-drawer">
+    <h2>Tu bolsa <span id="close-cart" onclick="toggleCart()">✕</span></h2>
+    <div id="cart-items"></div>
+    <div id="cart-total-row">
+        <span>Total</span>
+        <span id="cart-total">0 🪙</span>
+    </div>
+    <button id="btn-checkout" class="accion" type="button" onclick="checkout()">Finalizar compra</button>
+    <button id="btn-clear" class="accion" type="button" onclick="clearCart()">Vaciar bolsa</button>
+</div>
 <script src="../js/cart.js"></script>
 <script src="../js/inventario.js"></script>
 <script src="../js/datos-gremios.js"></script>
 <script src="../js/tienda.js"></script>
 <script src="../js/auth.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const addButton = document.getElementById('detailAddButton');
+    if (!addButton) return;
+    addButton.addEventListener('click', () => {
+        Cart.add({
+            id: addButton.dataset.id,
+            name: addButton.dataset.name,
+            price: Number(addButton.dataset.price),
+            stock: Number(addButton.dataset.stock)
+        });
+    });
+});
+</script>
+</body>
+</html>
 </body>
 </html>
