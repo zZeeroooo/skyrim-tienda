@@ -185,11 +185,11 @@ const inventario = {
         { id: "escudo-quitinoso", name: "Escudo Quitinoso", price: 100, description: "Escudo de quitina.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_quitinoso.png" },
         { id: "escudo-stalhrim", name: "Escudo Stalhrim", price: 250, description: "Escudo de stalhrim.", image: "assets/img/Herreria/Armadura/Ligera/Escudo_stalhrim.png" },
         { id: "gaunteletes-escamas-dragon", name: "Guanteletes Escamas Dragón", price: 150, description: "Guanteletes de escamas de dragón.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_escamas_dragon.png" },
-        { id: "gaunteletes-cristal", name: "Guanteletes Cristal", price: 120, description: "Guanteletes de cristal.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_cristal.png" },
-        { id: "gaunteletes-elficos", name: "Guanteletes Élficos", price: 100, description: "Guanteletes élficos.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_elficos.png" },
-        { id: "gaunteletes-pieles", name: "Guanteletes Pieles", price: 30, description: "Guanteletes de pieles.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_pieles.png" },
-        { id: "gaunteletes-renegado", name: "Guanteletes Renegado", price: 60, description: "Guanteletes de renegado.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_renegado.png" },
-        { id: "gaunteletes-vampiro", name: "Guanteletes Vampiro", price: 70, description: "Guanteletes de vampiro.", image: "assets/img/Herreria/Armadura/Ligera/Gaunteletes_vampiro.png" }
+        { id: "gaunteletes-cristal", name: "Guanteletes Cristal", price: 120, description: "Guanteletes de cristal.", image: "assets/img/Herreria/Armadura/Ligera/Guanteletes_cristal.png" },
+        { id: "gaunteletes-elficos", name: "Guanteletes Élficos", price: 100, description: "Guanteletes élficos.", image: "assets/img/Herreria/Armadura/Ligera/Guanteletes_elficos.png" },
+        { id: "gaunteletes-pieles", name: "Guanteletes Pieles", price: 30, description: "Guanteletes de pieles.", image: "assets/img/Herreria/Armadura/Ligera/Guanteletes_pieles.png" },
+        { id: "gaunteletes-renegado", name: "Guanteletes Renegado", price: 60, description: "Guanteletes de renegado.", image: "assets/img/Herreria/Armadura/Ligera/Guanteletes_renegado.png" },
+        { id: "gaunteletes-vampiro", name: "Guanteletes Vampiro", price: 70, description: "Guanteletes de vampiro.", image: "assets/img/Herreria/Armadura/Ligera/Guanteletes_vampiro.png" }
       ]
     },
     {
@@ -611,11 +611,11 @@ const inventario = {
         { id: "estrella-azura", name: "Estrella Azura", price: 500, description: "Estrella de Azura.", image: "assets/img/Magia/Varios/Estrella_azura.png" },
         { id: "estrellanegra", name: "Estrella Negra", price: 600, description: "Estrella negra.", image: "assets/img/Magia/Varios/Estrella_negra.png" },
         { id: "gema-alma-comun", name: "Gema Alma Común", price: 40, description: "Gema de alma común.", image: "assets/img/Magia/Varios/Gema_alma_comun.png" },
-        { id: "gema-almagrande", name: "Gema Alma Grande", price: 100, description: "Gema de alma grande.", image: "assets/img/Magia/Varios/Gema_almagrande.png" },
+        { id: "gema-almagrande", name: "Gema Alma Grande", price: 100, description: "Gema de alma grande.", image: "assets/img/Magia/Varios/Gema_alma_grande.png" },
         { id: "gema-alma-insignificante", name: "Gema Alma Insignificante", price: 10, description: "Gema de alma insignificante.", image: "assets/img/Magia/Varios/Gema_alma_insignificante.png" },
-        { id: "gema-almamenor", name: "Gema Alma Menor", price: 20, description: "Gema de alma menor.", image: "assets/img/Magia/Varios/Gema_almamenor.png" },
-        { id: "gema-almanegra", name: "Gema Alma Negra", price: 150, description: "Gema de alma negra.", image: "assets/img/Magia/Varios/Gema_almanegra.png" },
-        { id: "gema-almasuperior", name: "Gema Alma Superior", price: 80, description: "Gema de alma superior.", image: "assets/img/Magia/Varios/Gema_almasuperior.png" },
+        { id: "gema-almamenor", name: "Gema Alma Menor", price: 20, description: "Gema de alma menor.", image: "assets/img/Magia/Varios/Gema_alma_menor.png" },
+        { id: "gema-almanegra", name: "Gema Alma Negra", price: 150, description: "Gema de alma negra.", image: "assets/img/Magia/Varios/Gema_alma_negra.png" },
+        { id: "gema-almasuperior", name: "Gema Alma Superior", price: 80, description: "Gema de alma superior.", image: "assets/img/Magia/Varios/Gema_alma_superior.png" },
         { id: "inkwell", name: "Tintero", price: 10, description: "Tintero.", image: "assets/img/Magia/Varios/Inkwell.png" },
         { id: "piedravarladefectuosa", name: "Piedra Varla Defectuosa", price: 30, description: "Piedra varla defectuosa.", image: "assets/img/Magia/Varios/Piedra_varla_defectuosa.png" },
         { id: "pluma", name: "Pluma", price: 5, description: "Pluma para escribir.", image: "assets/img/Magia/Varios/Pluma.png" },

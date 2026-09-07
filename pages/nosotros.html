@@ -39,12 +39,26 @@
                     <li class="nav-item"><a class="nav-link" href="../index.html#direcciones">Direcciones</a></li>
                     <li class="nav-item"><a class="nav-link" href="../login.html">Iniciar sesión</a></li>
                     <li class="nav-item">
-                    <button id="cart-icon" onclick="toggleCart()">🛒 Carrito <span id="cart-count">0</span></button>
+                    <button id="cart-icon" onclick="toggleCart()"><img src="../assets/img/Iconos/Shipwreck.png" style="height:20px; width:auto; margin-right:8px; vertical-align:middle;">Carrito <span id="cart-count">0</span></button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+    <!-- ================= CARRITO ================= -->
+<div id="cart-overlay" onclick="toggleCart()"></div>
+<div id="cart-drawer">
+    <h2>Tu Bolsa <span id="close-cart" onclick="toggleCart()">✕</span></h2>
+    <div id="cart-items"></div>
+    <div id="cart-total-row">
+        <span>Total:</span>
+        <span id="cart-total">0 🪙</span>
+    </div>
+    <button class="accion" id="btn-checkout" onclick="checkout()">Cerrar Trato</button>
+    <button class="accion" id="btn-clear" onclick="clearCart()">Vaciar bolsa</button>
+</div>
 
 <!-- ================= CONTENIDO PRINCIPAL ================= -->
 <main class="main-nosotros">

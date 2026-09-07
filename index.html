@@ -238,10 +238,14 @@
 
   // Función para añadir al carrito
   function agregarAlCarrito(nombre, precio, imagen) {
-    if (typeof addToCart === 'function') {
-      addToCart(nombre, precio, imagen);
+    const producto = Object.values(inventario)
+      .flatMap(secciones => secciones.flatMap(seccion => seccion.items))
+      .find(item => item.image === imagen);
+
+    if (producto && typeof Cart !== 'undefined') {
+      Cart.add(producto);
     } else {
-      alert('Función de carrito no disponible.');
+      alert('Producto no disponible.');
     }
   }
 </script>
