@@ -98,38 +98,6 @@
 <script src="../js/cart.js"></script>
 <script src="../js/auth.js"></script>
 <script src="../js/inventario.js"></script>
-<script>
-  const catalogo = inventario.herreria;
-
-  function render() {
-    const cont = document.getElementById("lista");
-    cont.innerHTML = `
-      <div class="tarjeta borde-herreria">
-        <div class="icono"><img src="../assets/img/Iconos/Whiterun.png" alt=""></div>
-        <div class="info">
-          <span class="tipo cat-herreria">Herrería · Mercader</span>
-          <h2>Herrería de Adrianne Avenicci</h2>
-          <p><span class="etiqueta">Nota:</span> Especialista en herrería, buenos precios en metal.</p>
-          <div class="productos">
-            ${catalogo.map(seccion => `
-              <p class="subcategoria">${seccion.titulo}</p>
-              ${seccion.items.map(p => `
-                <div class="producto">
-                  <span>${p.name}</span>
-                  <span class="precio">${p.price} 🪙</span>
-                  <button onclick='Cart.add(${JSON.stringify(p)})'>Añadir</button>
-                </div>
-              `).join("")}
-            `).join("")}
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  render();
-</script>
-
 <script src="../js/gremios.js"></script>
 </body>
 </html>
