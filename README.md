@@ -36,14 +36,10 @@ Sitio web temático de Skyrim con información de gremios y mercaderes, sistema 
 │       └── taberna/
 │
 ├── js/
-|    ├── cart.js
-|    ├── inventario.js
-|    ├── tienda.js
-|    ├── datos-usuarios.js
-|    ├── datos-gremios.js
-|    ├── formularios.js
-|    └── admin.js                 
-│
+│   ├── auth.js                          # Construyendo ?
+│   ├── cart.js                          # Lógica del carrito, compartida entre todas las páginas
+│   └── inventario.js                    # Catálogo y precios centralizados de todas las tiendas
+│   │
 └── pages/
     ├── blogs.html                      # Página de blogs
     ├── contacto.html                   # Página de contacto
