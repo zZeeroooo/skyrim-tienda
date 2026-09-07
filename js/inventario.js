@@ -514,6 +514,7 @@ const inventario = {
         { id: "carne-perro", name: "Carne Perro", price: 6, description: "Carne de perro.", image: "assets/img/Taberna/Comida/Carne_perro.png" },
         { id: "carne-res-cocida", name: "Carne Res Cocida", price: 10, description: "Carne de res cocida.", image: "assets/img/Taberna/Comida/Carne_res_cocida.png" },
         { id: "carne-res-cruda", name: "Carne Res Cruda", price: 5, description: "Carne de res cruda.", image: "assets/img/Taberna/Comida/Carne_res_cruda.png" },
+        { id: "carne-salmon-cocina", name: "Filete Salmón", price: 7, description: "Filete de salmón.", image: "assets/img/Taberna/Comida/Filete_salmon.png" },
         { id: "carne-skeever-chamuscada", name: "Carne Skeever Chamuscada", price: 8, description: "Carne de skeever chamuscada.", image: "assets/img/Taberna/Comida/Carne_skeever_chamuscada.png" },
         { id: "carpa", name: "Carpa", price: 5, description: "Carpa fresca.", image: "assets/img/Taberna/Comida/Carpa.png" },
         { id: "carpa-cocida", name: "Carpa Cocida", price: 7, description: "Carpa cocida.", image: "assets/img/Taberna/Comida/Carpa_cocida.png" },
@@ -545,8 +546,7 @@ const inventario = {
         { id: "ajo-cocina", name: "Ajo", price: 3, description: "Ajo para cocinar.", image: "assets/img/Taberna/Ingredientes/Ajo.png" },
         { id: "lavanda-cocina", name: "Lavanda", price: 4, description: "Lavanda para cocinar.", image: "assets/img/Taberna/Ingredientes/Lavanda.png" },
         { id: "monton-sal-cocina", name: "Montón Sal", price: 3, description: "Sal para cocinar.", image: "assets/img/Taberna/Ingredientes/Monton_sal.png" },
-        { id: "sales-fuego-cocina", name: "Sales Fuego", price: 12, description: "Sales de fuego (para cocinar).", image: "assets/img/Taberna/Ingredientes/Sales_fuego.png" },
-        { id: "carne-salmon-cocina", name: "Carne Salmón", price: 7, description: "Carne de salmón.", image: "assets/img/Taberna/Ingredientes/Carne_salmon.png" }
+        { id: "sales-fuego-cocina", name: "Sales Fuego", price: 12, description: "Sales de fuego (para cocinar).", image: "assets/img/Taberna/Ingredientes/Sales_fuego.png" }
       ]
     },
     {
@@ -596,12 +596,12 @@ const inventario = {
     {
       titulo: "Pergaminos",
       items: [
-        { id: "pergamino-1", name: "Pergamino 1", price: 50, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_1.png" },
-        { id: "pergamino-2", name: "Pergamino 2", price: 55, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_2.png" },
-        { id: "pergamino-3", name: "Pergamino 3", price: 60, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_3.png" },
-        { id: "pergamino-4", name: "Pergamino 4", price: 65, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_4.png" },
-        { id: "pergamino-5", name: "Pergamino 5", price: 70, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_5.png" },
-        { id: "pergamino-6", name: "Pergamino 6", price: 75, description: "Pergamino mágico.", image: "assets/img/Magia/Pergaminos/Pergamino_6.png" }
+        { id: "pergamino-1", name: "Pergamino de Alteración", price: 50, description: "Pergamino mágico de alteración.", image: "assets/img/Magia/Pergaminos/Pergamino_1.png" },
+        { id: "pergamino-2", name: "Pergamino de Conjuro", price: 55, description: "Pergamino mágico de conjuración.", image: "assets/img/Magia/Pergaminos/Pergamino_2.png" },
+        { id: "pergamino-3", name: "Pergamino de Destrucción", price: 60, description: "Pergamino mágico de destrucción.", image: "assets/img/Magia/Pergaminos/Pergamino_3.png" },
+        { id: "pergamino-4", name: "Pergamino de Ilusión", price: 65, description: "Pergamino mágico de ilusión.", image: "assets/img/Magia/Pergaminos/Pergamino_4.png" },
+        { id: "pergamino-5", name: "Pergamino de Restauración", price: 70, description: "Pergamino mágico de restauración.", image: "assets/img/Magia/Pergaminos/Pergamino_5.png" },
+        { id: "pergamino-6", name: "Pergamino Misterioso", price: 75, description: "Pergamino mágico. No se sabe qué hace con exactitud.", image: "assets/img/Magia/Pergaminos/Pergamino_6.png" }
       ]
     },
     {
@@ -661,7 +661,7 @@ const inventario = {
         { id: "bowl", name: "Bowl", price: 3, description: "Cuenco.", image: "assets/img/Bienes_generales/Bowl.png" },
         { id: "bowl-1", name: "Bowl 1", price: 3, description: "Cuenco.", image: "assets/img/Bienes_generales/Bowl_1.png" },
         { id: "bowl-3", name: "Bowl 3", price: 4, description: "Cuenco.", image: "assets/img/Bienes_generales/Bowl_3.png" },
-        { id: "cabeza-bruja-glennoril", name: "Cabeza Bruja Glennoril", price: 50, description: "Cabeza de bruja Glennoril.", image: "assets/img/Bienes_generales/Cabeza_bruja_Glennoril.png" },
+        { id: "cabeza-bruja-glennoril", name: "Cabeza Bruja Glenmoril", price: 50, description: "Cabeza de bruja Glenmoril.", image: "assets/img/Bienes_generales/Cabeza_bruja_Glenmoril.png" },
         { id: "calavera-troll", name: "Calavera Troll", price: 30, description: "Calavera de troll.", image: "assets/img/Bienes_generales/Calavera_troll.png" },
         { id: "caliz", name: "Cáliz", price: 5, description: "Cáliz.", image: "assets/img/Bienes_generales/Caliz.png" },
         { id: "caliz-1", name: "Cáliz 1", price: 5, description: "Cáliz.", image: "assets/img/Bienes_generales/Caliz_1.png" },
